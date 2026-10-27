@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AB SIGNS MEDIA — Print, Stationery & Photography</title>
+  <meta name="description" content="AB SIGNS MEDIA — Design, Printing, Stationery, Photography, Branding. Quality for lifetime memories." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0b1d3a;
+      --secondary: #eab308;
+      --green: #25D366;
+      --accent: #1e40af;
+      --line: #c5d0de;
+    }
+    body { font-family: 'Open Sans', system-ui, sans-serif; color: #0f172a; background: #e8eef5; }
+    a { text-decoration: none; }
+    .btn-primary { background: var(--primary); border-color: var(--primary); }
+    .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-secondary { background: var(--secondary); border-color: var(--secondary); color: #0b1d3a; font-weight: 600; }
+    .btn-wa { background: var(--green); color: #fff; border: none; }
+    .btn-wa:hover { background: #1da851; color: #fff; }
+
+    .topbar { background: var(--primary); color: #cbd5e1; font-size: .85rem; padding: 8px 0; }
+    .topbar a { color: #e2e8f0; }
+    .topbar a:hover { color: var(--secondary); }
+
+    .brand-title { font-family: Roboto, sans-serif; font-weight: 700; color: var(--primary); margin: 0; }
+    .brand-title .ab { color: #3b82f6; }
+    .brand-title .media { color: #ef4444; }
+
+    .nav-bar { background: var(--primary); }
+    .nav-bar .nav-link { color: #e2e8f0 !important; font-weight: 500; padding: 12px 14px !important; }
+    .nav-bar .nav-link:hover, .nav-bar .nav-link.active { color: var(--secondary) !important; }
+
+    .hero-banner {
+      position: relative; min-height: 320px; background: #0b1d3a; overflow: hidden; color: #fff;
+    }
+    @media (min-width: 768px) { .hero-banner { min-height: 420px; } }
+    #bannerVideo {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+    }
+    .banner-slides { position: absolute; inset: 0; z-index: 0; }
+    .banner-slide {
+      position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s ease;
+      background: #0b1d3a center/cover no-repeat;
+    }
+    .banner-slide.active { opacity: 1; }
+    .hero-overlay {
+      position: relative; z-index: 2;
+      background: linear-gradient(180deg, rgba(11,29,58,0.45), rgba(11,29,58,0.88));
+      min-height: 320px; display: flex; align-items: center; padding: 2rem 0;
+    }
+    @media (min-width: 768px) { .hero-overlay { min-height: 420px; } }
+    .hero-overlay .tag { color: var(--secondary); font-style: italic; }
+    .banner-arrows {
+      position: absolute; z-index: 3; top: 50%; left: 0; right: 0;
+      display: flex; justify-content: space-between; padding: 0 12px;
+      transform: translateY(-50%); pointer-events: none;
+    }
+    .banner-arrows button {
+      pointer-events: auto; width: 40px; height: 40px; border-radius: 50%;
+      border: none; background: rgba(255,255,255,0.25); color: #fff; font-size: 1.1rem; cursor: pointer;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      height: 100%;
+      transition: .2s;
+      box-shadow: 0 4px 12px rgba(11,29,58,.08);
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(11,29,58,.14);
+    }
+    .product-card.outlined {
+      border: 2.5px solid var(--accent);
+    }
+    .pic-slot {
+      height: 140px; background: #e2e8f0;
+      display: flex; align-items: center; justify-content: center;
+      color: #64748b; font-size: .8rem; text-align: center; padding: 8px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .pic-slot img { width: 100%; height: 100%; object-fit: cover; }
+    .ask { color: #16a34a; font-size: .9rem; }
+    .price { color: var(--primary); font-weight: 700; }
+    .subprice { color: #b91c1c; font-size: .8rem; }
+
+    .ads-strip {
+      position: relative; height: 200px; border-radius: 12px; overflow: hidden;
+      border: 2px solid var(--line); box-shadow: 0 4px 12px rgba(11,29,58,.08); background: #0f172a;
+    }
+    @media (min-width: 768px) { .ads-strip { height: 280px; } }
+    .ads-slide {
+      position: absolute; inset: 0; opacity: 0; transition: opacity 0.6s ease;
+      background: #1e293b center/cover no-repeat;
+    }
+    .ads-slide.active { opacity: 1; }
+    .ads-label {
+      position: absolute; left: 10px; bottom: 10px; z-index: 2;
+      background: rgba(0,0,0,0.55); color: #f39494; font-size: .72rem; padding: 4px 10px; border-radius: 999px;
+    }
+
+    .gallery-slot {
+      height: 140px; background: #e2e8f0; border-radius: 10px;
+      overflow: hidden; border: 20px solid var(--line); cursor: pointer;
+      box-shadow: 0 2px 8px rgba(11,29,58,.06);
+    }
+    @media (min-width: 768px) { .gallery-slot { height: 180px; } }
+    .gallery-slot img { width: 100%; height: 100%; object-fit: cover; }
+
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 16px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 10px; object-fit: contain; }
+    .lightbox-close {
+      position: absolute; top: 14px; right: 16px; width: 42px; height: 42px;
+      border: none; border-radius: 50%; background: rgba(255,255,255,0.15);
+      color: #fff; font-size: 1.4rem; cursor: pointer;
+    }
+
+    .media-player {
+      width: 100%; border-radius: 12px; overflow: hidden;
+      background: #000; border: 2px solid var(--line);
+    }
+    .media-player video { width: 100%; height: auto; max-height: 70vh; display: block; background: #000; }
+    .media-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .media-actions button {
+      flex: 1; min-width: 120px; padding: 11px 14px; border-radius: 8px;
+      border: 2px solid var(--line); background: #fff; font-weight: 700; cursor: pointer; font-size: .9rem;
+    }
+    .media-actions button.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .footer { background: #0f172a; color: #94a3b8; }
+    .footer h5 { color: var(--secondary); }
+    .footer a { color: #cbd5e1; display: block; margin-bottom: 4px; }
+    .footer a:hover { color: var(--secondary); }
+    .copyright { background: var(--primary); color: #bfdbfe; font-size: .85rem; }
+    .section-title {
+      color: var(--primary); border-bottom: 2px solid var(--accent);
+      padding-bottom: 6px; margin-bottom: 1rem;
+    }
+    .pkg-list { font-size: .85rem; text-align: left; margin: 0 0 12px 0; padding-left: 18px; }
+    .pkg-list li { margin-bottom: 3px; }
+
+    form label { display: block; font-size: .85rem; font-weight: 700; margin-top: .4rem; }
+    input, select, textarea {
+      width: 100%; padding: 10px; margin: 6px 0 10px;
+      border: 2px solid #cbd5e1; border-radius: 8px; font: inherit; font-size: .9rem; background: #fff;
+    }
+
+    /* ===== MOBILE + DESKTOP BALANCE ===== */
+    @media (max-width: 767.98px) {
+      .hero-banner, .hero-overlay { min-height: 260px; }
+      .hero-overlay .h2 { font-size: 1.35rem; }
+      .product-card { border-width: 2px; }
+      .pic-slot { height: 110px; font-size: 0.75rem; }
+      .pkg-list { font-size: 0.8rem; }
+      .section-title { font-size: 1.15rem; }
+      .topbar { font-size: 0.78rem; }
+      .gallery-slot { height: 120px; }
+      .ads-strip { height: 160px; }
+      .container.py-5 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+      .btn-wa.btn-sm { font-size: 0.8rem; padding: 0.4rem 0.6rem; }
+    }
+    @media (min-width: 768px) {
+      .hero-banner, .hero-overlay { min-height: 440px; }
+      .product-card { border-width: 2px; }
+      .pic-slot { height: 150px; }
+      .gallery-slot { height: 190px; }
+      .ads-strip { height: 300px; }
+      .row.g-3 > [class*="col-"] { display: flex; }
+      .row.g-3 > [class*="col-"] > .product-card { width: 100%; }
+    }
+    @media (min-width: 992px) {
+      .container { max-width: 1140px; }
+      .gallery-slot { height: 200px; }
+    }
+    /* Gallery lightbox stronger */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(0,0,0,0.94);
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      touch-action: manipulation;
+    }
+    .lightbox.open { display: flex !important; }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      object-fit: contain;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 12px; right: 12px;
+      width: 48px; height: 48px;
+      border: none; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      color: #fff; font-size: 1.5rem;
+      cursor: pointer; z-index: 100000;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gallery-slot { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .gallery-slot:active { opacity: 0.85; transform: scale(0.98); }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div>
+        <a href="#contact">Help</a> /
+        <a href="https://wa.me/256788002309" target="_blank" rel="noopener">WhatsApp</a> /
+        <a href="#branches">Branches</a>
+      </div>
+      <div class="d-none d-md-block">
+        Call: <a href="tel:+256788002309">0788 002 309</a> ·
+        <a href="tel:+256740045771">0740 045 771</a>
+      </div>
+      <div><a href="mailto:absignsmedia@gmail.com">absignsmedia@gmail.com</a></div>
+    </div>
+  </div>
+
+  <div class="container py-3">
+    <div class="row align-items-center g-3">
+      <div class="col-lg-3">
+        <a href="#" class="brand-title h4">
+          <span class="ab">AB</span> SIGNS <span class="media">MEDIA</span>
+        </a>
+        <div class="small text-muted">Quality for lifetime memories</div>
+      </div>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchBox" placeholder="Search printing, stationery, photo..." />
+          <select class="form-select" style="max-width:140px" id="catFilter">
+            <option value="">All</option>
+            <option value="printing">Printing</option>
+            <option value="stationery">Stationery</option>
+            <option value="photography">Photography</option>
+            <option value="branding">Branding</option>
+          </select>
+          <button class="btn btn-primary" type="button" onclick="filterItems()"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div class="col-lg-3 text-lg-end">
+        <a class="btn btn-wa rounded-pill px-3" href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20MEDIA" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp me-1"></i> Order WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark py-0">
+        <a class="navbar-brand d-lg-none text-warning fw-bold" href="#">AB SIGNS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <div class="navbar-nav me-auto">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#printing">Printing</a>
+            <a class="nav-link" href="#stationery">Stationery</a>
+            <a class="nav-link" href="#photography">Photography</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
+            <a class="nav-link" href="#video">Video</a>
+            <a class="nav-link" href="#branding">Branding</a>
+            <a class="nav-link" href="#branches">Branches</a>
+            <a class="nav-link" href="#feedback">Feedback</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#contact">Contact</a>
+          </div>
+          <a class="btn btn-secondary btn-sm rounded-pill my-2" href="tel:+256788002309">
+            <i class="fa fa-phone me-1"></i> 0788 002 309
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- LIVE BANNER -->
+  <section class="hero-banner">
+    <video id="bannerVideo" autoplay muted loop playsinline>
+      <source src="ab video.mp4" type="video/mp4" />
+    </video>
+    <div class="banner-slides" id="bannerSlides">
+      <div class="banner-slide active" style="background-image:url('banner.jpg')"></div>
+      <div class="banner-slide" style="background-image:url('banner1.jpg')"></div>
+      <div class="banner-slide" style="background-image:url('banner2.jpg')"></div>
+    </div>
+    <div class="banner-arrows">
+      <button type="button" id="prevSlide" aria-label="Previous">&#10094;</button>
+      <button type="button" id="nextSlide" aria-label="Next">&#10095;</button>
+    </div>
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <p class="text-uppercase fw-bold mb-2" style="letter-spacing:2px;color:#93c5fd;">We Design · We Print · We Brand</p>
+            <h1 class="h2 fw-bold mb-2">
+              <span style="color:#3b82f6">AB</span>
+              <span style="color:#fff"> SIGNS </span>
+              <span style="color:#ef4444">MEDIA</span>
+            </h1>
+            <p class="tag mb-4">Quality for lifetime memories</p>
+            <a href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20MEDIA" class="btn btn-wa rounded-pill px-4 me-2" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp me-1"></i> WhatsApp Order
+            </a>
+            <a href="#photography" class="btn btn-outline-light rounded-pill px-4">View Packages</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container-fluid bg-white border-bottom py-3">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-4 col-md-2"><i class="fa fa-print fa-lg text-primary"></i><div class="small mt-1">Printing</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-pen-fancy fa-lg text-primary"></i><div class="small mt-1">Stationery</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-camera fa-lg text-primary"></i><div class="small mt-1">Photography</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-tshirt fa-lg text-primary"></i><div class="small mt-1">Branding</div></div>
+        <div class="col-4 col-md-2"><i class="fab fa-whatsapp fa-lg" style="color:#25D366"></i><div class="small mt-1">WhatsApp</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-map-marker-alt fa-lg text-primary"></i><div class="small mt-1">4 Branches</div></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="products" class="container py-5">
+    <h2 class="section-title">Products &amp; Services</h2>
+
+    <!-- PRINTING -->
+    <h4 id="printing" class="text-primary mb-3">Printing</h4>
+    <div class="row g-3 mb-5">
+      <div class="col-6 col-md-3" data-cat="printing">
+        <div class="product-card">
+          <div class="pic-slot"><img src="print-banner.jpg" alt="" onerror="this.parentElement.innerHTML='Banners'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Banners &amp; Posters</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Banners%20%26%20Posters" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="printing">
+        <div class="product-card">
+          <div class="pic-slot"><img src="print-cards.jpg" alt="" onerror="this.parentElement.innerHTML='Cards'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Business Cards</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Business%20Cards" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="printing">
+        <div class="product-card">
+          <div class="pic-slot"><img src="print-stickers.jpg" alt="" onerror="this.parentElement.innerHTML='Stickers'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Stickers &amp; Labels</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Stickers" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="printing">
+        <div class="product-card">
+          <div class="pic-slot"><img src="print-large.jpg" alt="" onerror="this.parentElement.innerHTML='Large Format'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Large Format</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Large%20Format%20Print" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATIONERY / POPULAR - MORE ITEMS -->
+    <h4 id="stationery" class="text-primary mb-3">Popular Services &amp; Stationery</h4>
+    <div class="row g-3 mb-5">
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="rim.jpg" alt="" onerror="this.parentElement.innerHTML='Rim'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Photocopy Paper / Rim</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Photocopy%20Paper%20Rim" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="photo-paper.jpg" alt="" onerror="this.parentElement.innerHTML='Photo Paper'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Photo Papers</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Photo%20Papers" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="epson-ink.jpg" alt="" onerror="this.parentElement.innerHTML='Ink'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Epson Ink</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Epson%20Ink" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="toner.jpg" alt="" onerror="this.parentElement.innerHTML='Toner'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Toner</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Toner" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="a4-paper.jpg" alt="" onerror="this.parentElement.innerHTML='A4 Paper'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">A4 Bond Paper</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=A4%20Bond%20Paper" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="envelopes.jpg" alt="" onerror="this.parentElement.innerHTML='Envelopes'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Envelopes</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Envelopes" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="files.jpg" alt="" onerror="this.parentElement.innerHTML='Files'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Files &amp; Folders</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Files%20and%20Folders" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="pens.jpg" alt="" onerror="this.parentElement.innerHTML='Pens'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Pens &amp; Markers</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Pens%20and%20Markers" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="laminating.jpg" alt="" onerror="this.parentElement.innerHTML='Laminating'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Laminating</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Laminating" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-cat="stationery">
+        <div class="product-card">
+          <div class="pic-slot"><img src="binding.jpg" alt="" onerror="this.parentElement.innerHTML='Binding'" /></div>
+          <div class="p-3 text-center">
+            <h6 class="mb-1">Binding &amp; Spiral</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Binding%20and%20Spiral" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTO OFFERS -->
+    <h4 class="text-primary mb-3">Offers</h4>
+    <div id="ads" class="ads-strip mb-5" aria-label="Offers">
+      <span class="ads-label">Offers</span>
+      <div class="ads-slide active" style="background-image:url('ad1.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('box.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('epson in.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('p\ rim.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('rim.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('toner.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('print-stickers.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('print-large.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('files.jpg')"></div>
+      <div class="ads-slide" style="background-image:url('Envelopes\ \(3\).jpg')"></div>
+    </div>
+
+    <!-- PHOTOGRAPHY PACKAGES -->
+    <h4 id="photography" class="text-primary mb-3">Photography Packages</h4>
+    <div class="row g-3 mb-5">
+      <div class="col-md-4" data-cat="photography">
+        <div class="product-card p-4 text-center">
+          <h5 class="fw-bold">SILVER</h5>
+          <div class="price fs-4">UGX 800,000/=</div>
+          <div class="subprice mb-2">Minus videography: 400,000/=</div>
+          <ul class="pkg-list">
+            <li>100 photos with an album</li>
+            <li>30 edited soft copies</li>
+            <li>2 A4 frames</li>
+            <li>2 A4 boards</li>
+            <li>2 A3 frames</li>
+            <li>One videographer</li>
+          </ul>
+          <a class="btn btn-wa rounded-pill w-100" href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20Media%2C%20I%20want%20the%20SILVER%20photography%20package." target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Book Silver
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4" data-cat="photography">
+        <div class="product-card p-4 text-center outlined">
+          <span class="badge bg-primary mb-2">RECOMMENDED</span>
+          <h5 class="fw-bold">PLATINUM</h5>
+          <div class="price fs-4">UGX 1,600,000/=</div>
+          <div class="subprice mb-2">Minus videography: 800,000/=</div>
+          <ul class="pkg-list">
+            <li>200 photos with an album</li>
+            <li>70 edited soft copies</li>
+            <li>4 A4 frames</li>
+            <li>3 A4 boards</li>
+            <li>4 A3 frames</li>
+            <li>Two videographers</li>
+          </ul>
+          <a class="btn btn-wa rounded-pill w-100" href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20Media%2C%20I%20want%20the%20PLATINUM%20photography%20package." target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Book Platinum
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4" data-cat="photography">
+        <div class="product-card p-4 text-center">
+          <h5 class="fw-bold">GOLD</h5>
+          <div class="price fs-4">UGX 3,000,000/=</div>
+          <ul class="pkg-list">
+            <li>400 photos with an album</li>
+            <li>100 edited soft copies</li>
+            <li>Flash with UN edited photos</li>
+            <li>5 A4 frames</li>
+            <li>5 A4 boards</li>
+            <li>4 A3 frames</li>
+            <li>4 A4 boards</li>
+            <li>Two videographers</li>
+            <li>A drone</li>
+          </ul>
+          <a class="btn btn-wa rounded-pill w-100" href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20Media%2C%20I%20want%20the%20GOLD%20photography%20package." target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Book Gold
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <h4 id="gallery" class="text-primary mb-3">Photo Gallery</h4>
+    <p class="text-muted small mb-3">Our shoots and work so far. Tap a photo for full screen.</p>
+    <div class="row g-2 g-md-3 mb-5" id="galleryGrid">
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="cup.JPG" alt="Work 1" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="edit 2.jpg" alt="Work 2" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="j3.jpg" alt="Work 3" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="mm rose.jpg" alt="Work 4" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="aisha 2.jpg" alt="Work 5" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="photo.jpg" alt="Work 6" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="peace edit.jpg" alt="Work 7" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="Edit 3.jpg" alt="Work 8" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="j2.jpg" alt="Work 9" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+      <div class="col-6 col-md-3"><div class="gallery-slot"><img src="woman.png" alt="Work 10" onerror="this.parentElement.style.background='#e2e8f0'" /></div></div>
+    </div>
+
+    <!-- MEDIA PLAYER -->
+    <h4 id="video" class="text-primary mb-3">Watch &amp; Listen</h4>
+    <div class="product-card p-3 mb-5">
+      <p class="text-muted small mb-2">AB SIGNS MEDIA video — play full screen. Add your audio if needed.</p>
+      <div class="media-player">
+        <video id="promoVideo" controls playsinline preload="metadata" poster="banner.jpg">
+          <source src="lv_0_20261027104722.mp4" type="video/mp4" />
+          Your browser does not support video.
+        </video>
+      </div>
+      <div class="media-actions">
+        <button type="button" class="primary" id="btnFullscreen">Full Screen</button>
+        <button type="button" id="btnPlayPause">Play / Pause</button>
+      </div>
+      <audio id="promoAudio" controls style="width:100%; margin-top:12px;">
+        <source src="audio.mp3" type="audio/mpeg" />
+        <source src="audio.m4a" type="audio/mp4" />
+      </audio>
+    </div>
+
+    <!-- BRANDING -->
+    <h4 id="branding" class="text-primary mb-3">Branding</h4>
+    <div class="row g-3 mb-5">
+      <div class="col-6 col-md-4" data-cat="branding">
+        <div class="product-card">
+          <div class="pic-slot"><img src="tshirt.jpg" alt="" onerror="this.parentElement.innerHTML='T-shirts'" /></div>
+          <div class="p-3 text-center">
+            <h6>T-shirt Branding</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=T-shirt%20branding" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4" data-cat="branding">
+        <div class="product-card">
+          <div class="pic-slot"><img src="success-card.jpg" alt="" onerror="this.parentElement.innerHTML='Success Cards'" /></div>
+          <div class="p-3 text-center">
+            <h6>Success Cards &amp; Gifts</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Success%20cards" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4" data-cat="branding">
+        <div class="product-card">
+          <div class="pic-slot"><img src="caps.jpg" alt="" onerror="this.parentElement.innerHTML='Caps'" /></div>
+          <div class="p-3 text-center">
+            <h6>Caps &amp; Jerseys</h6>
+            <div class="ask mb-2">Ask price</div>
+            <a class="btn btn-wa btn-sm rounded-pill w-100" href="https://wa.me/256788002309?text=Caps%20and%20Jerseys" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section id="branches" class="container pb-5">
+    <h2 class="section-title">Branches</h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card p-4">
+          <h5>Bududa Main</h5>
+          <p class="text-muted small">Bududa Trading Centre / Bukigai</p>
+          <p class="mb-1"><a href="tel:+256788002309"><i class="fa fa-phone me-1"></i> 0788 002 309</a></p>
+          <p class="mb-2"><a href="https://wa.me/256788002309" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>
+          <a class="btn btn-outline-primary btn-sm" href="https://maps.app.goo.gl/Lj9NVtewyzHs3FYbA?g_st=ac" target="_blank" rel="noopener">Map</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card p-4">
+          <h5>Konokoyi</h5>
+          <p class="text-muted small">After Namaitsu Trading Center</p>
+          <p class="mb-1"><a href="tel:+256769801082"><i class="fa fa-phone me-1"></i> 0769 801 082</a></p>
+          <p class="mb-2"><a href="https://wa.me/256769801082" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>
+          <a class="btn btn-outline-primary btn-sm" href="https://maps.app.goo.gl/vSrAGV5ETdqiRXiC7?g_st=ac" target="_blank" rel="noopener">Map</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card p-4">
+          <h5>Lukhonje</h5>
+          <p class="text-muted small">Bukigai, Uganda</p>
+          <p class="mb-1"><a href="tel:+256761237885"><i class="fa fa-phone me-1"></i> 0761 237 885</a></p>
+          <p class="mb-2"><a href="https://wa.me/256761237885" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>
+          <a class="btn btn-outline-primary btn-sm" href="https://maps.app.goo.gl/o3bxfYCWjSwap8Ga9" target="_blank" rel="noopener">Map</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card p-4">
+          <h5>Kamu Market</h5>
+          <p class="text-muted small">Bulambuli · Kibanda Road</p>
+          <p class="mb-1"><a href="tel:+256791266453"><i class="fa fa-phone me-1"></i> 0791 266 453</a></p>
+          <p class="mb-2"><a href="https://wa.me/256791266453" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="feedback" class="container pb-5">
+    <h2 class="section-title">Customer Feedback</h2>
+    <div class="product-card p-4">
+      <p class="text-muted small mb-3">Tell us who served you and how we did. Send by WhatsApp or Email.</p>
+      <form onsubmit="return false;">
+        <label>Your Name</label>
+        <input id="cust-name" type="text" placeholder="Full name" />
+        <label>Who served you? (Branch / Staff)</label>
+        <select id="served-by">
+          <option value="">-- Choose --</option>
+          <option>Wakoba Abraham (CEO)</option>
+          <option>Bududa Main</option>
+          <option>Konokoyi Branch</option>
+          <option>Lukhonje Branch</option>
+          <option>Kamu Market</option>
+        </select>
+        <label>Rating</label>
+        <select id="rating">
+          <option value="">-- Choose --</option>
+          <option>5 Stars - Excellent</option>
+          <option>4 Stars - Good</option>
+          <option>3 Stars - Average</option>
+          <option>2 Stars - Needs Improvement</option>
+        </select>
+        <label>Comment</label>
+        <textarea id="comments" rows="3" placeholder="Your comment"></textarea>
+        <div class="d-flex gap-2 flex-wrap mt-2">
+          <button type="button" class="btn btn-wa flex-fill" onclick="sendFeedback('wa')"><i class="fab fa-whatsapp me-1"></i> Send WhatsApp</button>
+          <button type="button" class="btn btn-primary flex-fill" onclick="sendFeedback('email')"><i class="fa fa-envelope me-1"></i> Send Email</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container pb-5">
+    <h2 class="section-title">About AB SIGNS MEDIA</h2>
+    <div class="product-card p-4">
+      <p class="fw-bold mb-3">YOUR CREATIVE PARTNER FOR DESIGN, PRINTING, BRANDING &amp; MEMORIES</p>
+      <p class="mb-3" style="font-size:.92rem;color:#475569;">
+        AB SIGNS MEDIA is a creative media, printing, photography, and branding company dedicated to turning ideas into quality visual experiences. We help individuals, businesses, organizations, schools, teams, and events bring their ideas to life through professional design, printing, photography, branding, and customized products.
+      </p>
+      <p class="mb-3" style="font-size:.92rem;color:#475569;">
+        Our services include graphic design, logo design, digital printing, DTF printing, T-shirt and cap branding, jersey customization, banners and posters, labels and stickers, large-format printing, photography, videography, customized gifts, success cards, money bouquets, student trunk &amp; chop box branding, and much more.
+      </p>
+      <p class="mb-2 fw-bold">OUR FOCUS</p>
+      <p class="mb-3" style="font-size:.92rem;color:#475569;">
+        Our focus is on quality, creativity, professionalism, and customer satisfaction. Whether you need to promote your business, brand your team, preserve a special moment, prepare for an event, or create a personalized gift, we work with you to turn your vision into something you can proudly share.
+      </p>
+      <p class="mb-3" style="font-size:.92rem;color:#475569;">
+        We are proud to serve our customers through our branches and growing network, bringing quality creative, printing, branding, and media services closer to our customers. As we continue to grow, our commitment remains the same: creativity, professionalism, reliability, and quality in everything we do.
+      </p>
+      <p class="fw-bold mb-0" style="color:#0b1d3a;font-size:1rem;">BRING YOUR IDEA. WE BRING IT TO LIFE.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT + CEO -->
+  <section id="contact" class="container pb-5">
+    <div class="row g-3">
+      <div class="col-md-5">
+        <div class="product-card p-4 text-center">
+          <h5>CEO</h5>
+          <div class="pic-slot mx-auto mb-3" style="width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid var(--accent);">
+            <img src="ceo_photo.png" alt="Wakoba Abraham" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='CEO photo'" />
+          </div>
+          <h4>Wakoba Abraham</h4>
+          <p class="text-muted">We deliver premium printing, custom stationery, and professional photography. We handle every project with absolute precision to bring your ideas to life. Our goal is to constantly innovate and be your top choice for creative visual work. &amp; CEO</p>
+          <a class="btn btn-sm btn-outline-primary me-1" href="tel:+256788002309">Call</a>
+          <a class="btn btn-sm btn-wa me-1" href="https://wa.me/256788002309" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-sm btn-outline-secondary" href="mailto:absignsmedia@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="product-card p-4">
+          <h5>Contact AB SIGNS MEDIA</h5>
+          <p class="mb-1"><i class="fa fa-envelope me-1"></i> <a href="mailto:absignsmedia@gmail.com">absignsmedia@gmail.com</a></p>
+          <p class="mb-3"><i class="fa fa-phone me-1"></i> <a href="tel:+256788002309">0788 002 309</a> · <a href="tel:+256740045771">0740 045 771</a></p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-outline-primary btn-sm" href="https://www.facebook.com/profile.php?id=100083232823616" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>
+            <a class="btn btn-outline-dark btn-sm" href="https://vm.tiktok.com/ZS9SNFvcjCCsK-V0xlL/" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a class="btn btn-outline-danger btn-sm" href="https://youtube.com/@coolitabrahx98?si=DXquqaGz6v2GjuWI" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <h5>AB SIGNS MEDIA</h5>
+          <p class="small mb-0">Design, printing, stationery, photography &amp; branding.<br/>Bring your idea. We bring it to life.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="btn btn-wa rounded-pill" href="https://wa.me/256788002309?text=Hello%20AB%20SIGNS%20MEDIA" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="copyright py-3 text-center">
+    © 2026 AB SIGNS MEDIA. All Rights Reserved.
+    <div class="small">Designed &amp; developed by Kasim Kibwana</div>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&#10005;</button>
+    <img id="lightboxImg" src="" alt="Full view" />
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function filterItems() {
+      var q = (document.getElementById('searchBox').value || '').toLowerCase();
+      var cat = document.getElementById('catFilter').value;
+      document.querySelectorAll('[data-cat]').forEach(function (el) {
+        var text = el.innerText.toLowerCase();
+        var okCat = !cat || el.getAttribute('data-cat') === cat;
+        var okQ = !q || text.indexOf(q) !== -1;
+        el.style.display = (okCat && okQ) ? '' : 'none';
+      });
+    }
+    document.getElementById('searchBox').addEventListener('keyup', filterItems);
+    document.getElementById('catFilter').addEventListener('change', filterItems);
+
+    var slides = Array.from(document.querySelectorAll('.banner-slide'));
+    var idx = 0;
+    function showSlide(n) {
+      slides.forEach(function(s) { s.classList.remove('active'); });
+      idx = (n + slides.length) % slides.length;
+      slides[idx].classList.add('active');
+    }
+    document.getElementById('prevSlide').onclick = function() { showSlide(idx - 1); };
+    document.getElementById('nextSlide').onclick = function() { showSlide(idx + 1); };
+    setInterval(function() { showSlide(idx + 1); }, 5000);
+
+    var bannerVideo = document.getElementById('bannerVideo');
+    if (bannerVideo) {
+      bannerVideo.addEventListener('loadeddata', function() {
+        document.getElementById('bannerSlides').style.display = 'none';
+      });
+      bannerVideo.addEventListener('error', function() {
+        document.getElementById('bannerSlides').style.display = 'block';
+      });
+    }
+
+    var ads = Array.from(document.querySelectorAll('.ads-slide'));
+    var adIdx = 0;
+    setInterval(function() {
+      if (!ads.length) return;
+      ads.forEach(function(s) { s.classList.remove('active'); });
+      adIdx = (adIdx + 1) % ads.length;
+      ads[adIdx].classList.add('active');
+    }, 3500);
+
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    document.getElementById('galleryGrid').addEventListener('click', function(e) {
+      var slot = e.target.closest('.gallery-slot');
+      if (!slot) return;
+      var img = slot.querySelector('img');
+      if (!img) return;
+      var src = img.getAttribute('src');
+      if (!src || src.indexOf('gallery') === -1 && !img.complete) {
+        // still try to show if has natural size
+      }
+      if (!img.src) return;
+      lightboxImg.src = img.src;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    var promoVideo = document.getElementById('promoVideo');
+    var btnFs = document.getElementById('btnFullscreen');
+    var btnPp = document.getElementById('btnPlayPause');
+    if (btnFs && promoVideo) {
+      btnFs.addEventListener('click', function() {
+        if (promoVideo.requestFullscreen) promoVideo.requestFullscreen();
+        else if (promoVideo.webkitEnterFullscreen) promoVideo.webkitEnterFullscreen();
+        else if (promoVideo.webkitRequestFullscreen) promoVideo.webkitRequestFullscreen();
+      });
+    }
+    if (btnPp && promoVideo) {
+      btnPp.addEventListener('click', function() {
+        if (promoVideo.paused) promoVideo.play();
+        else promoVideo.pause();
+      });
+    }
+
+    function sendFeedback(type) {
+      var name = document.getElementById('cust-name').value.trim();
+      var staff = document.getElementById('served-by').value;
+      var rating = document.getElementById('rating').value;
+      var comments = document.getElementById('comments').value.trim();
+      if (!name || !staff || !rating || !comments) {
+        alert('Please fill all fields.');
+        return;
+      }
+      var now = new Date().toLocaleString('en-UG', { timeZone: 'Africa/Kampala' });
+      var msg = '*AB SIGNS MEDIA - Feedback*\n\nName: ' + name + '\nServed by: ' + staff + '\nRating: ' + rating + '\nComment: ' + comments + '\nTime: ' + now;
+      if (type === 'wa') {
+        window.open('https://wa.me/256788002309?text=' + encodeURIComponent(msg), '_blank');
+      } else {
+        window.location.href = 'mailto:absignsmedia@gmail.com?subject=' + encodeURIComponent('AB SIGNS Media Feedback') + '&body=' + encodeURIComponent(msg);
+      }
+    }
+  </script>
+</body>
+</html>
