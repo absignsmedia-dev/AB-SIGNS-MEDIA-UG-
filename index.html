@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AB SIGNS MEDIA — Print, Stationery & Photography</title>
+  <meta name="description" content="AB SIGNS MEDIA — Design, Printing, Stationery, Photography, Branding. Quality for lifetime memories." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AB SIGNS MEDIA — Print, Stationery & Photography" />
+  <meta property="og:description" content="Design, printing, stationery, photography and branding. Bring your idea. We bring it to life." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0b1d3a;
+      --secondary: #eab308;
+      --green: #25D366;
+      --accent: #1e40af;
+      --line: #c5d0de;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 8px; }
+    body { font-family: 'Open Sans', system-ui, sans-serif; color: #0f172a; background: #e8eef5; }
+    a { text-decoration: none; }
+    .btn-primary { background: var(--primary); border-color: var(--primary); }
+    .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-secondary { background: var(--secondary); border-color: var(--secondary); color: #0b1d3a; font-weight: 600; }
+    .btn-wa { background: var(--green); color: #fff; border: none; }
+    .btn-wa:hover { background: #1da851; color: #fff; }
+
+    .topbar { background: var(--primary); color: #cbd5e1; font-size: .85rem; padding: 8px 0; }
+    .topbar a { color: #e2e8f0; }
+    .topbar a:hover { color: var(--secondary); }
+
+    .brand-title { font-family: Roboto, sans-serif; font-weight: 700; color: var(--primary); margin: 0; }
+    .brand-title .ab { color: #3b82f6; }
+    .brand-title .media { color: #ef4444; }
+
+    .nav-bar { background: var(--primary); }
+    .nav-bar .nav-link { color: #e2e8f0 !important; font-weight: 500; padding: 12px 14px !important; }
+    .nav-bar .nav-link:hover, .nav-bar .nav-link.active { color: var(--secondary) !important; }
+
+    .hero-banner { position: relative; height: 100vh; height: 100svh; min-height: 480px; background: #0b1d3a; overflow: hidden; color: #fff; }
+    #bannerVideo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .banner-slides { position: absolute; inset: 0; z-index: 0; }
+    .banner-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .7s ease; background: #0b1d3a center/cover no-repeat; }
+    .banner-slide.active { opacity: 1; }
+    .hero-overlay {
+      position: relative; z-index: 2;
+      background: linear-gradient(180deg, rgba(11,29,58,.45), rgba(11,29,58,.88));
+      height: 100%; display: flex; align-items: center; justify-content: center; padding: 2rem 0;
+    }
+    .hero-overlay .tag { color: var(--secondary); font-style: italic; }
+    .banner-arrows {
+      position: absolute; z-index: 3; top: 50%; left: 0; right: 0;
+      display: flex; justify-content: space-between; padding: 0 12px;
+      transform: translateY(-50%); pointer-events: none;
+    }
+    .banner-arrows button {
+      pointer-events: auto; width: 40px; height: 40px; border-radius: 50%;
+      border: none; background: rgba(255,255,255,.25); color: #fff; font-size: 1.1rem; cursor: pointer;
+    }
+
+    .hero-kicker { text-transform: uppercase; font-weight: 700; letter-spacing: 2px; color: #93c5fd; font-size: .85rem; margin-bottom: .5rem; }
+    .hero-name { font-family: Roboto, sans-serif; font-weight: 700; font-size: clamp(2.2rem, 9vw, 5rem); line-height: 1.05; margin-bottom: .5rem; text-shadow: 0 3px 14px rgba(0,0,0,.5); }
+    .hero-title { font-size: clamp(1.05rem, 3.5vw, 1.7rem); margin-bottom: 1.6rem !important; }
+    .scroll-down {
+      position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
+      width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.22);
+      border: 2px solid rgba(255,255,255,.7); color: #fff; font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center; animation: bounceDown 1.6s infinite;
+    }
+    .scroll-down:hover { background: var(--secondary); color: #0b1d3a; }
+    @keyframes bounceDown { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 10px); } }
+    .product-card {
+      background: #fff; border: 2px solid var(--line); border-radius: 12px; overflow: hidden;
+      height: 100%; transition: .2s; box-shadow: 0 4px 12px rgba(11,29,58,.08);
+    }
+    .product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(11,29,58,.14); }
+    .product-card.outlined { border: 2.5px solid var(--accent); }
+    .pic-slot {
+      height: 140px; background: #e2e8f0; display: flex; align-items: center; justify-content: center;
+      color: #64748b; font-size: .8rem; text-align: center; padding: 8px; border-bottom: 1px solid #e2e8f0;
+    }
+    .pic-slot img { width: 100%; height: 100%; object-fit: cover; }
+    .web-desc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .price { color: var(--primary); font-weight: 700; }
+    .subprice { color: #b91c1c; font-size: .8rem; }
+
+    .ads-strip {
+      position: relative; height: 200px; border-radius: 12px; overflow: hidden;
+      border: 2px solid var(--line); box-shadow: 0 4px 12px rgba(11,29,58,.08); background: #0f172a;
+    }
+    .ads-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; background: #1e293b center/cover no-repeat; }
+    .ads-slide.active { opacity: 1; }
+    .ads-label {
+      position: absolute; left: 10px; bottom: 10px; z-index: 2;
+      background: rgba(0,0,0,.55); color: #f39494; font-size: .72rem; padding: 4px 10px; border-radius: 999px;
+    }
+
+    .gallery-slot {
+      height: 140px; background: #e2e8f0; border-radius: 10px; overflow: hidden;
+      border: 6px solid var(--line); cursor: pointer; box-shadow: 0 2px 8px rgba(11,29,58,.06);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .gallery-slot:active { opacity: .85; transform: scale(.98); }
+    .gallery-slot img { width: 100%; height: 100%; object-fit: cover; }
+
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,.94);
+      align-items: center; justify-content: center; padding: 12px; touch-action: manipulation;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 100%; max-height: 88vh; width: auto; height: auto; border-radius: 10px;
+      object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,.5);
+    }
+    .lightbox-close, .lightbox-nav {
+      position: fixed; width: 48px; height: 48px; border: none; border-radius: 50%;
+      background: rgba(255,255,255,.2); color: #fff; font-size: 1.5rem; cursor: pointer;
+      z-index: 100000; display: flex; align-items: center; justify-content: center;
+    }
+    .lightbox-close { top: 12px; right: 12px; }
+    .lightbox-nav { top: 50%; transform: translateY(-50%); }
+    .lightbox-nav.prev { left: 10px; }
+    .lightbox-nav.next { right: 10px; }
+
+    .media-player { width: 100%; border-radius: 12px; overflow: hidden; background: #000; border: 2px solid var(--line); }
+    .media-player video { width: 100%; height: auto; max-height: 70vh; display: block; background: #000; }
+    .media-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .media-actions button {
+      flex: 1; min-width: 120px; padding: 11px 14px; border-radius: 8px;
+      border: 2px solid var(--line); background: #fff; font-weight: 700; cursor: pointer; font-size: .9rem;
+    }
+    .media-actions button.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .footer { background: #0f172a; color: #94a3b8; }
+    .footer h5 { color: var(--secondary); }
+    .copyright { background: var(--primary); color: #bfdbfe; font-size: .85rem; }
+    .section-title { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 6px; margin-bottom: 1rem; }
+    .pkg-list { font-size: .85rem; text-align: left; margin: 0 0 12px 0; padding-left: 18px; }
+    .pkg-list li { margin-bottom: 3px; }
+
+    .wa-float {
+      position: fixed; right: 16px; bottom: 16px; z-index: 9000;
+      width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 1.9rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,.3);
+    }
+    .wa-float:hover { background: #1da851; color: #fff; }
+
+    #noResults { display: none; }
+
+    @media (max-width: 767.98px) {
+      .hero-overlay .h2 { font-size: 1.35rem; }
+      .pic-slot { height: 110px; font-size: .75rem; }
+      .pkg-list { font-size: .8rem; }
+      .section-title { font-size: 1.15rem; }
+      .topbar { font-size: .78rem; }
+      .gallery-slot { height: 120px; }
+      .ads-strip { height: 160px; }
+      .container.py-5 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    }
+    @media (min-width: 768px) {
+      .pic-slot { height: 150px; }
+      .gallery-slot { height: 190px; }
+      .ads-strip { height: 300px; }
+      .row.g-3 > [class*="col-"] { display: flex; }
+      .row.g-3 > [class*="col-"] > .product-card { width: 100%; }
+    }
+    @media (min-width: 992px) {
+      .container { max-width: 1140px; }
+      .gallery-slot { height: 200px; }
+    }
+
+
+    /* ===== hero logo ===== */
+    .hero-logo { width: clamp(130px, 28vw, 210px); margin: 0 auto 12px; background: #fff; border-radius: 16px; padding: 8px 12px; box-shadow: 0 8px 26px rgba(0,0,0,.45); }
+    .hero-logo img { display: block; width: 100%; height: auto; }
+    /* ===== gallery empty slot ===== */
+    .gallery-slot.empty { cursor: default; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #94a3b8; font-size: .78rem; background: #f1f5f9; }
+    .gallery-slot.empty i { font-size: 1.6rem; color: #cbd5e1; }
+    /* ===== contact tiles ===== */
+    .contact-tile { display: flex; align-items: center; gap: 14px; height: 100%; background: #f1f5f9; border-radius: 12px; padding: 14px 16px; }
+    .contact-tile .ct-ico { width: 44px; height: 44px; flex: none; border-radius: 50%; background: var(--primary); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; }
+    .contact-tile small { display: block; color: #64748b; font-size: .72rem; text-transform: uppercase; letter-spacing: .6px; }
+    .contact-tile a { font-weight: 600; word-break: break-word; }
+
+    /* ===== menu button + panel (customer site) ===== */
+    .menu-btn { position: fixed; top: 12px; right: 12px; z-index: 9500; width: 48px; height: 48px; border: 1px solid rgba(234,179,8,.55); border-radius: 14px;
+      background: linear-gradient(135deg, rgba(11,29,58,.95), rgba(30,64,175,.9)); color: #fff; font-size: 1.25rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,.35); backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform .2s, box-shadow .2s, color .2s; }
+    .menu-btn:hover { color: var(--secondary); transform: scale(1.06); box-shadow: 0 8px 22px rgba(234,179,8,.35); }
+    .menu-backdrop { position: fixed; inset: 0; z-index: 9600; background: rgba(5,12,28,.6); backdrop-filter: blur(3px); display: none; }
+    .menu-backdrop.open { display: block; animation: mFade .25s ease; }
+    @keyframes mFade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes mSlide { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: none; } }
+    .menu-panel { position: fixed; top: 0; right: 0; bottom: 0; z-index: 9700; width: min(86vw, 330px);
+      background: radial-gradient(circle at 100% 0, rgba(30,64,175,.55), transparent 55%), linear-gradient(180deg, #0b1d3a 0%, #07142b 100%);
+      border-left: 1px solid rgba(234,179,8,.35); box-shadow: -12px 0 40px rgba(0,0,0,.55);
+      transform: translateX(105%); transition: transform .3s cubic-bezier(.22,.8,.3,1); overflow-y: auto; padding: 16px 14px 24px; color: #fff; }
+    .menu-panel.open { transform: none; }
+    .menu-panel .brand-title { color: #fff; letter-spacing: .5px; }
+    .menu-panel .brand-title .ab { color: #60a5fa; } .menu-panel .brand-title .media { color: #f87171; }
+    .menu-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .menu-close { border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.08); color: #fff; border-radius: 50%; width: 36px; height: 36px; font-size: 1rem; transition: .2s; }
+    .menu-close:hover { background: var(--secondary); color: #0b1d3a; transform: rotate(90deg); }
+    .menu-panel a.m-link { position: relative; display: flex; align-items: center; gap: 12px; padding: 11px 12px; margin: 2px 0; border-radius: 12px;
+      color: #e2e8f0; font-weight: 600; letter-spacing: .2px; text-decoration: none; transition: background .2s, color .2s, padding-left .2s; }
+    .menu-panel a.m-link i { width: 32px; height: 32px; flex: none; display: flex; align-items: center; justify-content: center; border-radius: 10px;
+      background: rgba(255,255,255,.08); color: var(--secondary); font-size: .9rem; transition: .2s; }
+    .menu-panel a.m-link::before { content: ""; position: absolute; left: 0; top: 22%; bottom: 22%; width: 3px; border-radius: 3px; background: var(--secondary); transform: scaleY(0); transition: transform .2s; }
+    .menu-panel a.m-link:hover { background: rgba(255,255,255,.09); color: #fff; padding-left: 16px; }
+    .menu-panel a.m-link:hover::before { transform: scaleY(1); }
+    .menu-panel a.m-link:hover i { background: var(--secondary); color: #0b1d3a; }
+    .menu-panel.open a.m-link { animation: mSlide .35s ease both; }
+    .menu-panel.open a.m-link:nth-of-type(1){animation-delay:.04s} .menu-panel.open a.m-link:nth-of-type(2){animation-delay:.07s}
+    .menu-panel.open a.m-link:nth-of-type(3){animation-delay:.10s} .menu-panel.open a.m-link:nth-of-type(4){animation-delay:.13s}
+    .menu-panel.open a.m-link:nth-of-type(5){animation-delay:.16s} .menu-panel.open a.m-link:nth-of-type(6){animation-delay:.19s}
+    .menu-panel.open a.m-link:nth-of-type(7){animation-delay:.22s} .menu-panel.open a.m-link:nth-of-type(8){animation-delay:.25s}
+    .menu-panel.open a.m-link:nth-of-type(9){animation-delay:.28s} .menu-panel.open a.m-link:nth-of-type(10){animation-delay:.31s}
+    .menu-panel.open a.m-link:nth-of-type(11){animation-delay:.34s} .menu-panel.open a.m-link:nth-of-type(12){animation-delay:.37s}
+    .menu-panel.open a.m-link:nth-of-type(13){animation-delay:.40s}
+    .menu-panel a.m-login { justify-content: center; gap: 8px; margin-top: 16px; padding: 13px 12px; border-radius: 999px; text-align: center; font-weight: 700; letter-spacing: .6px;
+      background: linear-gradient(135deg, #facc15, #eab308); color: #0b1d3a !important; box-shadow: 0 6px 16px rgba(234,179,8,.35); }
+    .menu-panel a.m-login::before { display: none; }
+    .menu-panel a.m-login i { width: auto; height: auto; background: none; color: inherit; }
+    .menu-panel a.m-login:hover { background: linear-gradient(135deg, #3b82f6, #1e40af); color: #fff !important; padding-left: 12px; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(59,130,246,.45); }
+    .menu-panel a.m-login:hover i { background: none; color: #fff; }
+    .menu-foot { margin-top: 18px; text-align: center; font-size: .75rem; color: #94a3b8; }
+    /* top navigation bar login pill */
+    .nav-bar .nav-link.nav-login { background: linear-gradient(135deg, #facc15, #eab308); color: #0b1d3a !important; border-radius: 999px; font-weight: 700;
+      margin: 6px 0 6px 6px; padding: 6px 18px !important; transition: .2s; }
+    .nav-bar .nav-link.nav-login:hover { background: linear-gradient(135deg, #3b82f6, #1e40af); color: #fff !important; transform: translateY(-1px); }
+    #staffView { min-height: 100vh; }
+    #staffView .wrap { padding-top: 18px; }
+
+    /* ===== staff area styles ===== */
+
+#staffView .brand { font-weight: 700; font-size: 1.15rem; color: #0b1d3a; line-height: 1.2; }
+#staffView .slogan { font-size: .8rem; color: #64748b; font-style: italic; }
+#staffView .wrap { max-width: 900px; margin: 0 auto; padding: 14px; }
+#staffView .card { border: 2px solid #c5d0de; border-radius: 12px; box-shadow: 0 4px 12px rgba(11,29,58,.08); }
+#staffView .item { background: #fff; border: 2px solid #c5d0de; border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+#staffView .item.unread { border-color: #eab308; background: #fffbeb; }
+#staffView .nav-pills .nav-link { color: #0b1d3a; white-space: nowrap; }
+#staffView .nav-pills .nav-link.active { background: #0b1d3a; color: #fff; }
+#staffView .stat { font-size: 1.4rem; font-weight: 700; color: #0b1d3a; }
+    .pthumb { width: 52px; height: 52px; border-radius: 8px; object-fit: cover; flex: none; }
+    .ph { background: #e2e8f0; color: #64748b; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .pthumb.big { width: 84px; height: 84px; }
+    .desc { font-size: .8rem; color: #64748b; }
+    #toast { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 20000; display: none; max-width: 92vw; }
+  
+#staffView .brand .ab { color: #3b82f6; } #staffView .brand .md { color: #ef4444; }
+
+/* ===== stylish staff login ===== */
+#staffView:has(.auth-card) { background: radial-gradient(circle at 15% 10%, rgba(59,130,246,.35), transparent 45%), radial-gradient(circle at 90% 90%, rgba(234,179,8,.22), transparent 45%), linear-gradient(160deg, #0b1d3a 0%, #07142b 100%); }
+#staffView .auth-card { max-width: 400px; margin-top: 6vh !important; padding: 28px 24px !important; border: 1px solid rgba(255,255,255,.18); border-radius: 22px;
+  background: rgba(255,255,255,.96); box-shadow: 0 25px 60px rgba(0,0,0,.45); animation: authIn .5s ease both; }
+@keyframes authIn { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: none; } }
+#staffView .auth-card .auth-logo { width: 62px; height: 62px; margin: -58px auto 12px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #facc15, #eab308); color: #0b1d3a; font-size: 1.5rem; box-shadow: 0 8px 20px rgba(234,179,8,.5); border: 4px solid #fff; }
+#staffView .auth-card .brand { font-size: 1.05rem; letter-spacing: .4px; }
+#staffView .auth-card .form-label { margin-bottom: 4px; color: #334155; }
+#staffView .auth-card .input-group-text { background: #f1f5f9; border: 1.5px solid #cbd5e1; border-right: 0; color: #1e40af; border-radius: 12px 0 0 12px; }
+#staffView .auth-card .form-control, #staffView .auth-card .form-select { border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 10px 12px; }
+#staffView .auth-card .input-group .form-control { border-radius: 0 12px 12px 0; }
+#staffView .auth-card .input-group .form-control.has-eye { border-radius: 0; border-right: 0; }
+#staffView .auth-card .eye-btn { border: 1.5px solid #cbd5e1; border-left: 0; background: #fff; color: #64748b; border-radius: 0 12px 12px 0; padding: 0 12px; }
+#staffView .auth-card .eye-btn:hover { color: #1e40af; }
+#staffView .auth-card .form-control:focus, #staffView .auth-card .form-select:focus { border-color: #3b82f6; box-shadow: 0 0 0 .2rem rgba(59,130,246,.18); }
+#staffView .auth-card .btn-primary { padding: 11px; border: 0; border-radius: 999px; font-weight: 700; letter-spacing: .5px;
+  background: linear-gradient(135deg, #1e40af, #0b1d3a); box-shadow: 0 8px 18px rgba(30,64,175,.35); transition: .2s; }
+#staffView .auth-card .btn-primary:hover { background: linear-gradient(135deg, #facc15, #eab308); color: #0b1d3a; transform: translateY(-2px); }
+#staffView .auth-card .btn-outline-primary { border-radius: 999px; border-width: 1.5px; }
+
+/* ===== smart dashboard look (after login) ===== */
+#staffView:not(:has(.auth-card)) { background: linear-gradient(180deg, #e6edf7 0%, #d8e2f0 100%); }
+#staffView .pt-head { position: relative; overflow: hidden; background: linear-gradient(135deg, #0b1d3a 0%, #1e40af 100%); color: #fff; border-radius: 20px; padding: 16px 18px; margin-bottom: 14px; box-shadow: 0 12px 28px rgba(11,29,58,.3); }
+#staffView .pt-head::after { content: ""; position: absolute; right: -50px; top: -60px; width: 190px; height: 190px; border-radius: 50%; background: rgba(234,179,8,.16); pointer-events: none; }
+#staffView .pt-head .brand { color: #fff; font-size: 1rem; }
+#staffView .pt-head .brand .ab { color: #93c5fd; } #staffView .pt-head .brand .md { color: #fca5a5; }
+#staffView .pt-head .who { font-size: .82rem; color: #cbd5e1; }
+#staffView .pt-head .btn { border-radius: 999px; font-weight: 600; }
+#staffView .pt-tabs { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 10px; margin-bottom: 6px; scrollbar-width: thin; }
+#staffView .pt-tab { flex: none; border: 1px solid #c5d0de; background: #fff; color: #0b1d3a; border-radius: 999px; padding: 8px 14px; font-weight: 600; font-size: .85rem; display: flex; align-items: center; gap: 7px; box-shadow: 0 2px 6px rgba(11,29,58,.06); transition: .15s; white-space: nowrap; }
+#staffView .pt-tab i { color: #1e40af; }
+#staffView .pt-tab:hover { transform: translateY(-1px); border-color: #1e40af; }
+#staffView .pt-tab.active { background: linear-gradient(135deg, #0b1d3a, #1e40af); color: #fff; border-color: transparent; box-shadow: 0 6px 14px rgba(30,64,175,.35); }
+#staffView .pt-tab.active i { color: #facc15; }
+#staffView .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 14px; }
+#staffView .tile { background: #fff; border: 1px solid #d5deea; border-radius: 16px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 12px rgba(11,29,58,.07); }
+#staffView .tile .ti { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex: none; }
+#staffView .tile .tv { font-size: 1.35rem; font-weight: 700; line-height: 1.1; color: #0b1d3a; }
+#staffView .tile .tl { font-size: .7rem; color: #64748b; text-transform: uppercase; letter-spacing: .5px; }
+#staffView .sync { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+#staffView .sync.ok { background: rgba(34,197,94,.22); color: #86efac; }
+#staffView .sync.err { background: rgba(239,68,68,.28); color: #fecaca; }
+#staffView .sync.wait { background: rgba(234,179,8,.28); color: #fde68a; }
+#staffView .ws-nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+#staffView .ws-chip { border: 1px solid #c5d0de; background: #fff; color: #0b1d3a; border-radius: 999px; padding: 6px 12px; font-size: .8rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+#staffView .ws-chip i { color: #1e40af; }
+#staffView .ws-chip.active { background: #eab308; border-color: #eab308; }
+#staffView .ws-chip.active i { color: #0b1d3a; }
+#staffView .ws-card { background: #fff; border: 1px solid #d5deea; border-radius: 16px; padding: 16px; box-shadow: 0 4px 12px rgba(11,29,58,.07); margin-bottom: 12px; }
+#staffView .ws-card h6 { color: #0b1d3a; font-weight: 700; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+#staffView .ws-card h6 i { color: #1e40af; }
+#staffView .imgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+#staffView .imgs .im { position: relative; border-radius: 12px; overflow: hidden; border: 2px solid #c5d0de; aspect-ratio: 1; background: #e2e8f0; }
+#staffView .imgs .im img { width: 100%; height: 100%; object-fit: cover; }
+#staffView .imgs .im button { position: absolute; top: 4px; right: 4px; width: 26px; height: 26px; border-radius: 50%; border: 0; background: rgba(239,68,68,.92); color: #fff; font-size: .75rem; }
+
+  
+    /* ===== v2: natural-shape photos, transparent logo, neat buttons, cart ===== */
+    .pic-slot{height:auto!important;min-height:0!important;background:transparent!important;border-bottom:0!important;padding:8px 8px 0!important;display:block!important}
+    .pic-slot img{width:100%!important;height:auto!important;object-fit:contain!important;display:block;cursor:zoom-in}
+    #galleryGrid{display:block!important;column-count:2;column-gap:10px;margin:0 0 3rem!important}
+    @media(min-width:768px){#galleryGrid{column-count:4}}
+    #galleryGrid>*{width:100%!important;max-width:100%!important;padding:0!important;margin:0 0 10px!important;break-inside:avoid;display:block}
+    .gallery-slot{height:auto!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+    .gallery-slot img{width:100%!important;height:auto!important;object-fit:contain!important;display:block}
+    .gallery-slot.empty{min-height:110px;background:#f1f5f9!important}
+    .hero-logo{background:transparent!important;box-shadow:none!important;border-radius:0!important;padding:0!important}
+    .hero-logo img{filter:drop-shadow(0 4px 12px rgba(0,0,0,.35))}
+    .btn{border-radius:10px;font-weight:600;letter-spacing:.2px;transition:transform .12s,box-shadow .15s,background .15s,color .15s}
+    .btn:active{transform:scale(.97)}
+    .btn-primary,.btn-secondary,.btn-wa,.btn-danger,.btn-warning,.btn-success{box-shadow:0 2px 6px rgba(11,29,58,.22)}
+    .btn-primary:hover,.btn-wa:hover,.btn-success:hover{box-shadow:0 4px 12px rgba(11,29,58,.3)}
+    .btn-outline-primary,.btn-outline-secondary,.btn-outline-danger,.btn-outline-success,.btn-outline-light{border-width:1.5px}
+    .btn.rounded-pill{border-radius:999px!important}
+    #staffView .btn{padding:.45rem .95rem}#staffView .btn-sm{padding:.3rem .75rem;font-size:.82rem}
+    #staffView .btn-group .btn{border-radius:0}#staffView .btn-group .btn:first-child{border-radius:10px 0 0 10px}#staffView .btn-group .btn:last-child{border-radius:0 10px 10px 0}
+    .add-btn{width:100%;border:0;border-radius:999px;background:var(--secondary);color:#0b1d3a;font-weight:700;font-size:.85rem;padding:6px 10px;margin-bottom:4px;box-shadow:0 2px 6px rgba(234,179,8,.45)}
+    .add-btn:active{transform:scale(.97)}
+    .stepper{display:flex;align-items:center;justify-content:space-between;background:var(--secondary);border-radius:999px;padding:3px;margin-bottom:4px;font-weight:700;color:#0b1d3a}
+    .stepper button{width:30px;height:30px;border-radius:50%;border:0;background:#fff;color:#0b1d3a;font-weight:700;font-size:1.1rem;line-height:1;cursor:pointer}
+    #cartBar{position:fixed;left:14px;bottom:16px;z-index:9000;display:none;border:0;border-radius:999px;background:var(--primary);color:#fff;font-weight:700;padding:12px 18px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+    #cartBar b{background:var(--secondary);color:#0b1d3a;border-radius:999px;padding:1px 9px;margin-left:6px}
+    .svc-chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:600;cursor:pointer;color:#0b1d3a}
+    .svc-chip.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .svc-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #e2e8f0;padding:6px 0}
+    .svc-row .stepper{width:104px;margin:0;flex:none}
+    #pmImg{max-width:100%;max-height:60vh;width:auto;height:auto;display:block;margin:0 auto}
+
+    body.modal-open .menu-btn,body.modal-open .wa-float,body.modal-open #cartBar,body.staff-on .menu-btn,body.staff-on .wa-float,body.staff-on #cartBar{display:none!important}
+    .product-card .pic-slot{aspect-ratio:1/1;display:flex!important;align-items:center;justify-content:center;overflow:hidden;padding:8px!important}
+    .product-card .pic-slot{padding:0!important;background:#f1f5f9!important}
+    .product-card .pic-slot img{width:100%!important;height:100%!important;max-width:none;max-height:none;object-fit:cover!important;object-position:center}
+    [data-cat]>.product-card{height:100%}
+</style>
+</head>
+<body>
+  <!-- MENU BUTTON + PANEL -->
+  <button type="button" class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <nav class="menu-panel" id="menuPanel" aria-label="Main menu">
+    <div class="menu-head"><span class="brand-title h5 js-brand"><span class="ab">AB</span> SIGNS <span class="media">MEDIA</span></span>
+      <button type="button" class="menu-close" id="menuClose" aria-label="Close menu">&#10005;</button></div>
+    <a class="m-link" href="#top"><i class="fas fa-home"></i><span>Home</span></a>
+    <a class="m-link" href="#products"><i class="fas fa-box-open"></i><span>Products</span></a>
+    <a class="m-link" href="#photography"><i class="fas fa-camera"></i><span>Photography</span></a>
+    <a class="m-link" href="#gallery"><i class="fas fa-images"></i><span>Gallery</span></a>
+    <a class="m-link" href="#video"><i class="fas fa-video"></i><span>Video</span></a>
+    <a class="m-link" href="#branches"><i class="fas fa-map-marker-alt"></i><span>Branches</span></a>
+    <a class="m-link" href="#feedback"><i class="fas fa-comment-dots"></i><span>Feedback</span></a>
+    <a class="m-link" href="#about"><i class="fas fa-info-circle"></i><span>About</span></a>
+    <a class="m-link" href="#contact"><i class="fas fa-phone-alt"></i><span>Contact</span></a>
+    <a class="m-link m-login" href="#login" id="menuLogin"><i class="fa fa-user-lock"></i> Staff Login</a>
+    <div class="menu-foot" id="menuFoot">Quality for Lifetime Memories</div>
+  </nav>
+
+  <div id="siteView">
+
+  <!-- FULL-SCREEN BANNER -->
+  <section class="hero-banner" id="top">
+    <video id="bannerVideo" autoplay muted loop playsinline preload="metadata" poster="banner.jpg">
+      <source src="ab video.mp4" type="video/mp4" />
+    </video>
+    <div class="banner-slides" id="bannerSlides"></div>
+    <div class="banner-arrows" id="bannerArrows">
+      <button type="button" id="prevSlide" aria-label="Previous">&#10094;</button>
+      <button type="button" id="nextSlide" aria-label="Next">&#10095;</button>
+    </div>
+    <div class="hero-overlay">
+      <div class="container text-center">
+        <div class="hero-logo" id="heroLogo"><img id="heroLogoImg" src="logo.png" alt="Company logo" onerror="this.parentElement.style.display='none'" /></div>
+        <p class="hero-kicker" id="heroKick">We Design · We Print · We Brand</p>
+        <h1 class="hero-name" id="heroName">
+          <span style="color:#3b82f6">AB</span>
+          <span style="color:#fff"> SIGNS </span>
+          <span style="color:#ef4444">MEDIA</span>
+        </h1>
+        <p class="tag hero-title" id="heroTag">Quality for lifetime memories</p>
+        <button type="button" class="btn btn-wa rounded-pill px-4 me-2 mb-2" data-svc>
+          <i class="fab fa-whatsapp me-1"></i> WhatsApp Order
+        </button>
+        <a href="#photography" class="btn btn-outline-light rounded-pill px-4 mb-2">View Packages</a>
+      </div>
+      <a href="#siteTop" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+    </div>
+  </section>
+
+  <div id="siteTop"></div>
+
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2" id="topbarIn"></div>
+  </div>
+
+  <div class="container py-3">
+    <div class="row align-items-center g-3">
+      <div class="d-none">
+        <a href="#" class="brand-title h4 js-brand">
+          <span class="ab">AB</span> SIGNS <span class="media">MEDIA</span>
+        </a>
+        <div class="small text-muted" id="headTag">Quality for lifetime memories</div>
+      </div>
+      <div class="col-12 col-md-8 col-lg-9">
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchBox" placeholder="Search printing, stationery, photo..." />
+          <select class="form-select" style="max-width:150px" id="catFilter">
+            <option value="">All</option>
+            <option value="printing">Printing</option>
+            <option value="stationery">Stationery</option>
+            <option value="frames">Frames &amp; Boards</option>
+            <option value="electronics">Electronics</option>
+            <option value="photography">Photography</option>
+            <option value="branding">Branding</option>
+            <option value="others">Others</option>
+          </select>
+          <button class="btn btn-primary" type="button" id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3">
+        <button type="button" class="btn btn-wa rounded-pill px-3 w-100" id="orderWa" data-svc>
+          <i class="fab fa-whatsapp me-1"></i> Order WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark py-0">
+        <a class="navbar-brand d-lg-none text-warning fw-bold" href="#" id="navBrandSm">AB SIGNS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <div class="navbar-nav me-auto">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#products">Products</a>
+            <a class="nav-link" href="#photography">Photography</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
+            <a class="nav-link" href="#video">Video</a>
+            <a class="nav-link" href="#branches">Branches</a>
+            <a class="nav-link" href="#feedback">Feedback</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link nav-login" href="#login"><i class="fa fa-user-lock me-1"></i>Login</a>
+          </div>
+          <a class="btn btn-secondary btn-sm rounded-pill my-2" id="navCall" href="tel:+256788002309">
+            <i class="fa fa-phone me-1"></i> <span id="navCallTxt">0788 002 309</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid bg-white border-bottom py-3">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-4 col-md-2"><i class="fa fa-print fa-lg text-primary"></i><div class="small mt-1">Printing</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-pen-fancy fa-lg text-primary"></i><div class="small mt-1">Stationery</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-camera fa-lg text-primary"></i><div class="small mt-1">Photography</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-tshirt fa-lg text-primary"></i><div class="small mt-1">Branding</div></div>
+        <div class="col-4 col-md-2"><i class="fab fa-whatsapp fa-lg" style="color:#25D366"></i><div class="small mt-1">WhatsApp</div></div>
+        <div class="col-4 col-md-2"><i class="fa fa-map-marker-alt fa-lg text-primary"></i><div class="small mt-1" id="brCount">4 Branches</div></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="products" class="container py-5">
+    <h2 class="section-title">Products &amp; Services</h2>
+
+    <div id="noResults" class="alert alert-warning">No product found. Try another word, or <a href="#contact">contact us</a> — we may still have it.</div>
+
+    <!-- PRODUCTS ADDED FROM THE STAFF PORTAL APPEAR HERE AUTOMATICALLY -->
+    <div class="cat-block" id="webProductsBlock" data-block="web" style="display:none">
+      <h4 id="webProductsTitle" class="text-primary mb-3">Products</h4>
+      <div class="row g-3 mb-5" id="gridWebProducts"></div>
+    </div>
+
+    <!-- OFFERS (added from the staff login) -->
+    <div id="offersSection" style="display:none">
+      <h4 class="text-primary mb-3">Offers</h4>
+      <div id="ads" class="ads-strip mb-5" aria-label="Offers">
+        <span class="ads-label">Offers</span>
+      </div>
+    </div>
+
+    <!-- PHOTOGRAPHY PACKAGES (edited from the staff login) -->
+    <div class="cat-block" data-block="photography">
+      <h4 id="photography" class="text-primary mb-3">Photography Packages</h4>
+      <div class="row g-3 mb-5" id="packagesGrid"></div>
+    </div>
+
+    <!-- GALLERY (added from the staff login) -->
+    <div id="gallerySection" style="display:none">
+      <h4 id="gallery" class="text-primary mb-3">Photo Gallery</h4>
+      <div class="row g-2 g-md-3 mb-5" id="galleryGrid"></div>
+    </div>
+
+    <!-- MEDIA PLAYER -->
+    <div id="videoSection">
+    <h4 id="video" class="text-primary mb-3">Watch &amp; Listen</h4>
+    <div class="product-card p-3 mb-5">
+      <p class="text-muted small mb-2">AB SIGNS MEDIA video — play full screen.</p>
+      <div class="media-player">
+        <video id="promoVideo" controls playsinline preload="none" poster="banner.jpg">
+          <source src="lv_0_20261027104722.mp4" type="video/mp4" />
+          Your browser does not support video.
+        </video>
+      </div>
+      <div class="media-actions">
+        <button type="button" class="primary" id="btnFullscreen">Full Screen</button>
+        <button type="button" id="btnPlayPause">Play / Pause</button>
+      </div>
+      <audio id="promoAudio" controls preload="none" style="width:100%; margin-top:12px;">
+        <source src="audio.mp3" type="audio/mpeg" />
+        <source src="audio.m4a" type="audio/mp4" />
+      </audio>
+    </div>
+    </div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section id="branches" class="container pb-5">
+    <h2 class="section-title">Branches</h2>
+    <div class="row g-3" id="branchesGrid"></div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="feedback" class="container pb-5">
+    <h2 class="section-title">Customer Feedback</h2>
+    <div class="product-card p-4">
+      <p class="text-muted small mb-3" id="fbIntro">Tell us who served you and how we did. Send by WhatsApp or Email.</p>
+      <form onsubmit="return false;">
+        <label class="form-label fw-bold small" for="cust-name">Your Name</label>
+        <input id="cust-name" type="text" class="form-control mb-2" placeholder="Full name" />
+        <label class="form-label fw-bold small" for="served-by">Who served you? (Branch / Staff)</label>
+        <select id="served-by" class="form-select mb-2">
+          <option value="">-- Choose --</option>
+        </select>
+        <label class="form-label fw-bold small" for="rating">Rating</label>
+        <select id="rating" class="form-select mb-2">
+          <option value="">-- Choose --</option>
+          <option>5 Stars - Excellent</option>
+          <option>4 Stars - Good</option>
+          <option>3 Stars - Average</option>
+          <option>2 Stars - Needs Improvement</option>
+          <option>1 Star - Poor</option>
+        </select>
+        <label class="form-label fw-bold small" for="comments">Comment</label>
+        <textarea id="comments" class="form-control mb-3" rows="3" placeholder="Your comment"></textarea>
+        <div class="d-flex gap-2 flex-wrap">
+          <button type="button" class="btn btn-wa flex-fill" onclick="sendFeedback('wa')"><i class="fab fa-whatsapp me-1"></i> Send WhatsApp</button>
+          <button type="button" class="btn btn-primary flex-fill" onclick="sendFeedback('email')"><i class="fa fa-envelope me-1"></i> Send Email</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container pb-5">
+    <h2 class="section-title" id="aboutTitle">About AB SIGNS MEDIA</h2>
+    <div class="product-card p-4" id="aboutBox"></div>
+  </section>
+
+  <!-- CONTACT + CEO -->
+  <section id="contact" class="container pb-5">
+    <div class="row g-3 align-items-stretch" id="contactRow"></div>
+    <div class="row g-3 mt-1" id="teamRow"></div>
+  </section>
+
+  <footer class="footer py-4">
+    <div class="container" id="footerBox"></div>
+  </footer>
+  <div class="copyright py-3 text-center">
+    <span id="copyLine">© 2026 AB SIGNS MEDIA. All Rights Reserved.</span>
+    <div class="small" id="creditLine">Designed &amp; developed by Kasim Kibwana</div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  </div><!-- /siteView -->
+
+  <!-- STAFF AREA (shown after pressing Menu > Login) -->
+  <div id="staffView" hidden>
+    <div class="wrap" id="app"></div>
+  </div>
+
+  <div id="toast" class="alert alert-success py-2 px-3 shadow"></div>
+  
+
+  <input type="file" id="fCam" accept="image/*" capture="environment" hidden />
+  <input type="file" id="fFile" accept="image/*" hidden />
+  <input type="file" id="fSite" accept="image/*" hidden />
+
+  <!-- Change password modal -->
+  <div class="modal fade" id="profModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title"><i class="fas fa-user-cog me-1"></i> Profile settings</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+    <div class="modal-body">
+      <label class="form-label small fw-bold" for="profName">Name</label><input id="profName" class="form-control mb-2" />
+      <label class="form-label small fw-bold" for="profUser">Username</label><input id="profUser" class="form-control mb-1" autocapitalize="none" autocomplete="off" />
+      <div class="small text-muted mb-2" id="profUserNote"></div>
+      <label class="form-label small fw-bold" for="profNew">New password (4 to 6 characters — leave empty to keep the old one)</label><input id="profNew" type="password" maxlength="6" class="form-control mb-2" autocomplete="new-password" />
+      <div id="profCurBox"><label class="form-label small fw-bold" for="profCur">Your current password (needed to confirm changes)</label><input id="profCur" type="password" class="form-control mb-2" autocomplete="current-password" /></div>
+      <div id="profErr" class="text-danger small mb-2" style="display:none"></div>
+      <button type="button" class="btn btn-primary w-100" id="profSave"><i class="fas fa-save"></i> Save profile</button>
+    </div></div></div></div>
+
+  <div class="modal fade" id="pwModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title"><i class="fas fa-key me-1"></i> Change password</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <div class="alert alert-warning small" id="pwNote" style="display:none"></div>
+          <label class="form-label small fw-bold">Current password</label>
+          <input id="pwOld" type="password" class="form-control mb-2" autocomplete="current-password" />
+          <label class="form-label small fw-bold">New password (4 to 6 characters)</label>
+          <input id="pwNew" type="password" class="form-control mb-2" autocomplete="new-password" />
+          <label class="form-label small fw-bold">Repeat new password</label>
+          <input id="pwNew2" type="password" class="form-control mb-2" autocomplete="new-password" />
+          <div id="pwErr" class="text-danger small mb-2" style="display:none"></div>
+          <button type="button" class="btn btn-primary w-100" data-act="pwsave">Save new password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stock modal -->
+  <div class="modal fade" id="stockModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title" id="mTitle"></h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <div class="small text-muted mb-2" id="mInfo"></div>
+          <label class="form-label small fw-bold" id="mQtyLabel">Quantity</label>
+          <input id="mQty" type="number" min="0" inputmode="numeric" class="form-control mb-2" />
+          <div id="mSupWrap">
+            <label class="form-label small fw-bold">Supplier (optional)</label>
+            <input id="mSupplier" type="text" class="form-control mb-2" placeholder="Who supplied it?" />
+          </div>
+          <label class="form-label small fw-bold">Note (optional)</label>
+          <input id="mNote" type="text" class="form-control mb-2" placeholder="e.g. delivery from supplier" />
+          <div id="mErr" class="text-danger small mb-2" style="display:none"></div>
+          <button class="btn btn-primary w-100" data-act="save">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit product modal -->
+  <div class="modal fade" id="pModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Edit product</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <label class="form-label small fw-bold">Name</label><input id="epName" class="form-control mb-2" />
+          <div class="row g-2">
+            <div class="col-6"><label class="form-label small fw-bold">Category</label><select id="epCat" class="form-select mb-2"></select></div>
+            <div class="col-6"><label class="form-label small fw-bold">Condition</label><select id="epCond" class="form-select mb-2"><option value="new">New</option><option value="used">Used</option></select></div>
+          </div>
+          <label class="form-label small fw-bold">Price in UGX (empty = "Ask price")</label><input id="epPrice" type="number" min="0" inputmode="numeric" class="form-control mb-2" />
+          <label class="form-label small fw-bold">Description</label><textarea id="epDesc" rows="3" class="form-control mb-2"></textarea>
+          <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="epWeb" /><label class="form-check-label small" for="epWeb">Show on the customer website</label></div>
+          <div id="epErr" class="text-danger small mb-2" style="display:none"></div>
+          <button class="btn btn-primary w-100" data-act="saveprod">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&#10005;</button>
+    <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous photo">&#10094;</button>
+    <img id="lightboxImg" src="" alt="Full view" />
+    <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Next photo">&#10095;</button>
+  </div>
+
+  <!-- ORDER MODAL -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderTitle">Order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-muted mb-3" id="orderSub"></p>
+          <form id="orderForm" onsubmit="return false;" novalidate>
+            <label class="form-label fw-bold small" for="oName">Your name *</label>
+            <input id="oName" class="form-control mb-2" type="text" placeholder="e.g. Mary Nambozo" autocomplete="name" />
+            <label class="form-label fw-bold small" for="oPlace">Where are you from? *</label>
+            <input id="oPlace" class="form-control mb-2" type="text" placeholder="Village / Town e.g. Bududa" autocomplete="address-level2" />
+            <label class="form-label fw-bold small" for="oDetails">Quantity or details (optional)</label>
+            <textarea id="oDetails" class="form-control mb-2" rows="2" placeholder="e.g. 50 cards, size A5, needed by Friday"></textarea>
+            <label class="form-label fw-bold small" for="oBranch">Send to which branch?</label>
+            <select id="oBranch" class="form-select mb-3"></select>
+            <div id="oError" class="text-danger small mb-2" style="display:none;">Please enter your name and where you are from.</div>
+            <button type="button" class="btn btn-wa w-100 py-2" id="oSend"><i class="fab fa-whatsapp me-1"></i> Continue to WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" id="cartBar" data-svc><i class="fas fa-shopping-basket"></i> My order<b id="cartN">0</b></button>
+
+  <div class="modal fade" id="prodModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title" id="pmName"></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+    <div class="modal-body"><img id="pmImg" alt="" /><div class="mt-3 fw-bold price" id="pmPrice"></div><p class="mt-2 mb-3" id="pmDesc" style="white-space:pre-wrap"></p>
+      <div id="pmCart"></div>
+      <div class="d-grid gap-2"><button type="button" class="btn btn-outline-success rounded-pill" id="pmAsk">Ask price</button><button type="button" class="btn btn-wa rounded-pill" id="pmOrder"><i class="fab fa-whatsapp"></i> Order now</button></div></div>
+  </div></div></div>
+
+  <div class="modal fade" id="svcModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Place your order</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+    <div class="modal-body">
+      <p class="small text-muted">Order from where you are, then come and pick it up when it is ready — you pay when you pick up.</p>
+      <div class="fw-bold small mb-1">What do you need? (tap all that apply)</div>
+      <div class="d-flex flex-wrap gap-2 mb-3" id="svcChips"></div>
+      <div id="svcCart" class="mb-3"></div>
+      <label class="form-label fw-bold small" for="svcDetails">Details (size, quantity, colour, text…)</label>
+      <textarea id="svcDetails" class="form-control mb-2" rows="3" placeholder="e.g. 20 passport photos, 2 copies of ID in colour, A5 envelopes x100"></textarea>
+      <div class="row g-2"><div class="col-6"><label class="form-label fw-bold small" for="svcName">Your name *</label><input id="svcName" class="form-control mb-2" autocomplete="name" /></div>
+      <div class="col-6"><label class="form-label fw-bold small" for="svcPlace">Where are you from? *</label><input id="svcPlace" class="form-control mb-2" /></div></div>
+      <div class="row g-2"><div class="col-6"><label class="form-label fw-bold small" for="svcPhone">Your phone (optional)</label><input id="svcPhone" class="form-control mb-2" inputmode="tel" /></div>
+      <div class="col-6"><label class="form-label fw-bold small" for="svcWhen">Needed by / pick-up time</label><input id="svcWhen" class="form-control mb-2" placeholder="e.g. Friday 3pm" /></div></div>
+      <label class="form-label fw-bold small" for="svcBranch">Pick up from which branch?</label><select id="svcBranch" class="form-select mb-2"></select>
+      <div class="small text-muted mb-2">After WhatsApp opens, you can send your photos or documents in the chat.</div>
+      <div id="svcErr" class="text-danger small mb-2" style="display:none"></div>
+      <button type="button" class="btn btn-wa w-100 py-2" id="svcSend"><i class="fab fa-whatsapp me-1"></i> Send order on WhatsApp</button>
+    </div>
+  </div></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* =====================================================
+       WEBSITE CONTENT lives in SITE (below).
+       You do NOT edit it here: log in (Menu > Staff Login)
+       and use the "Website" tab. The values here are only
+       the starting content used before anything is saved.
+       ===================================================== */
+    var BRANCHES = [];
+    var SITE_KEY = 'abs_site_v1';
+    var DEFAULT_SITE = {
+      brand: { a: 'AB', b: 'SIGNS', c: 'MEDIA' },
+      tagline: 'Quality for lifetime memories',
+      kicker: 'We Design · We Print · We Brand',
+      logo: 'logo.png',
+      banners: ['banner.jpg', 'banner1.jpg', 'banner2.jpg'],
+      bannerVideo: 'ab video.mp4',
+      promoVideo: 'lv_0_20261027104722.mp4',
+      packages: [
+        { name: 'SILVER', price: 'UGX 800,000/=', sub: 'Without video: 400,000/=', rec: false,
+          items: ['100 photos with an album', '30 edited soft copies', '2 A4 frames', '2 A4 boards', '2 A3 frames', 'One videographer'] },
+        { name: 'PLATINUM', price: 'UGX 1,600,000/=', sub: 'Without video: 800,000/=', rec: true,
+          items: ['200 photos with an album', '70 edited soft copies', '4 A4 frames', '3 A4 boards', '4 A3 frames', 'Two videographers'] },
+        { name: 'GOLD', price: 'UGX 3,000,000/=', sub: '', rec: false,
+          items: ['400 photos with an album', '100 edited soft copies', 'Flash with unedited photos', '5 A4 frames', '5 A4 boards', '4 A3 frames', 'Two videographers', 'A drone'] }
+      ],
+      offers: [],
+      gallery: [],
+      branches: [
+        { name: 'Bududa Main', place: 'Bududa Trading Centre / Bukigai', phone: '0788 002 309', map: 'https://maps.app.goo.gl/Lj9NVtewyzHs3FYbA?g_st=ac' },
+        { name: 'Konokoyi', place: 'After Namaitsu Trading Center', phone: '0769 801 082', map: 'https://maps.app.goo.gl/vSrAGV5ETdqiRXiC7?g_st=ac' },
+        { name: 'Lukhonje', place: 'Bukigai, Uganda', phone: '0761 237 885', map: 'https://maps.app.goo.gl/o3bxfYCWjSwap8Ga9' },
+        { name: 'Kamu Market', place: 'Bulambuli · Kibanda Road', phone: '0791 266 453', map: '' }
+      ],
+      feedback: {
+        intro: 'Tell us who served you and how we did. Send by WhatsApp or Email.',
+        who: ['Wakoba Abraham (CEO)', 'Bududa Main', 'Konokoyi Branch', 'Lukhonje Branch', 'Kamu Market']
+      },
+      about: {
+        head: 'YOUR CREATIVE PARTNER FOR DESIGN, PRINTING, BRANDING & MEMORIES',
+        p1: 'AB SIGNS MEDIA is a creative media, printing, photography, and branding company dedicated to turning ideas into quality visual experiences. We help individuals, businesses, organizations, schools, teams, and events bring their ideas to life through professional design, printing, photography, branding, and customized products.',
+        p2: 'Our services include graphic design, logo design, digital printing, DTF printing, T-shirt and cap branding, jersey customization, banners and posters, labels and stickers, large-format printing, photography, videography, customized gifts, success cards, money bouquets, student trunk & chop box branding, and much more.',
+        p3: 'Our focus is on quality, creativity, professionalism, and customer satisfaction. Whether you need to promote your business, brand your team, preserve a special moment, prepare for an event, or create a personalized gift, we work with you to turn your vision into something you can proudly share.',
+        p4: 'We are proud to serve our customers through our branches and growing network, bringing quality creative, printing, branding, and media services closer to our customers. As we continue to grow, our commitment remains the same: creativity, professionalism, reliability, and quality in everything we do.',
+        closing: 'BRING YOUR IDEA. WE BRING IT TO LIFE.'
+      },
+      team: [],
+      ceo: {
+        label: 'CEO', name: 'Wakoba Abraham', photo: 'ceo_photo.png',
+        text: 'We deliver premium printing, custom stationery, and professional photography. We handle every project with absolute precision to bring your ideas to life. Our goal is to constantly innovate and be your top choice for creative visual work.'
+      },
+      contact: {
+        email: 'absignsmedia@gmail.com',
+        phones: ['0788 002 309', '0740 045 771', '0763 147 213'],
+        facebook: 'https://www.facebook.com/profile.php?id=100083232823616',
+        tiktok: 'https://vm.tiktok.com/ZS9SNFvcjCCsK-V0xlL/',
+        youtube: 'https://youtube.com/@coolitabrahx98?si=DXquqaGz6v2GjuWI'
+      },
+      footer: 'Design, printing, stationery, photography & branding. Bring your idea. We bring it to life.',
+      credit: 'Designed & developed by Kasim Kibwana'
+    };
+
+    /* ---------- helpers ---------- */
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function $s(id) { return document.getElementById(id); }
+    function toArr(x) {
+      if (!x) return [];
+      if (Array.isArray(x)) return x.filter(function (v) { return v != null; });
+      return Object.keys(x).sort(function (a, b) { return a - b; }).map(function (k) { return x[k]; });
+    }
+    function sj(o) {
+      if (Array.isArray(o)) return '[' + o.map(sj).join(',') + ']';
+      if (o && typeof o === 'object') return '{' + Object.keys(o).sort().map(function (k) { return JSON.stringify(k) + ':' + sj(o[k]); }).join(',') + '}';
+      return JSON.stringify(o === undefined ? null : o);
+    }
+    function str(v, d) { return (v === undefined || v === null) ? d : String(v); }
+    function mergeSite(v) {
+      var d = JSON.parse(JSON.stringify(DEFAULT_SITE));
+      if (!v || typeof v !== 'object') return d;
+      ['brand', 'about', 'ceo'].forEach(function (k) {
+        var src = v[k] && typeof v[k] === 'object' ? v[k] : {};
+        Object.keys(d[k]).forEach(function (f) { d[k][f] = str(src[f], d[k][f]); });
+      });
+      ['tagline', 'kicker', 'logo', 'bannerVideo', 'promoVideo', 'footer', 'credit'].forEach(function (k) { d[k] = str(v[k], d[k]); });
+      var fb = v.feedback && typeof v.feedback === 'object' ? v.feedback : {};
+      d.feedback = { intro: str(fb.intro, d.feedback.intro), who: toArr(fb.who).map(String) };
+      var ct = v.contact && typeof v.contact === 'object' ? v.contact : {};
+      d.contact = { email: str(ct.email, d.contact.email), phones: toArr(ct.phones).map(String),
+        facebook: str(ct.facebook, d.contact.facebook), tiktok: str(ct.tiktok, d.contact.tiktok), youtube: str(ct.youtube, d.contact.youtube),
+        social: toArr(ct.social).map(function (x) { x = x || {}; return { name: str(x.name, ''), url: str(x.url, '') }; }) };
+      ['banners', 'offers', 'gallery'].forEach(function (k) { d[k] = toArr(v[k]).map(String); });
+      d.team = toArr(v.team).map(function (m) { m = m || {}; return { role: str(m.role, ''), name: str(m.name, ''), text: str(m.text, ''), photo: str(m.photo, '') }; });
+      d.packages = toArr(v.packages).map(function (p) {
+        return { name: str(p.name, ''), price: str(p.price, ''), sub: str(p.sub, ''), rec: !!p.rec, items: toArr(p.items).map(String) };
+      });
+      d.branches = toArr(v.branches).map(function (b) {
+        return { name: str(b.name, ''), place: str(b.place, ''), phone: str(b.phone, ''), map: str(b.map, '') };
+      });
+      return d;
+    }
+    var SITE = (function () { var v = null; try { v = JSON.parse(localStorage.getItem(SITE_KEY)); } catch (x) {} return mergeSite(v); })();
+
+    function intl(p) { var d = String(p || '').replace(/\D/g, ''); if (d.charAt(0) === '0') d = '256' + d.slice(1); return d; }
+    function safeUrl(u) { return /^https?:\/\//i.test(String(u || '').trim()) ? String(u).trim() : ''; }
+    function cssUrl(u) { u = String(u); return u.indexOf('data:') === 0 ? u : encodeURI(u).replace(/'/g, '%27'); }
+    function cap(s) { s = String(s || '').toLowerCase(); return s.charAt(0).toUpperCase() + s.slice(1); }
+    function brandName() { var b = SITE.brand; return [b.a, b.b, b.c].filter(Boolean).join(' '); }
+    function mainPhone() { return intl(SITE.contact.phones[0]); }
+
+    /* ---------- render product cards ---------- */
+    function renderGrid(gridId, items, cat, colClass) {
+      var html = items.map(function (it) {
+        return '<div class="' + colClass + '" data-cat="' + cat + '">' +
+          '<div class="product-card">' +
+            '<div class="pic-slot"><img loading="lazy" src="' + esc(it[1]) + '" alt="' + esc(it[0]) + ' — AB SIGNS MEDIA" data-fallback="' + esc(it[0]) + '" /></div>' +
+            '<div class="p-3 text-center">' +
+              '<h6 class="mb-2">' + esc(it[0]) + '</h6>' +
+              '<div data-cart="' + esc(it[0]) + '"></div>' +
+              '<div class="d-grid gap-1">' +
+                '<button type="button" class="btn btn-outline-success btn-sm rounded-pill" data-order data-mode="price" data-item="' + esc(it[0]) + '">Ask price</button>' +
+                '<button type="button" class="btn btn-wa btn-sm rounded-pill" data-order data-mode="order" data-item="' + esc(it[0]) + '"><i class="fab fa-whatsapp"></i> Order</button>' +
+              '</div>' +
+            '</div>' +
+          '</div></div>';
+      }).join('');
+      document.getElementById(gridId).innerHTML = html; if (window.cartRefresh) window.cartRefresh();
+    }
+
+    document.querySelectorAll('img[data-fallback]').forEach(function (img) {
+      img.addEventListener('error', function () { img.parentElement.textContent = img.getAttribute('data-fallback'); });
+    });
+
+    /* ---------- offers ---------- */
+    var adsBox = document.getElementById('ads');
+    var ads = [];
+    var adIdx = 0;
+    setInterval(function () {
+      if (!ads.length) return;
+      if (ads[adIdx]) ads[adIdx].classList.remove('active');
+      adIdx = (adIdx + 1) % ads.length;
+      ads[adIdx].classList.add('active');
+    }, 3500);
+
+    /* ---------- gallery + lightbox ---------- */
+    var galleryGrid = document.getElementById('galleryGrid');
+    function renderGallery() {
+      galleryGrid.innerHTML = SITE.gallery.map(function (f, i) {
+        return '<div class="col-6 col-md-3"><div class="gallery-slot"><img loading="lazy" src="' + esc(f) + '" alt="Our work ' + (i + 1) + '" /></div></div>';
+      }).join('');
+      galleryGrid.querySelectorAll('.gallery-slot').forEach(function (slot, i) {
+        var img = slot.querySelector('img');
+        function empty() { slot.classList.add('empty'); slot.innerHTML = '<i class="fas fa-camera"></i><span>Photo ' + (i + 1) + '</span>'; }
+        img.addEventListener('error', empty);
+        if (img.complete && img.naturalWidth === 0) empty();
+      });
+    }
+
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lbList = [], lbIdx = 0;
+    function showLb(n) {
+      lbIdx = (n + lbList.length) % lbList.length;
+      lightboxImg.src = lbList[lbIdx];
+    }
+    galleryGrid.addEventListener('click', function (e) {
+      var slot = e.target.closest('.gallery-slot');
+      if (!slot || slot.classList.contains('empty')) return;
+      var imgs = Array.from(galleryGrid.querySelectorAll('.gallery-slot:not(.empty) img'));
+      lbList = imgs.map(function (i) { return i.src; });
+      showLb(imgs.indexOf(slot.querySelector('img')));
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click', function () { showLb(lbIdx - 1); });
+    document.getElementById('lightboxNext').addEventListener('click', function () { showLb(lbIdx + 1); });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showLb(lbIdx - 1);
+      if (e.key === 'ArrowRight') showLb(lbIdx + 1);
+    });
+
+    /* ---------- search + filter ---------- */
+    function filterItems() {
+      var q = (document.getElementById('searchBox').value || '').toLowerCase().trim();
+      var cat = document.getElementById('catFilter').value;
+      var anyVisible = false;
+      document.querySelectorAll('[data-cat]').forEach(function (el) {
+        var okCat = !cat || el.getAttribute('data-cat') === cat;
+        var okQ = !q || el.innerText.toLowerCase().indexOf(q) !== -1;
+        var show = okCat && okQ;
+        el.style.display = show ? '' : 'none';
+        if (show) anyVisible = true;
+      });
+      document.querySelectorAll('.cat-block').forEach(function (b) {
+        var has = Array.from(b.querySelectorAll('[data-cat]')).some(function (el) { return el.style.display !== 'none'; });
+        b.style.display = has ? '' : 'none';
+      });
+      document.getElementById('noResults').style.display = (anyVisible || (!q && !cat)) ? 'none' : 'block';
+    }
+    document.getElementById('searchBox').addEventListener('keyup', filterItems);
+    document.getElementById('catFilter').addEventListener('change', filterItems);
+    document.getElementById('searchBtn').addEventListener('click', filterItems);
+
+    /* ---------- hero banner ---------- */
+    var slides = Array.from(document.querySelectorAll('.banner-slide'));
+    var idx = 0;
+    function showSlide(n) {
+      if (!slides.length) return;
+      slides.forEach(function (s) { s.classList.remove('active'); });
+      idx = (n + slides.length) % slides.length;
+      slides[idx].classList.add('active');
+    }
+    document.getElementById('prevSlide').onclick = function () { showSlide(idx - 1); };
+    document.getElementById('nextSlide').onclick = function () { showSlide(idx + 1); };
+    setInterval(function () { showSlide(idx + 1); }, 5000);
+
+    var bannerVideo = document.getElementById('bannerVideo');
+    function useVideo() {
+      document.getElementById('bannerSlides').style.display = 'none';
+      document.getElementById('bannerArrows').style.display = 'none';
+    }
+    function bannerFail() {
+      bannerVideo.style.display = 'none';
+      document.getElementById('bannerSlides').style.display = 'block';
+      document.getElementById('bannerArrows').style.display = 'flex';
+    }
+    if (bannerVideo) {
+      bannerVideo.addEventListener('loadeddata', useVideo);
+      bannerVideo.addEventListener('playing', useVideo);
+      var vs = bannerVideo.querySelector('source');
+      if (vs) vs.addEventListener('error', bannerFail);
+    }
+
+    /* ---------- promo video + audio ---------- */
+    var promoVideo = document.getElementById('promoVideo');
+    var btnFs = document.getElementById('btnFullscreen');
+    var btnPp = document.getElementById('btnPlayPause');
+    if (btnFs && promoVideo) {
+      btnFs.addEventListener('click', function () {
+        if (promoVideo.requestFullscreen) promoVideo.requestFullscreen();
+        else if (promoVideo.webkitEnterFullscreen) promoVideo.webkitEnterFullscreen();
+        else if (promoVideo.webkitRequestFullscreen) promoVideo.webkitRequestFullscreen();
+      });
+    }
+    if (btnPp && promoVideo) {
+      btnPp.addEventListener('click', function () {
+        if (promoVideo.paused) promoVideo.play(); else promoVideo.pause();
+      });
+    }
+    var promoAudio = document.getElementById('promoAudio');
+    var audioSources = promoAudio ? promoAudio.querySelectorAll('source') : [];
+    if (audioSources.length) {
+      audioSources[audioSources.length - 1].addEventListener('error', function () { promoAudio.style.display = 'none'; });
+    }
+
+    /* ---------- close mobile menu after tapping a link ---------- */
+    document.querySelectorAll('#navMain .nav-link').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var el = document.getElementById('navMain');
+        if (el.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(el).hide();
+      });
+    });
+
+    /* ---------- ORDER POP-UP + WHATSAPP MESSAGE ---------- */
+    var orderModalEl = document.getElementById('orderModal');
+    var orderModal = new bootstrap.Modal(orderModalEl);
+    var oBranch = document.getElementById('oBranch');
+    var current = { item: '', mode: 'order' };
+
+    function lsGet(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
+    function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+    function buildMessage(name, place, details) {
+      var it = current.item, text;
+      var intro = 'Hello ' + brandName() + ' 👋, my name is ' + name + ' and I am from ' + place + '. ';
+      if (current.mode === 'price') {
+        text = intro + 'I would like to know the price of *' + it + '*. Please tell me the available options and how long it takes to get it. Thank you.';
+      } else if (current.mode === 'book') {
+        text = intro + 'I would like to book the *' + it + '* photography package. Please share the available dates and how I can confirm my booking. Thank you.';
+      } else if (current.mode === 'enquiry') {
+        text = intro + 'I would like to make an enquiry about ' + it + '. Please assist me. Thank you.';
+      } else {
+        text = intro + 'I would like to place an order for *' + it + '*. Please confirm that it is available, the total price, and whether I can pick it up or have it delivered. Thank you.';
+      }
+      if (details) text += '\n\nMore details: ' + details;
+      return text;
+    }
+
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-order]');
+      if (!btn) return;
+      current.item = btn.getAttribute('data-item');
+      current.mode = btn.getAttribute('data-mode') || 'order';
+      var titles = { price: 'Ask price', order: 'Order', book: 'Book package', enquiry: 'WhatsApp us' };
+      document.getElementById('orderTitle').textContent = titles[current.mode] + ' — ' + current.item;
+      document.getElementById('orderSub').textContent = 'Tell us a little about you, then we open WhatsApp with your message ready.';
+      document.getElementById('oName').value = lsGet('abs_name');
+      document.getElementById('oPlace').value = lsGet('abs_place');
+      document.getElementById('oDetails').value = '';
+      document.getElementById('oError').style.display = 'none';
+      var saved = lsGet('abs_branch');
+      if (saved !== '' && BRANCHES[+saved]) oBranch.value = saved;
+      orderModal.show();
+    });
+    orderModalEl.addEventListener('shown.bs.modal', function () {
+      var n = document.getElementById('oName');
+      (n.value ? document.getElementById('oPlace') : n).focus();
+    });
+
+    document.getElementById('oSend').addEventListener('click', function () {
+      var name = document.getElementById('oName').value.trim();
+      var place = document.getElementById('oPlace').value.trim();
+      var details = document.getElementById('oDetails').value.trim();
+      if (!name || !place) {
+        document.getElementById('oError').style.display = 'block';
+        return;
+      }
+      lsSet('abs_name', name); lsSet('abs_place', place); lsSet('abs_branch', oBranch.value);
+      var phone = (BRANCHES[+oBranch.value] || {}).phone || mainPhone();
+      var url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(buildMessage(name, place, details));
+      window.open(url, '_blank');
+      orderModal.hide();
+    });
+
+    /* ---------- about: read more ---------- */
+    document.addEventListener('shown.bs.collapse', function (ev) {
+      if (ev.target.id === 'aboutMore') { var b = $s('aboutBtn'); if (b) b.textContent = 'Show less'; }
+    });
+    document.addEventListener('hidden.bs.collapse', function (ev) {
+      if (ev.target.id === 'aboutMore') { var b = $s('aboutBtn'); if (b) b.textContent = 'Read more'; }
+    });
+
+    /* ---------- products added in the staff portal appear here automatically ---------- */
+    var WEB_KEY = 'abs_public_v1';   /* filled live from Firebase (node abs_public) */
+    function renderWebProducts() {
+      document.querySelectorAll('.web-prod').forEach(function (n) { n.remove(); });
+      var data = null;
+      try { data = JSON.parse(localStorage.getItem(WEB_KEY)); } catch (x) {}
+      var grid = document.getElementById('gridWebProducts');
+      if (grid && data && data.products) data.products.forEach(function (p) {
+        var used = p.cond === 'used';
+        var item = esc(p.name + (used ? ' (Used)' : ''));
+        var html = '<div class="col-6 col-md-3 web-prod" data-cat="' + esc(p.cat || '') + '"><div class="product-card" data-desc="' + esc(p.desc || '') + '">' +
+          '<div class="pic-slot">' + (p.img ? '<img src="' + p.img + '" alt="' + esc(p.name) + ' — AB SIGNS MEDIA" />' : esc(p.name)) + '</div>' +
+          '<div class="p-3 text-center">' +
+            '<span class="badge ' + (used ? 'bg-warning text-dark' : 'bg-success') + ' mb-1">' + (used ? 'Used' : 'New') + '</span>' +
+            '<h6 class="mb-1">' + esc(p.name) + '</h6>' +
+            (p.desc ? '<div class="web-desc small text-muted mb-1">' + esc(p.desc) + '</div>' + (p.desc.length > 60 ? '<a href="#" class="pm-more small d-block mb-1">See more</a>' : '') : '') +
+            '<div class="price mb-2">' + (p.price ? 'UGX ' + Number(p.price).toLocaleString('en-US') : 'Ask price') + '</div>' +
+            '<div data-cart="' + item + '"></div>' +
+            '<div class="d-grid gap-1">' +
+              '<button type="button" class="btn btn-outline-success btn-sm rounded-pill" data-order data-mode="price" data-item="' + item + '">Ask price</button>' +
+              '<button type="button" class="btn btn-wa btn-sm rounded-pill" data-order data-mode="order" data-item="' + item + '"><i class="fab fa-whatsapp"></i> Order</button>' +
+            '</div></div></div></div>';
+        grid.insertAdjacentHTML('beforeend', html);
+      });
+      filterItems(); if (window.cartRefresh) window.cartRefresh();
+    }
+    window.renderWebProducts = renderWebProducts;
+    window.addEventListener('storage', function (ev) { if (ev.key === WEB_KEY) renderWebProducts(); });
+
+    /* ---------- feedback ---------- */
+    function sendFeedback(type) {
+      var name = document.getElementById('cust-name').value.trim();
+      var staff = document.getElementById('served-by').value;
+      var rating = document.getElementById('rating').value;
+      var comments = document.getElementById('comments').value.trim();
+      if (!name || !staff || !rating || !comments) {
+        alert('Please fill all fields.');
+        return;
+      }
+      var now = new Date().toLocaleString('en-UG', { timeZone: 'Africa/Kampala' });
+      var msg = '*' + brandName() + ' - Feedback*\n\nName: ' + name + '\nServed by: ' + staff + '\nRating: ' + rating + '\nComment: ' + comments + '\nTime: ' + now;
+      if (type === 'wa') {
+        window.open('https://wa.me/' + mainPhone() + '?text=' + encodeURIComponent(msg), '_blank');
+      } else {
+        window.location.href = 'mailto:' + SITE.contact.email + '?subject=' + encodeURIComponent(brandName() + ' Feedback') + '&body=' + encodeURIComponent(msg);
+      }
+    }
+
+    /* =====================================================
+       BUILD THE WHOLE WEBSITE FROM SITE (edited in the portal)
+       ===================================================== */
+    function applySite() {
+      var s = SITE, b = s.brand, bn = brandName(), ph = s.contact.phones, p1 = ph[0] || '', p2 = ph[1] || '';
+      var wa = 'https://wa.me/' + intl(p1) + '?text=' + encodeURIComponent('Hello ' + bn + ', I would like to make an enquiry. Please assist me.');
+
+      document.title = bn + ' — Print, Stationery & Photography';
+      var bh = '<span class="ab">' + esc(b.a) + '</span> ' + esc(b.b) + ' <span class="media">' + esc(b.c) + '</span>';
+      document.querySelectorAll('.js-brand').forEach(function (n) { n.innerHTML = bh; });
+      $s('heroName').innerHTML = '<span style="color:#3b82f6">' + esc(b.a) + '</span><span style="color:#fff"> ' + esc(b.b) + ' </span><span style="color:#ef4444">' + esc(b.c) + '</span>';
+      $s('navBrandSm').textContent = (b.a + ' ' + b.b).trim();
+      $s('heroTag').textContent = s.tagline; $s('headTag').textContent = s.tagline; $s('menuFoot').textContent = s.tagline;
+      $s('heroKick').textContent = s.kicker;
+      $s('aboutTitle').textContent = 'About ' + bn;
+      $s('brCount').textContent = s.branches.length + (s.branches.length === 1 ? ' Branch' : ' Branches');
+
+      /* logo */
+      var hl = $s('heroLogo'), li = $s('heroLogoImg');
+      hl.style.display = s.logo ? '' : 'none';
+      if (s.logo && li.getAttribute('src') !== s.logo) li.src = s.logo;
+      var ic = document.querySelector('link[rel=icon]'); if (ic && s.logo) ic.href = s.logo;
+
+      /* banner pictures + videos */
+      $s('bannerSlides').innerHTML = s.banners.map(function (u, i) {
+        return '<div class="banner-slide' + (i === 0 ? ' active' : '') + '" style="background-image:url(\'' + cssUrl(u) + '\')"></div>';
+      }).join('');
+      slides = Array.from(document.querySelectorAll('.banner-slide')); idx = 0;
+      if (s.banners[0]) { bannerVideo.poster = s.banners[0]; promoVideo.poster = s.banners[0]; }
+      if (!s.bannerVideo) {
+        try { bannerVideo.pause(); } catch (x) {}
+        bannerFail();
+      } else {
+        var cs = bannerVideo.querySelector('source');
+        if (!cs || cs.getAttribute('src') !== s.bannerVideo) {
+          bannerVideo.innerHTML = '';
+          var ns = document.createElement('source'); ns.setAttribute('src', s.bannerVideo); ns.setAttribute('type', 'video/mp4');
+          ns.addEventListener('error', bannerFail); bannerVideo.appendChild(ns);
+          bannerVideo.load(); try { bannerVideo.play().catch(function () {}); } catch (x) {}
+        }
+        bannerVideo.style.display = '';
+      }
+      $s('videoSection').style.display = s.promoVideo ? '' : 'none';
+      if (s.promoVideo) {
+        var ps = promoVideo.querySelector('source');
+        if (!ps || ps.getAttribute('src') !== s.promoVideo) {
+          promoVideo.innerHTML = '<source src="' + esc(s.promoVideo) + '" type="video/mp4" />Your browser does not support video.';
+          promoVideo.load();
+        }
+      }
+
+      /* top bar + header buttons */
+      $s('topbarIn').innerHTML = '<div><a href="#contact">Help</a> / <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a> / <a href="#branches">Branches</a></div>' +
+        (p1 ? '<div class="d-none d-md-block">Call: <a href="tel:+' + intl(p1) + '">' + esc(p1) + '</a>' + (p2 ? ' · <a href="tel:+' + intl(p2) + '">' + esc(p2) + '</a>' : '') + '</div>' : '') +
+        (s.contact.email ? '<div><a href="mailto:' + esc(s.contact.email) + '">' + esc(s.contact.email) + '</a></div>' : '');
+      $s('orderWa').href = wa; $s('waFloat').href = wa;
+      $s('navCall').style.display = p1 ? '' : 'none';
+      $s('navCall').href = 'tel:+' + intl(p1); $s('navCallTxt').textContent = p1;
+
+      /* offers */
+      adsBox.querySelectorAll('.ads-slide').forEach(function (n) { n.remove(); });
+      s.offers.forEach(function (f, i) {
+        var d = document.createElement('div');
+        d.className = 'ads-slide' + (i === 0 ? ' active' : '');
+        d.style.backgroundImage = 'url("' + cssUrl(f) + '")';
+        adsBox.appendChild(d);
+      });
+      ads = Array.from(adsBox.querySelectorAll('.ads-slide')); adIdx = 0;
+      $s('offersSection').style.display = s.offers.length ? '' : 'none';
+
+      /* packages */
+      $s('packagesGrid').innerHTML = s.packages.map(function (p) {
+        var price = String(p.price || '').replace(/\/=\s*$/, '');
+        return '<div class="col-md-4" data-cat="photography"><div class="product-card p-4 text-center' + (p.rec ? ' outlined' : '') + '">' +
+          (p.rec ? '<span class="badge bg-primary mb-2">RECOMMENDED</span>' : '') +
+          '<h5 class="fw-bold">' + esc(p.name) + '</h5>' +
+          (p.price ? '<div class="price fs-4">' + esc(p.price) + '</div>' : '') +
+          (p.sub ? '<div class="subprice mb-2">' + esc(p.sub) + '</div>' : '') +
+          '<ul class="pkg-list">' + p.items.map(function (it) { return '<li>' + esc(it) + '</li>'; }).join('') + '</ul>' +
+          '<button type="button" class="btn btn-wa rounded-pill w-100" data-order data-mode="book" data-item="' + esc(p.name + (price ? ' (' + price + ')' : '')) + '"><i class="fab fa-whatsapp"></i> Book ' + esc(cap(p.name)) + '</button>' +
+          '</div></div>';
+      }).join('');
+
+      /* gallery */
+      $s('gallerySection').style.display = s.gallery.length ? '' : 'none';
+      renderGallery();
+
+      /* branches + order pop-up + feedback options */
+      $s('branches').style.display = s.branches.length ? '' : 'none';
+      $s('branchesGrid').innerHTML = s.branches.map(function (br) {
+        var m = safeUrl(br.map);
+        return '<div class="col-md-6 col-lg-3"><div class="product-card p-4"><h5>' + esc(br.name) + '</h5>' +
+          '<p class="text-muted small">' + esc(br.place) + '</p>' +
+          (br.phone ? '<p class="mb-1"><a href="tel:+' + intl(br.phone) + '"><i class="fa fa-phone me-1"></i> ' + esc(br.phone) + '</a></p>' +
+            '<p class="mb-2"><a href="https://wa.me/' + intl(br.phone) + '" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a></p>' : '') +
+          (m ? '<a class="btn btn-outline-primary btn-sm" href="' + esc(m) + '" target="_blank" rel="noopener">Map</a>' : '') +
+          '</div></div>';
+      }).join('');
+      BRANCHES = s.branches.map(function (br) { return { name: br.name, phone: intl(br.phone) }; });
+      var keep = oBranch.value; oBranch.innerHTML = '';
+      BRANCHES.forEach(function (br, i) { var o = document.createElement('option'); o.value = i; o.textContent = br.name; oBranch.appendChild(o); });
+      if (BRANCHES[+keep]) oBranch.value = keep;
+
+      $s('fbIntro').textContent = s.feedback.intro;
+      var sb = $s('served-by'), keepWho = sb.value;
+      sb.innerHTML = '<option value="">-- Choose --</option>' + s.feedback.who.map(function (w) { return '<option>' + esc(w) + '</option>'; }).join('');
+      sb.value = keepWho;
+
+      /* about */
+      var a = s.about;
+      $s('aboutBox').innerHTML = '<p class="fw-bold mb-3">' + esc(a.head) + '</p>' +
+        '<p class="mb-3" style="font-size:.92rem;color:#475569;">' + esc(a.p1) + '</p>' +
+        '<div class="collapse" id="aboutMore">' +
+        '<p class="mb-3" style="font-size:.92rem;color:#475569;">' + esc(a.p2) + '</p>' +
+        '<p class="mb-2 fw-bold">OUR FOCUS</p>' +
+        '<p class="mb-3" style="font-size:.92rem;color:#475569;">' + esc(a.p3) + '</p>' +
+        '<p class="mb-3" style="font-size:.92rem;color:#475569;">' + esc(a.p4) + '</p>' +
+        '<p class="fw-bold mb-0" style="color:#0b1d3a;font-size:1rem;">' + esc(a.closing) + '</p></div>' +
+        '<button type="button" class="btn btn-outline-primary btn-sm rounded-pill mt-2" id="aboutBtn" data-bs-toggle="collapse" data-bs-target="#aboutMore" aria-expanded="false" aria-controls="aboutMore">Read more</button>';
+
+      /* CEO + contact */
+      var ce = s.ceo, ct = s.contact;
+      var soc = '';
+      if (safeUrl(ct.facebook)) soc += '<a class="btn btn-outline-primary btn-sm flex-fill" href="' + esc(safeUrl(ct.facebook)) + '" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>';
+      if (safeUrl(ct.tiktok)) soc += '<a class="btn btn-outline-dark btn-sm flex-fill" href="' + esc(safeUrl(ct.tiktok)) + '" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> TikTok</a>';
+      if (safeUrl(ct.youtube)) soc += '<a class="btn btn-outline-danger btn-sm flex-fill" href="' + esc(safeUrl(ct.youtube)) + '" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a>';
+      (ct.social || []).forEach(function (x) {
+        if (!x.name || !safeUrl(x.url)) return;
+        var n = x.name.toLowerCase().replace(/[^a-z]/g, ''), known = ['instagram', 'linkedin', 'snapchat', 'telegram', 'pinterest', 'whatsapp', 'threads', 'reddit', 'discord'];
+        var ic = known.indexOf(n) > -1 ? 'fab fa-' + n : (n === 'x' || n === 'twitter' ? 'fab fa-x-twitter' : 'fas fa-link');
+        soc += '<a class="btn btn-outline-secondary btn-sm flex-fill" href="' + esc(safeUrl(x.url)) + '" target="_blank" rel="noopener"><i class="' + ic + '"></i> ' + esc(x.name) + '</a>';
+      });
+      $s('contactRow').innerHTML =
+        '<div class="col-md-5"><div class="product-card p-4 text-center h-100 d-flex flex-column justify-content-center align-items-center">' +
+          '<h5>' + esc(ce.label) + '</h5>' +
+          '<div class="pic-slot mx-auto mb-3" style="width:150px;max-width:100%;">' +
+            (ce.photo ? '<img src="' + esc(ce.photo) + '" alt="' + esc(ce.name) + '" style="width:100%;height:auto;object-fit:contain;" onerror="this.parentElement.textContent=\'Photo\'" />' : 'Photo') + '</div>' +
+          '<h4>' + esc(ce.name) + '</h4><p class="text-muted">' + esc(ce.text) + '</p>' +
+          '<div>' + (p1 ? '<a class="btn btn-sm btn-outline-primary me-1" href="tel:+' + intl(p1) + '">Call</a>' : '') +
+            '<button type="button" class="btn btn-sm btn-wa me-1" data-order data-mode="enquiry" data-item="your services">WhatsApp</button>' +
+            (ct.email ? '<a class="btn btn-sm btn-outline-secondary" href="mailto:' + esc(ct.email) + '">Email</a>' : '') + '</div>' +
+        '</div></div>' +
+        '<div class="col-md-7"><div class="product-card p-4 h-100 d-flex flex-column justify-content-center">' +
+          '<h5 class="mb-3">Contact ' + esc(bn) + '</h5><div class="row g-3 mb-3">' +
+            (ct.email ? '<div class="col-sm-6"><div class="contact-tile"><span class="ct-ico"><i class="fa fa-envelope"></i></span><div><small>Email</small><a href="mailto:' + esc(ct.email) + '">' + esc(ct.email) + '</a></div></div></div>' : '') +
+            (ph.length ? '<div class="col-sm-6"><div class="contact-tile"><span class="ct-ico"><i class="fa fa-phone"></i></span><div><small>Call us</small>' +
+              ph.map(function (p) { return '<a href="tel:+' + intl(p) + '">' + esc(p) + '</a>'; }).join('<br/>') + '</div></div></div>' : '') +
+          '</div>' + (soc ? '<div class="d-flex gap-2 flex-wrap">' + soc + '</div>' : '') +
+        '</div></div>';
+
+      $s('teamRow').innerHTML = (s.team || []).map(function (m) {
+        return '<div class="col-6 col-md-4 col-lg-3"><div class="product-card p-3 text-center h-100">' +
+          (m.photo ? '<img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" style="max-width:100%;max-height:220px;height:auto;margin:0 auto 8px;display:block" />' : '') +
+          '<div class="small text-primary fw-bold">' + esc(m.role) + '</div><h6 class="mb-1">' + esc(m.name) + '</h6>' +
+          (m.text ? '<p class="small text-muted mb-0">' + esc(m.text) + '</p>' : '') + '</div></div>';
+      }).join('');
+
+      /* footer */
+      $s('footerBox').innerHTML = '<div class="row g-3"><div class="col-md-6"><h5>' + esc(bn) + '</h5><p class="small mb-0">' + esc(s.footer) + '</p></div>' +
+        '<div class="col-md-6 text-end"><button type="button" class="btn btn-wa rounded-pill" data-order data-mode="enquiry" data-item="your services"><i class="fab fa-whatsapp"></i> WhatsApp</button></div></div>';
+      $s('copyLine').textContent = '© ' + new Date().getFullYear() + ' ' + bn + '. All Rights Reserved.';
+      $s('creditLine').textContent = s.credit;
+
+      filterItems();
+    }
+    window.applySite = applySite;
+
+    /* called by the staff portal after every change */
+    window.absSiteChanged = function () {
+      try { localStorage.setItem(SITE_KEY, JSON.stringify(SITE)); } catch (x) { try { localStorage.removeItem(SITE_KEY); } catch (y) {} }
+      applySite();
+      if (window.absSitePush) window.absSitePush();
+    };
+    window.absSiteData = function () { return JSON.parse(JSON.stringify(SITE)); };
+    /* called when Firebase sends the saved website content */
+    window.absSiteRemote = function (v) {
+      if (v === null || v === undefined) return;
+      var nw = mergeSite(v);
+      if (sj(nw) === sj(SITE)) return;
+      SITE = nw;
+      try { localStorage.setItem(SITE_KEY, JSON.stringify(SITE)); } catch (x) {}
+      applySite();
+      if (window.absPortalRefresh) window.absPortalRefresh();
+    };
+
+    applySite();
+    renderWebProducts();
+  </script>
+
+  <script>
+    /* ===== customer site <-> staff area ===== */
+    function showStaff() {
+      window.__wantStaff = true; if (window.absStartStaffSync) window.absStartStaffSync();
+      document.getElementById('siteView').hidden = true;
+      document.getElementById('staffView').hidden = false; document.body.classList.add('staff-on');
+      try { var v = document.getElementById('bannerVideo'); if (v) v.pause(); } catch (x) {}
+      window.scrollTo(0, 0);
+    }
+    function showSite() {
+      if (window.renderWebProducts) window.renderWebProducts();
+      document.getElementById('staffView').hidden = true; document.body.classList.remove('staff-on');
+      document.getElementById('siteView').hidden = false;
+      try { var v = document.getElementById('bannerVideo'); if (v && v.style.display !== 'none') v.play().catch(function () {}); } catch (x) {}
+      if (location.hash === '#login') history.replaceState(null, '', location.pathname + location.search);
+      window.scrollTo(0, 0);
+    }
+    (function () {
+      var panel = document.getElementById('menuPanel'), back = document.getElementById('menuBackdrop');
+      function openMenu() { panel.classList.add('open'); back.classList.add('open'); }
+      function closeMenu() { panel.classList.remove('open'); back.classList.remove('open'); }
+      document.getElementById('menuBtn').addEventListener('click', openMenu);
+      document.getElementById('menuClose').addEventListener('click', closeMenu);
+      back.addEventListener('click', closeMenu);
+      panel.addEventListener('click', function (ev) { if (ev.target.closest('a')) closeMenu(); });
+      document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') closeMenu(); });
+      document.addEventListener('click', function (ev) {
+        var a = ev.target.closest('a[href="#login"]'); if (!a) return;
+        ev.preventDefault(); closeMenu(); showStaff();
+      });
+      /* always open on the customer page */
+      if (location.hash === '#login') history.replaceState(null, '', location.pathname + location.search);
+    })();
+  </script>
+  <script>
+(function () {
+
+    /* ============ DEMO DATA (saved only in this browser) ============ */
+    var KEY = 'abs_demo_v3', LOW = 5;   /* index.html reads the same key */
+    var COMPANY = 'AB SIGNS MEDIA SERVICES UGANDA', SLOGAN = 'Quality for Lifetime Memories';
+    var ROLE = { director: 'Director', manager: 'Manager', attendant: 'Attendant', system: 'System' };
+    var CATS = { printing: 'Printing', stationery: 'Stationery', frames: 'Frames & Boards', electronics: 'Electronics', branding: 'Branding', others: 'Others' };
+    function $(id) { return document.getElementById(id); }
+
+    /* ============ PASSWORD SECURITY (passwords are never stored in plain text) ============ */
+    function sha256(msg) {
+      var K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+      var H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+      function R(n, x) { return (x >>> n) | (x << (32 - n)); }
+      var b = unescape(encodeURIComponent(String(msg))), l = b.length, w = [], i, j;
+      for (i = 0; i < l; i++) w[i >> 2] |= b.charCodeAt(i) << (24 - (i % 4) * 8);
+      w[l >> 2] |= 0x80 << (24 - (l % 4) * 8);
+      w[(((l + 8) >> 6) << 4) + 15] = l * 8;
+      for (i = 0; i < w.length; i += 16) {
+        var a = H.slice(), W = [];
+        for (j = 0; j < 64; j++) {
+          if (j < 16) W[j] = w[i + j] | 0;
+          else {
+            var s0 = R(7, W[j - 15]) ^ R(18, W[j - 15]) ^ (W[j - 15] >>> 3), s1 = R(17, W[j - 2]) ^ R(19, W[j - 2]) ^ (W[j - 2] >>> 10);
+            W[j] = (W[j - 16] + s0 + W[j - 7] + s1) | 0;
+          }
+          var S1 = R(6, a[4]) ^ R(11, a[4]) ^ R(25, a[4]), ch = (a[4] & a[5]) ^ (~a[4] & a[6]);
+          var t1 = (a[7] + S1 + ch + K[j] + W[j]) | 0;
+          var S0 = R(2, a[0]) ^ R(13, a[0]) ^ R(22, a[0]), mj = (a[0] & a[1]) ^ (a[0] & a[2]) ^ (a[1] & a[2]);
+          var t2 = (S0 + mj) | 0;
+          a = [(t1 + t2) | 0, a[0], a[1], a[2], (a[3] + t1) | 0, a[4], a[5], a[6]];
+        }
+        for (j = 0; j < 8; j++) H[j] = (H[j] + a[j]) | 0;
+      }
+      return H.map(function (x) { return ('00000000' + (x >>> 0).toString(16)).slice(-8); }).join('');
+    }
+    function newSalt() {
+      try { var a = new Uint8Array(12); crypto.getRandomValues(a); return Array.prototype.map.call(a, function (x) { return ('0' + x.toString(16)).slice(-2); }).join(''); }
+      catch (x) { return (Math.random().toString(16).slice(2) + Date.now().toString(16)).slice(0, 24); }
+    }
+    function hashPw(user, pw) { var h = user.salt + ':' + user.u + ':' + pw; for (var i = 0; i < 2000; i++) h = sha256(h + pw); return h; }
+    function setPw(user, pw) { user.salt = newSalt(); user.ph = hashPw(user, pw); delete user.pw; }
+    function secureUsers(st) {   /* turns any old plain-text password into a salted hash */
+      var changed = false;
+      (st.users || []).forEach(function (u) {
+        if (u.pw != null && u.pw !== '') {
+          var plain = String(u.pw); setPw(u, plain);
+          if (plain === '1234') u.chg = true;          /* default password: ask for a new one at next login */
+          changed = true;
+        }
+      });
+      return changed;
+    }
+    function e(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+    function now() { return new Date().toLocaleString('en-UG', { timeZone: 'Africa/Kampala' }); }
+    function brandHTML() { return '<span class="ab">AB</span> SIGNS <span class="md">MEDIA</span> SERVICES UGANDA'; }
+    function money(n) { return 'UGX ' + Number(n).toLocaleString('en-US'); }
+    function condBadge(p) { return p.cond === 'used' ? '<span class="badge bg-warning text-dark">Used</span>' : '<span class="badge bg-success">New</span>'; }
+
+    function seed() {
+      var br = [
+        { id: 'b1', name: 'Bududa Main', phone: '0788 002 309' },
+        { id: 'b2', name: 'Konokoyi', phone: '0769 801 082' },
+        { id: 'b3', name: 'Lukhonje', phone: '0761 237 885' },
+        { id: 'b4', name: 'Kamu Market', phone: '0791 266 453' }
+      ];
+      var base = [['Banners & Posters', 'printing'], ['Business Cards', 'printing'], ['Stickers & Labels', 'printing'],
+        ['Photocopy Paper / Rim', 'stationery'], ['A4 Bond Paper', 'stationery'], ['Epson Ink', 'stationery'], ['Toner', 'stationery'],
+        ['Notebooks', 'stationery'], ['Markers', 'stationery'], ['Pens', 'stationery'], ['Sellotape & Packing Tape', 'stationery'],
+        ['Frames', 'frames'], ['Boards', 'frames'], ['Photo Boards', 'frames'],
+        ['USB Cables', 'electronics'], ['HDMI Cables', 'electronics'], ['Fridge Guards', 'electronics']];
+      /* web:false → these already exist on the website's own list, so they are not published twice */
+      var pr = base.map(function (n, i) { return { id: 'p' + (i + 1), name: n[0], cat: n[1], cond: 'new', desc: '', price: 0, img: '', web: false }; });
+      var st = {};
+      br.forEach(function (b, bi) {
+        st[b.id] = {};
+        pr.forEach(function (p, pi) { st[b.id][p.id] = (pi * 7 + bi * 11) % 30; });
+      });
+      var users = [{ u: 'director', pw: '1234', name: 'Wakoba Abraham', role: 'director', branch: '', status: 'active' }];
+      var short = { b1: 'bududa', b2: 'konokoyi', b3: 'lukhonje', b4: 'kamu' };
+      br.forEach(function (b) {
+        users.push({ u: 'attendant.' + short[b.id], pw: '1234', name: 'Attendant ' + b.name, role: 'attendant', branch: b.id, status: 'active' });
+      });
+      users.push({ u: 'director2', pw: '1234', name: 'Director 2', role: 'director', branch: '', status: 'active' });
+      users.push({ u: 'sarah', pw: '1234', name: 'Sarah Namono', role: 'attendant', branch: 'b2', status: 'pending' });
+      return { branches: br, products: pr, stock: st, users: users, log: [], seq: 0, seen: {} };
+    }
+
+    function ensureStructure(st) {   /* 2 Directors at the top; every branch always has a Manager and an Attendant */
+      var ch = false; st.users = st.users || [];
+      var n0 = st.users.length; st.users = st.users.filter(function (u) { return !(u.role === 'manager' && /^manager\./.test(u.u)); }); if (st.users.length !== n0) ch = true;   /* branches use Attendants only for now */
+      if (st.users.filter(function (u) { return u.role === 'director'; }).length < 2 && !st.users.some(function (u) { return u.u === 'director2'; })) {
+        st.users.push({ u: 'director2', pw: '1234', name: 'Director 2', role: 'director', branch: '', status: 'active' }); ch = true;
+      }
+      (st.branches || []).forEach(function (b) {
+        ['attendant'].forEach(function (role) {
+          if (st.users.some(function (u) { return u.branch === b.id && u.role === role; })) return;
+          var un = role + '.' + b.id; if (st.users.some(function (u) { return u.u === un; })) return;
+          st.users.push({ u: un, pw: '1234', name: (role === 'manager' ? 'Manager ' : 'Attendant ') + b.name, role: role, branch: b.id, status: 'active' }); ch = true;
+        });
+      });
+      return ch;
+    }
+    function lastInBranch(u) {   /* true if u is the only Manager / Attendant of their branch */
+      if (u.role !== 'manager' && u.role !== 'attendant') return false;
+      return S.users.filter(function (x) { return x.branch === u.branch && x.role === u.role && x.status !== 'pending'; }).length <= 1;
+    }
+    function load() {
+      try { var s = JSON.parse(localStorage.getItem(KEY)); if (s && s.branches) { s.seen = s.seen || {}; s.seq = s.seq || 0; var c1 = ensureStructure(s), c2 = secureUsers(s); if (c1 || c2) { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (y) {} } return s; } } catch (x) {}
+      var sd = seed(); secureUsers(sd); return sd;
+    }
+    function save() {
+      try { localStorage.setItem(KEY, JSON.stringify(S)); try { localStorage.setItem('abs_public_v1', JSON.stringify(window.absPublicData())); } catch (x2) {} if (window.renderWebProducts) window.renderWebProducts(); if (window.absFirebasePush) window.absFirebasePush(); return true; }
+      catch (x) { toast('Storage is full — remove some product pictures.'); return false; }
+    }
+
+    var S = load(), me = null, tab = null, vb = null, mt = '', mp = '', ep = '';
+    var screen = 'login', newImg = '', photoFor = '', lastSlip = null;
+    try {
+      var su = sessionStorage.getItem('abs_user');
+      if (su) me = S.users.find(function (u) { return u.u === su && u.status !== 'pending'; }) || null;
+    } catch (x) {}
+
+    function isDir() { return me.role === 'director'; }   /* the two Directors have full control of every branch */
+    function isMgr() { return me.role === 'manager'; }   /* each Manager runs their own branch and its Attendant(s) */
+    function canManage() { return isDir() || isMgr(); }
+    function curBranch() { return isDir() ? (vb && vb !== 'ALL' ? vb : S.branches[0].id) : me.branch; }
+    function bName(id) { var b = S.branches.find(function (x) { return x.id === id; }); return b ? b.name : '—'; }
+    function stockOf(b, p) { return (S.stock[b] && S.stock[b][p]) || 0; }
+    function prodOf(id) { return S.products.find(function (p) { return p.id === id; }); }
+    function addLog(branch, text, extra) {
+      var l = { id: ++S.seq, t: now(), user: me.name, u: me.u, role: me.role, branch: branch, text: text };
+      if (extra) for (var k in extra) l[k] = extra[k];
+      S.log.unshift(l);
+      if (S.log.length > 500) S.log.length = 500;
+      return l;
+    }
+    function addSys(branch, text) {
+      S.log.unshift({ id: ++S.seq, t: now(), user: 'System', u: '__system', role: 'system', branch: branch, text: text, kind: 'low' });
+    }
+    function toast(msg) {
+      var t = $('toast'); t.textContent = msg; t.style.display = 'block';
+      clearTimeout(toast._t); toast._t = setTimeout(function () { t.style.display = 'none'; }, 3200);
+    }
+    function canApprove(u) { return isDir() || (isMgr() && u.branch === me.branch && u.role === 'attendant'); }
+    function pendingList() { return S.users.filter(function (u) { return u.status === 'pending' && canApprove(u); }); }
+    function relevant(l) { return l.u !== me.u && (isDir() || (isMgr() && l.branch === me.branch)); }
+    function unreadCount() {
+      if (!canManage()) return 0;
+      var seen = S.seen[me.u] || 0;
+      return S.log.filter(function (l) { return l.id > seen && relevant(l); }).length;
+    }
+    function thumb(p, big) {
+      var c = 'pthumb' + (big ? ' big' : '');
+      return p.img ? '<img src="' + p.img + '" class="' + c + '" alt="' + e(p.name) + '" />'
+                   : '<div class="' + c + ' ph">' + e(p.name.charAt(0).toUpperCase()) + '</div>';
+    }
+    function catOptions(sel) {
+      return Object.keys(CATS).map(function (k) { return '<option value="' + k + '"' + (k === sel ? ' selected' : '') + '>' + CATS[k] + '</option>'; }).join('');
+    }
+
+    /* ============ ONLINE STATUS BADGE ============ */
+    var SYNC = window.__sync || { st: 'wait', msg: 'Connecting…' };
+    function syncHTML() {
+      var ic = { ok: 'fa-check-circle', err: 'fa-exclamation-circle', wait: 'fa-sync' }[SYNC.st] || 'fa-sync';
+      return '<span id="syncBadge" class="sync ' + SYNC.st + '" title="' + e(SYNC.st === 'err' ? 'Check your Firebase Realtime Database rules' : '') + '"><i class="fas ' + ic + '"></i> ' + e(SYNC.msg) + '</span>';
+    }
+    window.absSetSync = function (st, msg) { SYNC = { st: st, msg: msg }; var b = $('syncBadge'); if (b) b.outerHTML = syncHTML(); };
+
+    /* ============ LOGIN / SIGN-UP SCREENS ============ */
+    function authHTML() {
+      var logo = '<div class="auth-logo"><i class="fas ' + (screen === 'signup' ? 'fa-user-plus' : 'fa-user-lock') + '"></i></div>';
+      var head = logo + '<div class="text-center mb-3"><div class="brand">' + brandHTML() + '</div><div class="slogan">' + SLOGAN + '</div>' +
+        '<div class="fw-bold mt-2" style="color:#1e40af">' + (screen === 'signup' ? 'Create your staff account' : 'Welcome back — Staff Login') + '</div></div>';
+      var foot = '<div class="text-center mt-3 small"><a href="#" data-act="web">&larr; Back to website</a></div>';
+      function fld(label, icon, input) { return '<label class="form-label small fw-bold">' + label + '</label><div class="input-group mb-3"><span class="input-group-text"><i class="fas ' + icon + '"></i></span>' + input + '</div>'; }
+      function pw(label, id, ac) { return '<label class="form-label small fw-bold">' + label + '</label><div class="input-group mb-3"><span class="input-group-text"><i class="fas fa-lock"></i></span>' +
+        '<input id="' + id + '" type="password" class="form-control has-eye" autocomplete="' + ac + '" /><button type="button" class="eye-btn" data-act="eye" data-for="' + id + '" aria-label="Show password"><i class="fas fa-eye"></i></button></div>'; }
+
+      if (screen === 'done') {
+        return '<div class="card auth-card p-4 mx-auto">' + head +
+          '<div class="alert alert-success small">Your account has been created. Please wait for your Manager or Director to <b>approve</b> it, then log in.</div>' +
+          '<button class="btn btn-primary w-100" data-act="gologin">Go to login</button>' + foot + '</div>';
+      }
+      if (screen === 'signup') {
+        return '<div class="card auth-card p-4 mx-auto">' + head +
+          fld('Full name', 'fa-id-badge', '<input id="gName" class="form-control" autocomplete="name" />') +
+          fld('Username', 'fa-user', '<input id="gUser" class="form-control" autocapitalize="none" autocomplete="username" placeholder="letters or numbers, no spaces" />') +
+          pw('Password', 'gPass', 'new-password') +
+          fld('Which branch?', 'fa-store', '<select id="gBranch" class="form-select" style="border-radius:0 12px 12px 0">' +
+            S.branches.map(function (b) { return '<option value="' + b.id + '">' + e(b.name) + '</option>'; }).join('') + '</select>') +
+          fld('I am a...', 'fa-briefcase', '<select id="gRole" class="form-select" style="border-radius:0 12px 12px 0"><option value="attendant">Attendant</option></select>') +
+          '<div id="gErr" class="text-danger small mb-2" style="display:none"></div>' +
+          '<button class="btn btn-primary w-100 mb-2" data-act="signup">Create account</button>' +
+          '<button class="btn btn-link w-100 btn-sm" data-act="gologin">Already have an account? Log in</button>' + foot + '</div>';
+      }
+      return '<div class="card auth-card p-4 mx-auto">' + head +
+        fld('Username', 'fa-user', '<input id="lUser" class="form-control" autocapitalize="none" autocomplete="username" placeholder="Enter your username" />') +
+        pw('Password', 'lPass', 'current-password') +
+        '<div id="lErr" class="text-danger small mb-2" style="display:none"></div>' +
+        '<button class="btn btn-primary w-100 mb-2" data-act="login"><i class="fas fa-sign-in-alt me-1"></i> Log in</button>' +
+        '<button class="btn btn-outline-primary w-100 btn-sm" data-act="gosignup">New staff? Create an account</button>' + foot + '</div>';
+    }
+
+    /* ============ MAIN SCREENS ============ */
+    function tabList() {
+      if (isDir()) return ['overview', 'approvals', 'stock', 'activity', 'products', 'website', 'staff', 'branches'];
+      if (isMgr()) return ['approvals', 'stock', 'activity', 'products', 'staff'];
+      return ['stock'];
+    }
+    var TAB_NAME = { overview: 'Overview', approvals: 'Approvals', stock: 'Stock', activity: 'Activity', products: 'Products', website: 'Website', staff: 'Staff', branches: 'Stock branches' };
+    var TAB_ICON = { overview: 'fa-chart-pie', approvals: 'fa-user-check', stock: 'fa-boxes', activity: 'fa-bell', products: 'fa-tags', website: 'fa-globe', staff: 'fa-users', branches: 'fa-store' };
+
+    function render() {
+      if (!me) { $('app').innerHTML = authHTML(); return; }
+      var tabs = tabList();
+      if (!tab || tabs.indexOf(tab) < 0) tab = tabs[0];
+      if (isDir() && !vb) vb = S.branches[0].id;
+      if (isDir() && tab !== 'activity' && vb === 'ALL') vb = S.branches[0].id;
+      var pend = canManage() ? pendingList().length : 0;
+      var unread = unreadCount();
+      var viewing = tab === 'activity' && (!isDir() || vb === 'ALL');   /* alerts are only 'read' when they are actually on screen */
+      var h = '<div class="pt-head"><div class="d-flex justify-content-between align-items-start flex-wrap gap-2 position-relative" style="z-index:1">' +
+        '<div><div class="brand">' + brandHTML() + '</div>' +
+        '<div class="who mt-1">' + e(me.name) + ' <span class="badge bg-warning text-dark">@' + e(me.u) + '</span> ' +
+        (me.branch ? '<span class="badge bg-light text-dark">' + e(bName(me.branch)) + '</span>' : '<span class="badge bg-light text-dark">All branches</span>') + ' ' + syncHTML() + '</div></div>' +
+        '<div class="d-flex gap-2 flex-wrap">' +
+        (unread && !viewing ? '<button class="btn btn-sm btn-warning" data-act="tab" data-t="activity">&#128276; ' + unread + '</button>' : '') +
+        '<a class="btn btn-sm btn-light" href="#" data-act="web"><i class="fas fa-globe"></i> Website</a>' +
+        '<button class="btn btn-sm btn-outline-light" data-act="rnuser" data-u="' + e(me.u) + '"><i class="fas fa-user-cog"></i> Profile</button>' +
+        '<button class="btn btn-sm btn-danger" data-act="logout">Log out</button></div></div></div>';
+      if (tabs.length > 1) {
+        h += '<div class="pt-tabs">' + tabs.map(function (t) {
+          var b = '';
+          if (t === 'approvals' && pend) b = ' <span class="badge bg-danger">' + pend + '</span>';
+          if (t === 'activity' && unread && !viewing) b = ' <span class="badge bg-danger">' + unread + '</span>';
+          return '<button class="pt-tab' + (t === tab ? ' active' : '') + '" data-act="tab" data-t="' + t + '"><i class="fas ' + TAB_ICON[t] + '"></i>' + TAB_NAME[t] + b + '</button>';
+        }).join('') + '</div>';
+      }
+      if (pend && tab !== 'approvals') {
+        h += '<div class="alert alert-warning py-2 d-flex justify-content-between align-items-center"><span><b>' + pend + '</b> new staff ' + (pend === 1 ? 'account is' : 'accounts are') + ' waiting for approval.</span>' +
+          '<button class="btn btn-sm btn-warning" data-act="tab" data-t="approvals">Review</button></div>';
+      }
+      h += content();
+      $('app').innerHTML = h;
+      if (tab === 'stock') stockList();
+      if (viewing && canManage() && S.log.length) { S.seen[me.u] = S.log[0].id; save(); }
+    }
+
+    function branchSelect(includeAll) {
+      if (!isDir()) return '';
+      return '<select id="bsel" class="form-select form-select-sm w-auto mb-2">' +
+        (includeAll ? '<option value="ALL"' + (vb === 'ALL' ? ' selected' : '') + '>All branches</option>' : '') +
+        S.branches.map(function (b) { return '<option value="' + b.id + '"' + (b.id === vb ? ' selected' : '') + '>' + e(b.name) + '</option>'; }).join('') + '</select>';
+    }
+    function slipBanner() {
+      if (!lastSlip) return '';
+      return '<div class="alert alert-success py-2 d-flex justify-content-between align-items-center flex-wrap gap-2"><span>' + e(lastSlip.msg) + '</span><span>' +
+        '<button class="btn btn-sm btn-success" data-act="slip" data-id="' + lastSlip.id + '">Print supply slip</button> ' +
+        '<button class="btn btn-sm btn-outline-secondary" data-act="dismiss">&times;</button></span></div>';
+    }
+
+    function content() {
+      if (tab === 'overview') return overviewHTML();
+      if (tab === 'approvals') return approvalsHTML();
+      if (tab === 'stock') return stockHTML();
+      if (tab === 'activity') return activityHTML();
+      if (tab === 'products') return productsHTML();
+      if (tab === 'website') return websiteHTML();
+      if (tab === 'staff') return staffHTML();
+      if (tab === 'branches') return branchesHTML();
+      return '';
+    }
+
+    /* ---- Overview (director) ---- */
+    function overviewHTML() {
+      var units = 0, low = 0, out = 0;
+      S.branches.forEach(function (b) { S.products.forEach(function (p) { var n = stockOf(b.id, p.id); units += n; if (n === 0) out++; else if (n <= LOW) low++; }); });
+      var staffN = S.users.filter(function (u) { return u.status !== 'pending'; }).length, pend = pendingList().length;
+      function tile(ic, bg, col, val, lab) {
+        return '<div class="tile"><div class="ti" style="background:' + bg + ';color:' + col + '"><i class="fas ' + ic + '"></i></div><div><div class="tv">' + val + '</div><div class="tl">' + lab + '</div></div></div>';
+      }
+      var tiles = '<div class="tiles">' + tile('fa-cubes', '#dbeafe', '#1e40af', units, 'Units in stock') + tile('fa-exclamation-triangle', '#fef3c7', '#b45309', low, 'Low stock') +
+        tile('fa-ban', '#fee2e2', '#b91c1c', out, 'Out of stock') + tile('fa-tags', '#dcfce7', '#15803d', S.products.length, 'Products') +
+        tile('fa-users', '#ede9fe', '#6d28d9', staffN, 'Staff') + tile('fa-user-clock', '#ffedd5', '#c2410c', pend, 'Waiting approval') + '</div>';
+      var quick = '<div class="d-flex gap-2 flex-wrap mb-3"><button class="btn btn-sm btn-primary rounded-pill" data-act="tab" data-t="website"><i class="fas fa-pen"></i> Edit website</button>' +
+        '<button class="btn btn-sm btn-outline-primary rounded-pill" data-act="tab" data-t="products"><i class="fas fa-plus"></i> Add product</button>' +
+        '<button class="btn btn-sm btn-outline-primary rounded-pill" data-act="tab" data-t="activity"><i class="fas fa-bell"></i> Activity</button></div>';
+      return tiles + quick + '<div class="row g-2">' + S.branches.map(function (b) {
+        var u2 = 0, lw = 0, ot = 0;
+        S.products.forEach(function (p) { var n = stockOf(b.id, p.id); u2 += n; if (n === 0) ot++; else if (n <= LOW) lw++; });
+        var act = S.users.filter(function (u) { return u.branch === b.id && u.status !== 'pending'; });
+        var mg = act.find(function (u) { return u.role === 'attendant'; });
+        return '<div class="col-12 col-md-6"><div class="card p-3 h-100">' +
+          '<div class="d-flex justify-content-between"><h6 class="mb-0">' + e(b.name) + '</h6><span class="small text-muted">' + e(b.phone) + '</span></div>' +
+          '<div class="small text-muted mb-2">Attendant: ' + (mg ? e(mg.name) : 'not assigned') + ' &middot; ' + act.length + ' staff</div>' +
+          '<div class="row text-center mb-2"><div class="col"><div class="stat">' + u2 + '</div><div class="small">units</div></div>' +
+          '<div class="col"><div class="stat text-warning">' + lw + '</div><div class="small">low</div></div>' +
+          '<div class="col"><div class="stat text-danger">' + ot + '</div><div class="small">out</div></div></div>' +
+          '<button class="btn btn-sm btn-outline-primary" data-act="open" data-b="' + b.id + '">Open stock</button></div></div>';
+      }).join('') + '</div>';
+    }
+
+    /* ---- Approvals ---- */
+    function approvalsHTML() {
+      var list = pendingList();
+      var note = '<div class="small text-muted mb-2">' + (isDir()
+        ? 'New staff create their own account. You can approve anyone, including managers.'
+        : 'New staff for ' + e(bName(me.branch)) + ' appear here. Only the Director can approve a new manager.') + '</div>';
+      if (!list.length) return note + '<div class="text-muted">Nobody is waiting for approval.</div>';
+      return note + list.map(function (u) {
+        return '<div class="item"><div class="d-flex justify-content-between align-items-start flex-wrap gap-2">' +
+          '<div><b>' + e(u.name) + '</b><div class="small text-muted">@' + e(u.u) + '</div>' +
+          '<div class="mt-1"><span class="badge bg-primary">' + ROLE[u.role] + '</span> <span class="badge bg-secondary">' + e(bName(u.branch)) + '</span></div></div>' +
+          '<div class="btn-group btn-group-sm"><button class="btn btn-success" data-act="approve" data-u="' + e(u.u) + '">Approve</button>' +
+          '<button class="btn btn-outline-danger" data-act="reject" data-u="' + e(u.u) + '">Reject</button></div></div></div>';
+      }).join('');
+    }
+
+    /* ---- Stock ---- */
+    function stockHTML() {
+      var b = curBranch();
+      return slipBanner() + '<div class="d-flex flex-wrap gap-2 align-items-start">' + branchSelect(false) + '</div>' +
+        '<div class="small text-muted mb-2">Stock at <b>' + e(bName(b)) + '</b></div>' +
+        '<input id="q" class="form-control mb-2" placeholder="Search product..." /><div id="stockList"></div>';
+    }
+    function stockList() {
+      var b = curBranch(), q = ($('q') ? $('q').value : '').toLowerCase();
+      var list = S.products.filter(function (p) { return p.name.toLowerCase().indexOf(q) > -1; });
+      $('stockList').innerHTML = list.length ? list.map(function (p) {
+        var n = stockOf(b, p.id);
+        var badge = n === 0 ? '<span class="badge bg-danger">Out of stock</span>' :
+          n <= LOW ? '<span class="badge bg-warning text-dark">Low: ' + n + '</span>' : '<span class="badge bg-success">' + n + ' in stock</span>';
+        return '<div class="item d-flex justify-content-between align-items-center flex-wrap gap-2">' +
+          '<div class="d-flex align-items-center gap-2">' + thumb(p) + '<div><div class="fw-bold">' + e(p.name) + (p.cond === 'used' ? ' <span class="badge bg-warning text-dark">Used</span>' : '') + '</div>' + badge + '</div></div>' +
+          '<div class="btn-group btn-group-sm">' +
+          '<button class="btn btn-success" data-act="stk" data-m="add" data-p="' + p.id + '">+ Add</button>' +
+          '<button class="btn btn-outline-danger" data-act="stk" data-m="sold" data-p="' + p.id + '">Sold</button>' +
+          (canManage() ? '<button class="btn btn-outline-secondary" data-act="stk" data-m="count" data-p="' + p.id + '">Count</button>' : '') +
+          '</div></div>';
+      }).join('') : '<div class="text-muted">No product found.</div>';
+    }
+
+    /* ---- Activity (with alerts) ---- */
+    function activityHTML() {
+      var seen = S.seen[me.u] || 0;
+      var rows = S.log.filter(function (l) {
+        if (isDir()) return vb === 'ALL' || l.branch === vb;
+        return l.branch === me.branch;
+      }).slice(0, 100);
+      var allow = (canManage() && window.Notification && Notification.permission === 'default')
+        ? '<button class="btn btn-sm btn-outline-primary mb-2 ms-2" data-act="allownotif">&#128276; Allow pop-up alerts</button>' : '';
+      return '<div class="d-flex flex-wrap align-items-start">' + branchSelect(true) + allow + '</div>' +
+        (rows.length ? rows.map(function (l) {
+          var isNew = canManage() && l.id > seen && relevant(l);
+          var slip = (l.kind === 'add' || l.kind === 'product') ? ' <button class="btn btn-sm btn-outline-secondary py-0" data-act="slip" data-id="' + l.id + '">Print slip</button>' : '';
+          var low = l.kind === 'low' ? ' <span class="badge bg-danger">LOW STOCK</span>' : '';
+          return '<div class="item' + (isNew ? ' unread' : '') + '"><div class="small text-muted">' + e(l.t) + ' &middot; ' + e(bName(l.branch)) + (isNew ? ' <span class="badge bg-warning text-dark">NEW</span>' : '') + '</div>' +
+            '<div><b>' + e(l.user) + '</b> ' + (l.role !== 'system' ? '<span class="badge bg-light text-dark border">' + ROLE[l.role] + '</span>' : '') + low + '</div>' +
+            '<div>' + e(l.text) + slip + '</div></div>';
+        }).join('') : '<div class="text-muted">No activity yet. Add or sell some stock and it will appear here.</div>');
+    }
+
+    /* ---- Products ---- */
+    function productsHTML() {
+      var prev = newImg ? '<img id="newPrev" src="' + newImg + '" class="pthumb big" alt="" />' : '<div id="newPrev" class="pthumb big ph">+</div>';
+      var branchField = isDir()
+        ? '<select id="pBranch" class="form-select mb-2">' + S.branches.map(function (b) { return '<option value="' + b.id + '"' + (b.id === curBranch() ? ' selected' : '') + '>' + e(b.name) + '</option>'; }).join('') + '</select>'
+        : '<div class="form-control mb-2 bg-light">' + e(bName(me.branch)) + '</div>';
+      return slipBanner() + '<div class="card p-3 mb-3"><h6>Add a product</h6>' +
+        '<div class="d-flex gap-3 align-items-center mb-2">' + prev +
+        '<div class="d-grid gap-1 flex-fill">' +
+        '<button class="btn btn-outline-primary btn-sm" data-act="pick" data-p="new" data-src="cam">&#128247; Take photo</button>' +
+        '<button class="btn btn-outline-primary btn-sm" data-act="pick" data-p="new" data-src="file">&#128444; Upload picture</button></div></div>' +
+        '<label class="form-label small fw-bold">Product name</label><input id="pName" class="form-control mb-2" placeholder="e.g. HP Laptop 15" />' +
+        '<div class="row g-2"><div class="col-6"><label class="form-label small fw-bold">Category</label><select id="pCat" class="form-select mb-2">' + catOptions('stationery') + '</select></div>' +
+        '<div class="col-6"><label class="form-label small fw-bold">Condition</label><select id="pCond" class="form-select mb-2"><option value="new">New</option><option value="used">Used</option></select></div></div>' +
+        '<div class="row g-2"><div class="col-6"><label class="form-label small fw-bold">Quantity</label><input id="pQty" type="number" min="0" inputmode="numeric" class="form-control mb-2" /></div>' +
+        '<div class="col-6"><label class="form-label small fw-bold">Price UGX (optional)</label><input id="pPrice" type="number" min="0" inputmode="numeric" class="form-control mb-2" /></div></div>' +
+        '<label class="form-label small fw-bold">Quantity goes to branch</label>' + branchField +
+        '<label class="form-label small fw-bold">Description</label><textarea id="pDesc" rows="2" class="form-control mb-2" placeholder="e.g. Brand new, 1 year warranty, color black"></textarea>' +
+        '<label class="form-label small fw-bold">Supplier (optional)</label><input id="pSupplier" class="form-control mb-2" placeholder="Who supplied it?" />' +
+        '<div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="pWeb" checked /><label class="form-check-label small" for="pWeb">Show on the customer website</label></div>' +
+        '<div id="pErr" class="text-danger small mb-2" style="display:none"></div>' +
+        '<button class="btn btn-primary w-100" data-act="addprod">Add product</button></div>' +
+        S.products.map(function (p) {
+          var total = 0; S.branches.forEach(function (b) { total += stockOf(b.id, p.id); });
+          return '<div class="item"><div class="d-flex justify-content-between align-items-center flex-wrap gap-2">' +
+            '<div class="d-flex align-items-center gap-2">' + thumb(p) + '<div><div class="fw-bold">' + e(p.name) + '</div>' +
+            '<div>' + condBadge(p) + ' <span class="badge bg-light text-dark border">' + e(CATS[p.cat] || '') + '</span>' +
+            (p.web ? ' <span class="badge bg-info text-dark">On website</span>' : '') +
+            ' <span class="small text-muted">' + (p.price ? money(p.price) : 'Ask price') + ' &middot; ' + total + ' in stock</span></div>' +
+            (p.desc ? '<div class="desc">' + e(p.desc) + '</div>' : '') + '</div></div>' +
+            '<div class="btn-group btn-group-sm">' +
+            '<button class="btn btn-outline-secondary" data-act="pick" data-p="' + p.id + '" data-src="cam" title="Take photo">&#128247;</button>' +
+            '<button class="btn btn-outline-secondary" data-act="pick" data-p="' + p.id + '" data-src="file" title="Upload picture">&#128444;</button>' +
+            '<button class="btn btn-outline-primary" data-act="editprod" data-p="' + p.id + '">Edit</button>' +
+            (isDir() ? '<button class="btn btn-outline-danger" data-act="delprod" data-p="' + p.id + '">Remove</button>' : '') +
+            '</div></div></div>';
+        }).join('');
+    }
+
+    /* ---- Staff (active accounts) ---- */
+    function staffHTML() {
+      var list = S.users.filter(function (u) { return u.status !== 'pending' && (isDir() || u.branch === me.branch); });
+      return '<div class="small text-muted mb-2">Staff create their own accounts. Approve them in the <b>Approvals</b> tab.' + (isDir() ? ' Directors have full control. Each branch has its own Attendant (managers can be added later).' : '') + '</div>' +
+        list.map(function (u) {
+          var canDel = u.role !== 'director' && u.u !== me.u && !lastInBranch(u) && (isDir() || (isMgr() && u.role === 'attendant' && u.branch === me.branch));
+          return '<div class="item d-flex justify-content-between align-items-center"><div><b>' + e(u.name) + '</b><div class="small text-muted">@' + e(u.u) + ' &middot; ' + ROLE[u.role] + (u.branch ? ' &middot; ' + e(bName(u.branch)) : '') + '</div></div>' +
+            '<div class="d-flex gap-1">' +
+            (isDir() ? '<button class="btn btn-sm btn-outline-primary" data-act="rnuser" data-u="' + e(u.u) + '"><i class="fas fa-user-edit"></i> Edit</button>' : '') +
+            (me.role === 'director' && u.u !== me.u ? '<button class="btn btn-sm btn-outline-secondary" data-act="rspw" data-u="' + e(u.u) + '">Reset password</button>' : '') +
+            (canDel ? '<button class="btn btn-sm btn-outline-danger" data-act="delstaff" data-u="' + e(u.u) + '">Remove</button>' : '') + '</div></div>';
+        }).join('');
+    }
+
+    /* ---- Branches (director) ---- */
+    function branchesHTML() {
+      return '<div class="card p-3 mb-3"><h6>Add a branch</h6>' +
+        '<input id="brName" class="form-control mb-2" placeholder="Branch name" />' +
+        '<input id="brPhone" class="form-control mb-2" placeholder="Phone number" />' +
+        '<div id="brErr" class="text-danger small mb-2" style="display:none"></div>' +
+        '<button class="btn btn-primary" data-act="addbranch">Add branch</button>' +
+        '<div class="small text-muted mt-2">A new branch starts with zero stock. Staff can then pick it when they create their account.</div></div>' +
+        S.branches.map(function (b) {
+          var mg = S.users.find(function (u) { return u.branch === b.id && u.role === 'attendant' && u.status !== 'pending'; });
+          return '<div class="item"><b>' + e(b.name) + '</b><div class="small text-muted">' + e(b.phone) + ' &middot; Attendant: ' + (mg ? e(mg.name) : 'not assigned') + '</div></div>';
+        }).join('');
+    }
+
+    /* ============ WEBSITE EDITOR (everything on the public website) ============ */
+    var wsec = 'general', siteTarget = '';
+    var WSEC = [['general', 'General', 'fa-sliders-h'], ['banner', 'Banner', 'fa-image'], ['packages', 'Packages', 'fa-box-open'], ['offers', 'Offers', 'fa-tags'],
+      ['gallery', 'Gallery', 'fa-images'], ['branches', 'Branches', 'fa-map-marker-alt'], ['feedback', 'Feedback', 'fa-comment-dots'],
+      ['about', 'About us', 'fa-info-circle'], ['ceo', 'Team / CEO', 'fa-user-tie'], ['contact', 'Contact', 'fa-address-book']];
+
+    function wf(id, label, val, ta, ph) {
+      var inner = ta ? '<textarea id="' + id + '" rows="' + (ta === true ? 3 : ta) + '" class="form-control" placeholder="' + e(ph || '') + '">' + e(val) + '</textarea>'
+                     : '<input id="' + id + '" class="form-control" value="' + e(val) + '" placeholder="' + e(ph || '') + '" />';
+      return '<div class="mb-2"><label class="form-label small fw-bold">' + label + '</label>' + inner + '</div>';
+    }
+    function imgList(key) {
+      var arr = window.SITE[key] || [];
+      return (arr.length ? '<div class="imgs mb-3">' + arr.map(function (src, i) {
+        return '<div class="im"><img src="' + e(src) + '" alt="" /><button type="button" data-act="imgdel" data-k="' + key + '" data-i="' + i + '" aria-label="Remove"><i class="fas fa-times"></i></button></div>';
+      }).join('') + '</div>' : '<div class="text-muted small mb-3">Nothing here yet.</div>');
+    }
+    function card(icon, title, body) { return '<div class="ws-card"><h6><i class="fas ' + icon + '"></i> ' + title + '</h6>' + body + '</div>'; }
+    function singleImg(src, key, resetBtn) {
+      return '<div class="d-flex align-items-center gap-3"><div style="width:84px;height:84px;border-radius:12px;border:1px solid #c5d0de;background:#fff;overflow:hidden;flex:none;display:flex;align-items:center;justify-content:center">' +
+        (src ? '<img src="' + e(src) + '" alt="" style="width:100%;height:100%;object-fit:contain" />' : '<i class="fas fa-image text-muted"></i>') + '</div>' +
+        '<div class="d-grid gap-1"><button class="btn btn-primary btn-sm" data-act="imgone" data-k="' + key + '"><i class="fas fa-upload"></i> Upload new</button>' + (resetBtn || '') + '</div></div>';
+    }
+
+    function websiteHTML() {
+      var s = window.SITE, kb = Math.round(JSON.stringify(s).length / 1024), body = '';
+      var nav = '<div class="ws-nav">' + WSEC.map(function (x) {
+        return '<button class="ws-chip' + (x[0] === wsec ? ' active' : '') + '" data-act="wsec" data-s="' + x[0] + '"><i class="fas ' + x[2] + '"></i>' + x[1] + '</button>';
+      }).join('') + '</div>';
+
+      if (wsec === 'general') {
+        var b = s.brand;
+        body = card('fa-id-card', 'Business name &amp; slogan',
+            '<div class="row g-2"><div class="col-4">' + wf('gA', 'Blue part', b.a) + '</div><div class="col-4">' + wf('gB', 'Middle part', b.b) + '</div><div class="col-4">' + wf('gC', 'Red part', b.c) + '</div></div>' +
+            wf('gTag', 'Slogan (under the name)', s.tagline) + wf('gKick', 'Small line above the name', s.kicker) +
+            wf('gFoot', 'Footer text', s.footer, 2) + wf('gCred', 'Credit line (very bottom)', s.credit) +
+            '<button class="btn btn-primary w-100 mt-1" data-act="wsgen"><i class="fas fa-save"></i> Save</button>') +
+          card('fa-film', 'Video files',
+            '<div class="small text-muted mb-2">Videos are too big to store here. Upload the video file to GitHub next to index.html, then type its exact file name. Leave empty to hide it.</div>' +
+            wf('gBV', 'Top banner video file', s.bannerVideo, false, 'e.g. ab video.mp4') + wf('gPV', 'Watch & Listen video file', s.promoVideo, false, 'e.g. promo.mp4') +
+            '<button class="btn btn-primary w-100 mt-1" data-act="wsvid"><i class="fas fa-save"></i> Save videos</button>') +
+          card('fa-star', 'Logo', singleImg(s.logo, 'logo', '<button class="btn btn-outline-secondary btn-sm" data-act="logoreset">Use logo.png file</button>'));
+      } else if (wsec === 'banner') {
+        body = card('fa-image', 'Banner pictures (top of the website)',
+          '<div class="small text-muted mb-2">These slide at the top when there is no banner video playing. Wide pictures work best.</div>' + imgList('banners') +
+          '<button class="btn btn-primary btn-sm" data-act="imgadd" data-k="banners"><i class="fas fa-plus"></i> Add pictures</button>');
+      } else if (wsec === 'offers') {
+        body = card('fa-tags', 'Offers (sliding strip)', '<div class="small text-muted mb-2">Add posters or offer pictures. The Offers section shows only when there is at least one.</div>' + imgList('offers') +
+          '<button class="btn btn-primary btn-sm" data-act="imgadd" data-k="offers"><i class="fas fa-plus"></i> Add pictures</button>');
+      } else if (wsec === 'gallery') {
+        body = card('fa-images', 'Photo gallery (' + s.gallery.length + ')', '<div class="small text-muted mb-2">Pick one or many photos from your phone. They are shrunk automatically. About 20 photos is a good limit.</div>' + imgList('gallery') +
+          '<button class="btn btn-primary btn-sm" data-act="imgadd" data-k="gallery"><i class="fas fa-plus"></i> Add photos</button>');
+      } else if (wsec === 'packages') {
+        body = s.packages.map(function (p, i) {
+          return card('fa-box-open', 'Package ' + (i + 1),
+            '<div class="row g-2"><div class="col-6">' + wf('pkN' + i, 'Name', p.name) + '</div><div class="col-6">' + wf('pkP' + i, 'Price', p.price, false, 'UGX 800,000/=') + '</div></div>' +
+            wf('pkS' + i, 'Small note under the price (optional)', p.sub, false, 'Without video: 400,000/=') +
+            wf('pkI' + i, 'What is inside (one item per line)', p.items.join('\n'), 6) +
+            '<div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="pkR' + i + '"' + (p.rec ? ' checked' : '') + ' /><label class="form-check-label small" for="pkR' + i + '">Mark as RECOMMENDED</label></div>' +
+            '<div class="d-flex gap-2"><button class="btn btn-primary btn-sm flex-fill" data-act="pksave" data-i="' + i + '"><i class="fas fa-save"></i> Save package</button>' +
+            '<button class="btn btn-outline-danger btn-sm" data-act="pkdel" data-i="' + i + '">Remove</button></div>');
+        }).join('') + '<button class="btn btn-outline-primary w-100 mb-3" data-act="pkadd"><i class="fas fa-plus"></i> Add a package</button>';
+      } else if (wsec === 'branches') {
+        body = '<div class="small text-muted mb-2">These are the branches customers see on the website and choose when ordering. Type phone numbers like 0788 002 309.</div>' +
+          s.branches.map(function (br, i) {
+            return card('fa-map-marker-alt', 'Branch ' + (i + 1),
+              '<div class="row g-2"><div class="col-6">' + wf('brN' + i, 'Name', br.name) + '</div><div class="col-6">' + wf('brT' + i, 'Phone / WhatsApp', br.phone) + '</div></div>' +
+              wf('brP' + i, 'Place (shown under the name)', br.place) + wf('brM' + i, 'Google Maps link (optional)', br.map, false, 'https://maps.app.goo.gl/...') +
+              '<div class="d-flex gap-2"><button class="btn btn-primary btn-sm flex-fill" data-act="brsave" data-i="' + i + '"><i class="fas fa-save"></i> Save branch</button>' +
+              '<button class="btn btn-outline-danger btn-sm" data-act="brdel" data-i="' + i + '">Remove</button></div>');
+          }).join('') + '<button class="btn btn-outline-primary w-100 mb-3" data-act="bradd"><i class="fas fa-plus"></i> Add a branch</button>';
+      } else if (wsec === 'feedback') {
+        body = card('fa-comment-dots', 'Customer feedback form',
+          wf('fbIntro', 'Text above the form', s.feedback.intro, 2) +
+          wf('fbWho', '"Who served you?" choices (one per line)', s.feedback.who.join('\n'), 6) +
+          '<div class="small text-muted mb-2">Feedback is sent to the first phone number and the email in the Contact section.</div>' +
+          '<button class="btn btn-primary w-100" data-act="fbsave"><i class="fas fa-save"></i> Save</button>');
+      } else if (wsec === 'about') {
+        var a = s.about;
+        body = card('fa-info-circle', 'About us',
+          wf('abH', 'Headline (bold line)', a.head) + wf('abP1', 'First paragraph (always shown)', a.p1, 4) +
+          wf('abP2', 'Services paragraph (after "Read more")', a.p2, 4) + wf('abP3', 'Our focus paragraph', a.p3, 4) +
+          wf('abP4', 'Growth paragraph', a.p4, 4) + wf('abCl', 'Closing line (bold)', a.closing) +
+          '<button class="btn btn-primary w-100" data-act="absave"><i class="fas fa-save"></i> Save</button>');
+      } else if (wsec === 'ceo') {
+        var c = s.ceo;
+        body = card('fa-user-tie', 'CEO / owner card',
+          singleImg(c.photo, 'ceo', '') + '<div class="mt-3"></div>' +
+          '<div class="row g-2"><div class="col-4">' + wf('ceL', 'Title', c.label) + '</div><div class="col-8">' + wf('ceN', 'Name', c.name) + '</div></div>' +
+          wf('ceT', 'Short message', c.text, 5) + '<button class="btn btn-primary w-100" data-act="ceosave"><i class="fas fa-save"></i> Save</button>');
+        body += (s.team || []).map(function (m, i) {
+          return card('fa-id-badge', e(m.role || 'Profile') + (m.name ? ' — ' + e(m.name) : ''),
+            singleImg(m.photo, 'team' + i, '') + '<div class="mt-3"></div>' +
+            '<div class="row g-2"><div class="col-5">' + wf('tmR' + i, 'Title', m.role, false, 'Director / Manager / Partner') + '</div><div class="col-7">' + wf('tmN' + i, 'Name', m.name) + '</div></div>' +
+            wf('tmT' + i, 'Short message', m.text, 3) +
+            '<div class="d-flex gap-2"><button class="btn btn-primary flex-fill" data-act="tmsave" data-i="' + i + '"><i class="fas fa-save"></i> Save</button><button class="btn btn-outline-danger" data-act="tmdel" data-i="' + i + '"><i class="fas fa-trash"></i> Remove</button></div>');
+        }).join('') + '<button class="btn btn-secondary w-100 mb-3" data-act="tmadd"><i class="fas fa-plus"></i> Add a profile (director, manager, partner…)</button>';
+      } else if (wsec === 'contact') {
+        var k = s.contact;
+        body = card('fa-address-book', 'Contact details',
+          wf('ctE', 'Email', k.email) + wf('ctP', 'Phone numbers (one per line — the first is the main WhatsApp number)', k.phones.join('\n'), 4) +
+          wf('ctF', 'Facebook link', k.facebook, false, 'https://...') + wf('ctK', 'TikTok link', k.tiktok, false, 'https://...') + wf('ctY', 'YouTube link', k.youtube, false, 'https://...') +
+          '<div class="fw-bold small mb-1">Other social media</div>' + (k.social || []).map(function (x, i) {
+            return '<div class="row g-2 mb-1 align-items-end"><div class="col-4">' + wf('scN' + i, 'Name', x.name, false, 'Instagram') + '</div><div class="col-6">' + wf('scU' + i, 'Link', x.url, false, 'https://...') + '</div><div class="col-2"><button class="btn btn-outline-danger w-100" data-act="socdel" data-i="' + i + '" aria-label="Remove"><i class="fas fa-trash"></i></button></div></div>';
+          }).join('') + '<button class="btn btn-outline-primary btn-sm mb-3" data-act="socadd"><i class="fas fa-plus"></i> Add social media link</button>' +
+          '<button class="btn btn-primary w-100" data-act="ctsave"><i class="fas fa-save"></i> Save</button>');
+      }
+      var warn = kb > 3500 ? '<div class="alert alert-warning small py-2">The website content is ' + kb + ' KB. That is getting heavy for phones on mobile data. Remove a few photos.</div>' : '';
+      return '<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2"><div class="small text-muted">Everything here updates the public website for all visitors. <span class="badge bg-light text-dark border">' + kb + ' KB</span></div>' +
+        '<a class="btn btn-sm btn-outline-primary rounded-pill" href="#" data-act="web"><i class="fas fa-eye"></i> View website</a></div>' + warn + nav + body;
+    }
+
+    function siteChanged(msg) {
+      if (window.absSiteChanged) window.absSiteChanged();
+      if (msg) toast(msg);
+      var y = window.scrollY; render(); window.scrollTo(0, y);
+    }
+    function lines(id) { return $(id).value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean); }
+    function wsAct(a, t) {
+      var s = window.SITE, i = parseInt(t.getAttribute('data-i'), 10), k = t.getAttribute('data-k');
+      function v(id) { return $(id).value.trim(); }
+      function capContact() { s.contact = { email: v('ctE'), phones: lines('ctP'), facebook: v('ctF'), tiktok: v('ctK'), youtube: v('ctY'), social: (s.contact.social || []).map(function (x, j) { return { name: v('scN' + j), url: v('scU' + j) }; }) }; }
+      switch (a) {
+        case 'wsec': wsec = t.getAttribute('data-s'); render(); return true;
+        case 'wsgen': s.brand = { a: v('gA'), b: v('gB'), c: v('gC') }; s.tagline = v('gTag'); s.kicker = v('gKick'); s.footer = v('gFoot'); s.credit = v('gCred'); siteChanged('Saved'); return true;
+        case 'wsvid': s.bannerVideo = v('gBV'); s.promoVideo = v('gPV'); siteChanged('Videos saved'); return true;
+        case 'imgadd': pickSite(k, true); return true;
+        case 'imgone': pickSite(k, false); return true;
+        case 'imgdel': if (confirm('Remove this picture?')) { s[k].splice(i, 1); siteChanged('Removed'); } return true;
+        case 'logoreset': s.logo = 'logo.png'; siteChanged('Logo reset'); return true;
+        case 'pksave': s.packages[i] = { name: v('pkN' + i), price: v('pkP' + i), sub: v('pkS' + i), items: lines('pkI' + i), rec: $('pkR' + i).checked }; siteChanged('Package saved'); return true;
+        case 'pkadd': s.packages.push({ name: 'NEW PACKAGE', price: '', sub: '', items: [], rec: false }); siteChanged('Package added — now fill it in'); return true;
+        case 'pkdel': if (confirm('Remove this package?')) { s.packages.splice(i, 1); siteChanged('Removed'); } return true;
+        case 'brsave': s.branches[i] = { name: v('brN' + i), phone: v('brT' + i), place: v('brP' + i), map: v('brM' + i) }; siteChanged('Branch saved'); return true;
+        case 'bradd': s.branches.push({ name: 'New branch', place: '', phone: '', map: '' }); siteChanged('Branch added — now fill it in'); return true;
+        case 'brdel': if (confirm('Remove this branch from the website?')) { s.branches.splice(i, 1); siteChanged('Removed'); } return true;
+        case 'fbsave': s.feedback = { intro: v('fbIntro'), who: lines('fbWho') }; siteChanged('Saved'); return true;
+        case 'absave': s.about = { head: v('abH'), p1: v('abP1'), p2: v('abP2'), p3: v('abP3'), p4: v('abP4'), closing: v('abCl') }; siteChanged('Saved'); return true;
+        case 'tmadd': s.team = s.team || []; s.team.push({ role: 'Manager', name: 'New person', text: '', photo: '' }); siteChanged('Profile added — now fill it in'); return true;
+        case 'tmsave': if (s.team[i]) { s.team[i].role = v('tmR' + i); s.team[i].name = v('tmN' + i); s.team[i].text = v('tmT' + i); } siteChanged('Saved'); return true;
+        case 'tmdel': if (confirm('Remove this profile?')) { s.team.splice(i, 1); siteChanged('Removed'); } return true;
+        case 'ceosave': s.ceo.label = v('ceL'); s.ceo.name = v('ceN'); s.ceo.text = v('ceT'); siteChanged('Saved'); return true;
+        case 'ctsave': capContact(); siteChanged('Saved'); return true;
+        case 'socadd': capContact(); s.contact.social.push({ name: '', url: '' }); siteChanged(); return true;
+        case 'socdel': capContact(); s.contact.social.splice(i, 1); siteChanged('Removed'); return true;
+      }
+      return false;
+    }
+    function shrink2(file, max, q, type, ok, bad) {
+      var rd = new FileReader();
+      rd.onload = function () {
+        var im = new Image();
+        im.onload = function () {
+          var k = Math.min(1, max / Math.max(im.width, im.height));
+          var c = document.createElement('canvas'); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+          var cx = c.getContext('2d');
+          if (type === 'image/jpeg') { cx.fillStyle = '#fff'; cx.fillRect(0, 0, c.width, c.height); }
+          cx.drawImage(im, 0, 0, c.width, c.height);
+          ok(c.toDataURL(type, q));
+        };
+        im.onerror = bad; im.src = rd.result;
+      };
+      rd.onerror = bad; rd.readAsDataURL(file);
+    }
+    function pickSite(target, multi) { siteTarget = target; var f = $('fSite'); f.multiple = !!multi; f.click(); }
+    $('fSite').addEventListener('change', function (ev) {
+      var files = Array.prototype.slice.call(ev.target.files || []); ev.target.value = '';
+      if (!files.length) return;
+      var target = siteTarget;
+      var cfg = { gallery: [900, 0.72, 'image/jpeg'], offers: [1000, 0.72, 'image/jpeg'], banners: [1280, 0.72, 'image/jpeg'], logo: [420, 0.9, 'image/png'], ceo: [420, 0.8, 'image/jpeg'] }[target];
+      if (!cfg && /^team\d+$/.test(target)) cfg = [420, 0.8, 'image/jpeg'];
+      if (!cfg) return;
+      var out = [], n = 0;
+      toast('Processing ' + files.length + ' picture' + (files.length > 1 ? 's' : '') + '…');
+      function one() { if (++n === files.length) done(); }
+      function done() {
+        out = out.filter(Boolean);
+        if (!out.length) { toast('Could not read that picture.'); return; }
+        var s = window.SITE;
+        if (target === 'logo') s.logo = out[0];
+        else if (target === 'ceo') s.ceo.photo = out[0];
+        else if (/^team\d+$/.test(target)) { var ti = +target.slice(4); if (s.team[ti]) s.team[ti].photo = out[0]; }
+        else s[target] = (s[target] || []).concat(out);
+        siteChanged('Saved ' + out.length + ' picture' + (out.length > 1 ? 's' : ''));
+      }
+      files.forEach(function (f, i) { shrink2(f, cfg[0], cfg[1], cfg[2], function (d) { out[i] = d; one(); }, one); });
+    });
+    window.absPortalRefresh = function () {
+      if (!me || $('staffView').hidden) return;
+      var ae = document.activeElement;
+      if (ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) return;
+      if (tab === 'website') { var y = window.scrollY; render(); window.scrollTo(0, y); }
+    };
+
+    /* ============ ACTIONS ============ */
+    function showErr(id, msg) { var x = $(id); x.textContent = msg; x.style.display = 'block'; }
+    function login(u, p) {
+      if (login._lock && Date.now() < login._lock) { showErr('lErr', 'Too many wrong attempts. Wait ' + Math.ceil((login._lock - Date.now()) / 1000) + ' seconds and try again.'); return; }
+      var user = S.users.find(function (x) { return x.u === String(u).trim().toLowerCase() && x.ph && hashPw(x, p) === x.ph; });
+      if (!user) {
+        login._fails = (login._fails || 0) + 1;
+        if (login._fails >= 5) { login._fails = 0; login._lock = Date.now() + 60000; showErr('lErr', 'Too many wrong attempts. Wait 60 seconds and try again.'); }
+        else showErr('lErr', 'Wrong username or password.');
+        return;
+      }
+      login._fails = 0;
+      if (user.status === 'pending') { showErr('lErr', 'Your account is still waiting for approval.'); return; }
+      me = user; vb = null; tab = null; lastSlip = null;
+      try { sessionStorage.setItem('abs_user', user.u); } catch (x) {}
+      render();
+      if (user.chg) setTimeout(function () { openPw(true); }, 300);
+    }
+    function signup() {
+      var name = $('gName').value.trim(), un = $('gUser').value.trim().toLowerCase(), pw = $('gPass').value;
+      var br = $('gBranch').value, role = $('gRole').value;
+      if (!name || !un || !pw) return showErr('gErr', 'Fill in your name, username and password.');
+      if (!/^[a-z0-9._-]{3,}$/.test(un)) return showErr('gErr', 'Username: at least 3 letters or numbers, no spaces.');
+      if (pw.length < 4 || pw.length > 6) return showErr('gErr', 'Password must be 4 to 6 characters.');
+      if (S.users.some(function (u) { return u.u === un; })) return showErr('gErr', 'That username is taken. Try another.');
+      var nu = { u: un, name: name, role: role, branch: br, status: 'pending' }; setPw(nu, pw); S.users.push(nu);
+      S.log.unshift({ id: ++S.seq, t: now(), user: name, u: un, role: role, branch: br, text: 'Created an account and is waiting for approval' });
+      save(); screen = 'done'; render();
+    }
+
+    /* ---- change password ---- */
+    var pwModal = new bootstrap.Modal($('pwModal'));
+    function openPw(force) {
+      $('pwOld').value = ''; $('pwNew').value = ''; $('pwNew2').value = ''; $('pwErr').style.display = 'none';
+      $('pwNote').textContent = force ? 'You are using a default or temporary password. Please choose your own new password now.' : '';
+      $('pwNote').style.display = force ? 'block' : 'none';
+      pwModal.show();
+    }
+    var profTarget = '', profM = new bootstrap.Modal($('profModal'));
+    function openProfile(un) {
+      var tu = S.users.find(function (x) { return x.u === un; }); if (!tu || !(tu === me || isDir())) return;
+      profTarget = un; $('profName').value = tu.name; $('profUser').value = tu.u; $('profUser').disabled = !isDir(); $('profNew').value = ''; $('profCur').value = ''; $('profErr').style.display = 'none';
+      $('profUserNote').textContent = isDir() ? '' : 'Only a Director can change usernames.'; $('profCurBox').style.display = tu === me ? '' : 'none'; profM.show();
+    }
+    $('profSave').addEventListener('click', function () {
+      var tu = S.users.find(function (x) { return x.u === profTarget; }); if (!tu) return;
+      var mine = tu === me, nn = $('profName').value.trim() || tu.name, nu = isDir() ? $('profUser').value.trim().toLowerCase() : tu.u, np = $('profNew').value, cur = $('profCur').value;
+      if (!/^[a-z0-9._-]{3,30}$/.test(nu)) return showErr('profErr', 'Username: 3-30 letters or numbers, no spaces.');
+      if (nu !== tu.u && S.users.some(function (x) { return x.u === nu; })) return showErr('profErr', 'That username is already used.');
+      if (np && (np.length < 4 || np.length > 6)) return showErr('profErr', 'Password must be 4 to 6 characters.');
+      if (mine && (nu !== tu.u || np) && (!tu.ph || hashPw(tu, cur) !== tu.ph)) return showErr('profErr', 'Type your current password to confirm.');
+      var was = tu.u, pw = np || (mine ? cur : '1234'); tu.name = nn;
+      if (nu !== was) { tu.u = nu; if (S.seen && S.seen[was] != null) { S.seen[nu] = S.seen[was]; delete S.seen[was]; } if (mine) { try { sessionStorage.setItem('abs_user', nu); } catch (x) {} } }
+      if (nu !== was || np) { setPw(tu, pw); if (mine) delete tu.chg; else { tu.chg = true; toast(nn + ': they must set their own password at next login.'); } }
+      addLog(tu.branch, 'Updated profile: ' + nn + ' (@' + tu.u + ')'); save(); profM.hide(); render(); toast('Profile saved');
+    });
+    function savePw() {
+      var o = $('pwOld').value, n1 = $('pwNew').value, n2 = $('pwNew2').value;
+      if (!me.ph || hashPw(me, o) !== me.ph) return showErr('pwErr', 'Your current password is wrong.');
+      if (n1.length < 4 || n1.length > 6) return showErr('pwErr', 'New password must be 4 to 6 characters.');
+      if (n1 === '1234' || n1 === o) return showErr('pwErr', 'Choose a different, harder password.');
+      if (n1 !== n2) return showErr('pwErr', 'The two new passwords do not match.');
+      setPw(me, n1); delete me.chg;
+      save(); pwModal.hide(); toast('Password changed');
+    }
+    function resetPw(uu) {
+      var us = S.users.find(function (x) { return x.u === uu; }); if (!us || me.role !== 'director') return;
+      var np = prompt('Type a temporary password for ' + us.name + ' (4 to 6 characters). They must change it when they log in.');
+      if (np === null) return;
+      if (np.length < 4 || np.length > 6) { toast('Password must be 4 to 6 characters.'); return; }
+      setPw(us, np); us.chg = true; save(); toast('Password reset for ' + us.name);
+    }
+
+    /* ---- stock modal ---- */
+    var stockModal = new bootstrap.Modal($('stockModal'));
+    function openStock(m, p) {
+      mt = m; mp = p;
+      var prod = prodOf(p), b = curBranch();
+      var titles = { add: 'Add stock', sold: 'Record sale', count: 'Stock count' };
+      $('mTitle').textContent = titles[m] + ': ' + prod.name;
+      $('mInfo').textContent = bName(b) + ' · now in stock: ' + stockOf(b, p);
+      $('mQtyLabel').textContent = m === 'count' ? 'Actual quantity counted' : (m === 'add' ? 'Quantity received' : 'Quantity sold');
+      $('mSupWrap').style.display = m === 'add' ? '' : 'none';
+      $('mQty').value = ''; $('mNote').value = ''; $('mSupplier').value = ''; $('mErr').style.display = 'none';
+      stockModal.show();
+      setTimeout(function () { $('mQty').focus(); }, 300);
+    }
+    function saveStock() {
+      var q = parseInt($('mQty').value, 10), note = $('mNote').value.trim(), sup = $('mSupplier').value.trim();
+      var b = curBranch(), prod = prodOf(mp), cur = stockOf(b, mp), nu, txt;
+      if (isNaN(q) || q < 0 || (mt !== 'count' && q < 1)) { showErr('mErr', 'Enter a valid quantity.'); return; }
+      if (mt === 'add') { nu = cur + q; txt = 'Added ' + q + ' × ' + prod.name + ' (' + cur + ' → ' + nu + ')'; }
+      else if (mt === 'sold') {
+        if (q > cur) { showErr('mErr', 'Only ' + cur + ' in stock.'); return; }
+        nu = cur - q; txt = 'Sold ' + q + ' × ' + prod.name + ' (' + cur + ' → ' + nu + ')';
+      } else { nu = q; txt = 'Counted ' + prod.name + ': ' + cur + ' → ' + nu; }
+      if (mt === 'add' && sup) txt += ' — supplier: ' + sup;
+      if (note) txt += ' — ' + note;
+      S.stock[b][mp] = nu;
+      var l = addLog(b, txt, { kind: mt, pid: mp, pname: prod.name, qty: q, supplier: sup, note: note });
+      if (mt !== 'add' && ((nu === 0 && cur > 0) || (cur > LOW && nu <= LOW))) {
+        addSys(b, prod.name + ' at ' + bName(b) + ': ' + (nu === 0 ? 'finished' : 'only ' + nu + ' left'));
+      }
+      lastSlip = mt === 'add' ? { id: l.id, msg: 'Stock added: ' + q + ' × ' + prod.name } : null;
+      save(); stockModal.hide(); render(); toast('Saved');
+    }
+
+    /* ---- add / edit product ---- */
+    function addProduct() {
+      var n = $('pName').value.trim(), q = parseInt($('pQty').value, 10);
+      if (!n) return showErr('pErr', 'Enter the product name.');
+      if (isNaN(q) || q < 0) return showErr('pErr', 'Enter the quantity.');
+      if (S.products.some(function (p) { return p.name.toLowerCase() === n.toLowerCase(); })) return showErr('pErr', 'That product already exists. Use + Add on the Stock tab to add more.');
+      var br = isDir() ? $('pBranch').value : me.branch;
+      var price = parseInt($('pPrice').value, 10); if (isNaN(price) || price < 0) price = 0;
+      var sup = $('pSupplier').value.trim(), web = $('pWeb').checked, cond = $('pCond').value;
+      var id = 'n' + Date.now();
+      S.products.push({ id: id, name: n, cat: $('pCat').value, cond: cond, desc: $('pDesc').value.trim(), price: price, img: newImg, web: web });
+      S.branches.forEach(function (b) { S.stock[b.id][id] = 0; });
+      S.stock[br][id] = q;
+      var l = addLog(br, 'Added new product: ' + n + ' (' + (cond === 'used' ? 'Used' : 'New') + ') — quantity ' + q + (sup ? ' — supplier: ' + sup : ''),
+        { kind: 'product', pid: id, pname: n, qty: q, supplier: sup });
+      lastSlip = { id: l.id, msg: web ? 'Product added. It is now showing on the customer website.' : 'Product added (not shown on the website).' };
+      newImg = '';
+      if (save()) { render(); toast('Product added'); }
+    }
+    var pModal = new bootstrap.Modal($('pModal'));
+    function openEdit(id) {
+      var p = prodOf(id); ep = id;
+      $('epName').value = p.name; $('epCat').innerHTML = catOptions(p.cat); $('epCond').value = p.cond || 'new';
+      $('epPrice').value = p.price || ''; $('epDesc').value = p.desc || ''; $('epWeb').checked = !!p.web; $('epErr').style.display = 'none';
+      pModal.show();
+    }
+    function saveEdit() {
+      var p = prodOf(ep), n = $('epName').value.trim();
+      if (!n) return showErr('epErr', 'Enter the product name.');
+      if (S.products.some(function (x) { return x.id !== ep && x.name.toLowerCase() === n.toLowerCase(); })) return showErr('epErr', 'Another product has that name.');
+      var price = parseInt($('epPrice').value, 10); if (isNaN(price) || price < 0) price = 0;
+      p.name = n; p.cat = $('epCat').value; p.cond = $('epCond').value; p.price = price; p.desc = $('epDesc').value.trim(); p.web = $('epWeb').checked;
+      addLog(isDir() ? curBranch() : me.branch, 'Edited product: ' + n, { kind: 'edit', pid: ep, pname: n });
+      pModal.hide(); if (save()) { render(); toast('Product updated'); }
+    }
+
+    /* ---- pictures: take or upload, shrink, store ---- */
+    function shrink(file, cb) {
+      var rd = new FileReader();
+      rd.onload = function () {
+        var im = new Image();
+        im.onload = function () {
+          var max = 480, w = im.width, h = im.height, k = Math.min(1, max / Math.max(w, h));
+          var c = document.createElement('canvas'); c.width = Math.round(w * k); c.height = Math.round(h * k);
+          c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+          cb(c.toDataURL('image/jpeg', 0.75));
+        };
+        im.onerror = function () { toast('Could not read that picture.'); };
+        im.src = rd.result;
+      };
+      rd.readAsDataURL(file);
+    }
+    function onPicked(ev) {
+      var f = ev.target.files && ev.target.files[0]; ev.target.value = '';
+      if (!f) return;
+      shrink(f, function (data) {
+        if (photoFor === 'new') {
+          newImg = data;
+          var holder = $('newPrev');
+          if (holder) { var im = document.createElement('img'); im.id = 'newPrev'; im.className = 'pthumb big'; im.src = data; holder.replaceWith(im); }
+        } else {
+          var pr = prodOf(photoFor);
+          if (!pr) return;
+          pr.img = data;
+          addLog(isDir() ? curBranch() : me.branch, 'Changed the picture of ' + pr.name, { kind: 'edit', pid: pr.id, pname: pr.name });
+          if (save()) { render(); toast('Picture saved'); }
+        }
+      });
+    }
+    $('fCam').addEventListener('change', onPicked);
+    $('fFile').addEventListener('change', onPicked);
+
+    /* ---- printable supply slip ---- */
+    function printSlip(id) {
+      var l = S.log.find(function (x) { return x.id === id; });
+      if (!l) return;
+      var p = prodOf(l.pid), cond = p ? (p.cond === 'used' ? 'Used' : 'New') : '—';
+      var no = 'SS-' + String(l.id).padStart(5, '0');
+      var html = '<!doctype html><html><head><meta charset="utf-8"><title>' + no + '</title><style>' +
+        'body{font-family:Arial,sans-serif;color:#111;padding:24px;max-width:620px;margin:0 auto}' +
+        'h1{font-size:20px;margin:0}h2{font-size:15px;letter-spacing:2px;margin:14px 0 6px;border-top:2px solid #111;border-bottom:2px solid #111;padding:6px 0;text-align:center}' +
+        '.s{font-size:12px;color:#555;font-style:italic}table{width:100%;border-collapse:collapse;margin-top:10px}' +
+        'td,th{border:1px solid #888;padding:8px;text-align:left;font-size:14px}th{background:#eee}' +
+        '.meta td{border:none;padding:3px 0;font-size:13px}.sig{margin-top:46px;display:flex;gap:24px}.sig div{flex:1;border-top:1px solid #111;padding-top:4px;font-size:12px}' +
+        '</style></head><body>' +
+        '<h1>' + e(COMPANY) + '</h1><div class="s">' + e(SLOGAN) + '</div><h2>SUPPLY SLIP</h2>' +
+        '<table class="meta"><tr><td><b>Slip no:</b> ' + no + '</td><td><b>Date:</b> ' + e(l.t) + '</td></tr>' +
+        '<tr><td><b>Branch:</b> ' + e(bName(l.branch)) + '</td><td><b>Supplier:</b> ' + e(l.supplier || '—') + '</td></tr></table>' +
+        '<table><tr><th>Item</th><th>Condition</th><th>Quantity</th></tr><tr><td>' + e(l.pname) + '</td><td>' + cond + '</td><td>' + e(l.qty) + '</td></tr></table>' +
+        (l.note ? '<p style="font-size:13px"><b>Note:</b> ' + e(l.note) + '</p>' : '') +
+        '<p style="font-size:13px"><b>Received by:</b> ' + e(l.user) + ' (' + ROLE[l.role] + ')</p>' +
+        '<div class="sig"><div>Delivered by (supplier)</div><div>Received by</div><div>Approved by</div></div></body></html>';
+      var f = document.createElement('iframe');
+      f.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0';
+      document.body.appendChild(f);
+      var d = f.contentWindow.document; d.open(); d.write(html); d.close();
+      setTimeout(function () { try { f.contentWindow.focus(); f.contentWindow.print(); } catch (x) { toast('Printing is not available here.'); } }, 400);
+      setTimeout(function () { f.remove(); }, 90000);
+    }
+
+    /* ---- clicks ---- */
+    document.addEventListener('click', function (ev) {
+      var t = ev.target.closest('[data-act]'); if (!t) return;
+      ev.preventDefault();
+      var a = t.getAttribute('data-act');
+      if (a === 'web') { showSite(); return; }
+      if (a === 'eye') { var inp = $(t.getAttribute('data-for')); var show = inp.type === 'password'; inp.type = show ? 'text' : 'password'; t.innerHTML = '<i class="fas ' + (show ? 'fa-eye-slash' : 'fa-eye') + '"></i>'; return; }
+      if (me && isDir() && wsAct(a, t)) return;
+      if (a === 'login') login($('lUser').value, $('lPass').value);
+      else if (a === 'gosignup') { screen = 'signup'; render(); }
+      else if (a === 'gologin') { screen = 'login'; render(); }
+      else if (a === 'signup') signup();
+      else if (a === 'reset') { try { localStorage.removeItem(KEY); sessionStorage.removeItem('abs_user'); } catch (x) {} S = seed(); me = null; screen = 'login'; newImg = ''; lastSlip = null; render(); toast('Demo data reset'); }
+      else if (a === 'chpw') { openPw(false); }
+      else if (a === 'pwsave') { savePw(); }
+      else if (a === 'rnuser') { openProfile(t.getAttribute('data-u')); }
+      else if (a === 'rspw') { resetPw(t.getAttribute('data-u')); }
+      else if (a === 'logout') { try { sessionStorage.removeItem('abs_user'); } catch (x) {} me = null; tab = null; vb = null; screen = 'login'; lastSlip = null; render(); }
+      else if (a === 'tab') { tab = t.getAttribute('data-t'); lastSlip = null; if (tab === 'activity' && isDir()) vb = 'ALL'; render(); }
+      else if (a === 'open') { vb = t.getAttribute('data-b'); tab = 'stock'; render(); }
+      else if (a === 'stk') openStock(t.getAttribute('data-m'), t.getAttribute('data-p'));
+      else if (a === 'save') saveStock();
+      else if (a === 'dismiss') { lastSlip = null; render(); }
+      else if (a === 'slip') printSlip(parseInt(t.getAttribute('data-id'), 10));
+      else if (a === 'allownotif') { try { Notification.requestPermission().then(function () { render(); }); } catch (x) {} }
+      else if (a === 'approve') {
+        var au = S.users.find(function (u) { return u.u === t.getAttribute('data-u'); });
+        if (!au || !canApprove(au)) return;
+        au.status = 'active';
+        addLog(au.branch, 'Approved ' + ROLE[au.role] + ' account: ' + au.name); save(); render(); toast(au.name + ' approved');
+      }
+      else if (a === 'reject') {
+        var ru = S.users.find(function (u) { return u.u === t.getAttribute('data-u'); });
+        if (!ru || !canApprove(ru)) return;
+        if (!confirm('Reject ' + ru.name + '? Their account will be deleted.')) return;
+        S.users = S.users.filter(function (u) { return u !== ru; });
+        addLog(ru.branch, 'Rejected account request: ' + ru.name); save(); render();
+      }
+      else if (a === 'pick') { photoFor = t.getAttribute('data-p'); $(t.getAttribute('data-src') === 'cam' ? 'fCam' : 'fFile').click(); }
+      else if (a === 'addprod') addProduct();
+      else if (a === 'editprod') openEdit(t.getAttribute('data-p'));
+      else if (a === 'saveprod') saveEdit();
+      else if (a === 'delprod') {
+        var pid = t.getAttribute('data-p'), pr = prodOf(pid);
+        if (!confirm('Remove "' + pr.name + '" from all branches and from the website?')) return;
+        S.products = S.products.filter(function (p) { return p.id !== pid; });
+        addLog(curBranch(), 'Removed product: ' + pr.name); save(); render();
+      }
+      else if (a === 'delstaff') {
+        var uu = t.getAttribute('data-u'), us = S.users.find(function (u) { return u.u === uu; });
+        if (!us || us.role === 'director' || us.u === me.u || lastInBranch(us) || !(isDir() || (isMgr() && us.role === 'attendant' && us.branch === me.branch))) return toast('Not allowed — every branch must keep an Attendant.');
+        if (!confirm('Remove ' + us.name + '?')) return;
+        S.users = S.users.filter(function (u) { return u.u !== uu; });
+        addLog(us.branch || curBranch(), 'Removed account: ' + us.name); save(); render();
+      }
+      else if (a === 'addbranch') {
+        var bn = $('brName').value.trim(), ph = $('brPhone').value.trim();
+        if (!bn) return showErr('brErr', 'Enter the branch name.');
+        var bid = 'b' + Date.now(); S.branches.push({ id: bid, name: bn, phone: ph || '—' });
+        S.stock[bid] = {}; S.products.forEach(function (p) { S.stock[bid][p.id] = 0; });
+        ensureStructure(S); secureUsers(S);
+        addLog(bid, 'Added new branch: ' + bn); save(); render(); toast('Branch added');
+      }
+    });
+    document.addEventListener('change', function (ev) {
+      if (ev.target.id === 'bsel') { vb = ev.target.value; render(); }
+    });
+    document.addEventListener('input', function (ev) { if (ev.target.id === 'q') stockList(); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter' && (ev.target.id === 'lPass' || ev.target.id === 'lUser')) login($('lUser').value, $('lPass').value);
+      if (ev.key === 'Enter' && ev.target.id === 'mQty') saveStock();
+    });
+
+    /* ---- live alerts: when another tab/phone using the same data changes something ---- */
+    window.addEventListener('storage', function (ev) {
+      if (ev.key !== KEY || !ev.newValue) return;
+      var oldTop = S.log.length ? S.log[0].id : 0;
+      try { S = JSON.parse(ev.newValue); S.seen = S.seen || {}; } catch (x) { return; }
+      if (me) {
+        me = S.users.find(function (u) { return u.u === me.u && u.status !== 'pending'; }) || null;
+        if (me && canManage()) {
+          var fresh = S.log.filter(function (l) { return l.id > oldTop && relevant(l); });
+          if (fresh.length) {
+            var l = fresh[0], msg = l.user + ': ' + l.text;
+            toast('🔔 ' + msg);
+            try { if (window.Notification && Notification.permission === 'granted') new Notification(COMPANY, { body: msg }); } catch (x) {}
+          }
+        }
+      }
+      render();
+    });
+
+
+    /* ============ FIREBASE BRIDGE (live sync, shared by all phones) ============ */
+    function stable(o) {
+      if (Array.isArray(o)) return '[' + o.map(stable).join(',') + ']';
+      if (o && typeof o === 'object') return '{' + Object.keys(o).sort().map(function (k) { return JSON.stringify(k) + ':' + stable(o[k]); }).join(',') + '}';
+      return JSON.stringify(o === undefined ? null : o);
+    }
+    function cleanState(st) { var c = JSON.parse(JSON.stringify(st)); delete c.seen; return c; }   /* 'seen' is per-device */
+    function normalize(r) {
+      r.branches = r.branches || []; r.products = r.products || []; r.users = r.users || []; r.log = r.log || [];
+      r.stock = r.stock || {}; r.seq = r.seq || 0;
+      r.branches.forEach(function (b) { r.stock[b.id] = r.stock[b.id] || {}; });
+      return r;
+    }
+    window.absFirebaseState = function () { return cleanState(S); };
+    window.absPublicData = function () {   /* only what customers may see: products marked 'On website' that are in stock */
+      var out = [];
+      S.products.forEach(function (p) {
+        if (!p.web) return;
+        var total = 0; Object.keys(S.stock || {}).forEach(function (b) { total += (S.stock[b] && S.stock[b][p.id]) || 0; });
+        if (total < 1) return;
+        out.push({ id: p.id, name: p.name || '', cat: p.cat || '', cond: p.cond || 'new', desc: p.desc || '', price: p.price || 0, img: p.img || '' });
+      });
+      return { products: out };
+    };
+    window.absOrderIn = function (o) {   /* a customer just sent an order from the website */
+      if (!me || !canManage()) return;
+      var msg = 'New order — ' + (o.name || '?') + ' (' + (o.place || '') + '): ' + (o.summary || '');
+      toast('🛒 ' + msg); if (window.absBeep) window.absBeep();
+      try { if (window.Notification && Notification.permission === 'granted') new Notification(COMPANY, { body: msg }); } catch (x) {}
+    };
+    window.absFirebaseApply = function (remote) {
+      remote = normalize(remote);
+      if (stable(normalize(cleanState(S))) === stable(remote)) return;   /* nothing new */
+      var oldTop = S.log.length ? S.log[0].id : 0, seen = S.seen || {};
+      S = remote; S.seen = seen;
+      var m1 = ensureStructure(S), m2 = secureUsers(S), migrated = m1 || m2;   /* old plain-text passwords in the cloud get hashed */
+      try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (x) {}
+      if (migrated) save();
+      if (me) {
+        me = S.users.find(function (u) { return u.u === me.u && u.status !== 'pending'; }) || null;
+        if (me && canManage()) {
+          var fresh = S.log.filter(function (l) { return l.id > oldTop && relevant(l); });
+          if (fresh.length) {
+            var msg = fresh[0].user + ': ' + fresh[0].text; toast('🔔 ' + msg); if (window.absBeep) window.absBeep();
+            try { if (window.Notification && Notification.permission === 'granted') new Notification(COMPANY, { body: msg }); } catch (x) {}
+          }
+        }
+      }
+      var ae = document.activeElement;
+      if (ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName) && document.querySelector('.modal.show')) return;  /* don't disturb typing in a popup */
+      render();
+    };
+
+    render();
+  
+})();
+  </script>
+
+
+  <script>
+  (function () {
+    var SERVICES = ['Photo printing', 'Document printing', 'Photocopy & scanning', 'Envelopes', 'Business cards', 'Banners & posters', 'Stickers & labels', 'Frames & boards', 'T-shirt / cap branding', 'Photography booking', 'Stationery', 'Electronics', 'Others'];
+    var CART = {}, SEL = {}, KEY = 'abs_cart_v1', $ = function (id) { return document.getElementById(id); };
+    try { CART = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+    function persist() { try { localStorage.setItem(KEY, JSON.stringify(CART)); } catch (e) {} window.cartRefresh(); }
+    function ctl(n) { var q = CART[n] | 0, k = esc(n); return q ? '<div class="stepper"><button type="button" data-cm="' + k + '" aria-label="Less">&minus;</button><span>' + q + '</span><button type="button" data-cp="' + k + '" aria-label="More">+</button></div>' : '<button type="button" class="add-btn" data-cp="' + k + '"><i class="fas fa-plus"></i> Add</button>'; }
+    function total() { var t = 0; for (var k in CART) t += CART[k] | 0; return t; }
+    window.cartRefresh = function () {
+      document.querySelectorAll('[data-cart]').forEach(function (d) { d.innerHTML = ctl(d.getAttribute('data-cart')); });
+      var t = total(); $('cartBar').style.display = t ? 'block' : 'none'; $('cartN').textContent = t;
+      if ($('svcModal').classList.contains('show')) svcCart();
+    };
+    function svcCart() {
+      var ks = Object.keys(CART).filter(function (k) { return CART[k] > 0; });
+      $('svcCart').innerHTML = ks.length ? '<div class="fw-bold small mb-1">Products in your order</div>' + ks.map(function (k) { return '<div class="svc-row"><span class="small">' + esc(k) + '</span>' + ctl(k) + '</div>'; }).join('') : '';
+    }
+    var svcEl = $('svcModal'), svcM = new bootstrap.Modal(svcEl), pmEl = $('prodModal'), pmM = new bootstrap.Modal(pmEl);
+    function openSvc() {
+      $('svcChips').innerHTML = SERVICES.map(function (x) { return '<button type="button" class="svc-chip' + (SEL[x] ? ' on' : '') + '" data-chip="' + esc(x) + '">' + esc(x) + '</button>'; }).join('');
+      $('svcBranch').innerHTML = (window.BRANCHES || []).map(function (b, i) { return '<option value="' + i + '">' + esc(b.name) + '</option>'; }).join('');
+      var sb = lsGet('abs_branch'); if (sb !== '' && BRANCHES[+sb]) $('svcBranch').value = sb;
+      $('svcName').value = lsGet('abs_name'); $('svcPlace').value = lsGet('abs_place'); $('svcErr').style.display = 'none';
+      svcCart(); svcM.show();
+    }
+    function openProd(card) {
+      var img = card.querySelector('img'), key = (card.querySelector('[data-cart]') || {}).getAttribute ? card.querySelector('[data-cart]').getAttribute('data-cart') : '';
+      var h = card.querySelector('h6'), pr = card.querySelector('.price');
+      $('pmName').textContent = h ? h.textContent : key; $('pmImg').style.display = img ? '' : 'none'; if (img) $('pmImg').src = img.src;
+      $('pmPrice').textContent = pr ? pr.textContent : ''; $('pmDesc').textContent = card.getAttribute('data-desc') || '';
+      $('pmCart').innerHTML = '<div data-cart="' + esc(key) + '"></div>'; window.cartRefresh();
+      pmEl.setAttribute('data-key', key); pmM.show();
+    }
+    function viaOrder(mode) {   /* close the popup, then open the normal one-product order form */
+      var key = pmEl.getAttribute('data-key');
+      pmEl.addEventListener('hidden.bs.modal', function go() {
+        pmEl.removeEventListener('hidden.bs.modal', go);
+        var b = document.createElement('button'); b.setAttribute('data-order', ''); b.setAttribute('data-mode', mode); b.setAttribute('data-item', key); document.body.appendChild(b); b.click(); b.remove();
+      }); pmM.hide();
+    }
+    $('pmAsk').addEventListener('click', function () { viaOrder('price'); });
+    $('pmOrder').addEventListener('click', function () { viaOrder('order'); });
+    document.addEventListener('click', function (e) {
+      var t = e.target, b;
+      if ((b = t.closest('[data-cp]'))) { var n = b.getAttribute('data-cp'); CART[n] = (CART[n] | 0) + 1; persist(); return; }
+      if ((b = t.closest('[data-cm]'))) { var m = b.getAttribute('data-cm'); CART[m] = (CART[m] | 0) - 1; if (CART[m] <= 0) delete CART[m]; persist(); return; }
+      if ((b = t.closest('[data-chip]'))) { var c = b.getAttribute('data-chip'); SEL[c] = !SEL[c]; b.classList.toggle('on', !!SEL[c]); return; }
+      if (t.closest('[data-svc]')) { e.preventDefault(); openSvc(); return; }
+      var ps = t.closest('.pic-slot, .pm-more, .product-card h6');
+      if (ps && !ps.closest('#staffView')) { var card = ps.closest('.product-card'); if (card && card.querySelector('[data-cart]')) { e.preventDefault(); openProd(card); } }
+    });
+    $('svcSend').addEventListener('click', function () {
+      var name = $('svcName').value.trim(), place = $('svcPlace').value.trim(), det = $('svcDetails').value.trim();
+      var svc = SERVICES.filter(function (x) { return SEL[x]; }), items = Object.keys(CART).filter(function (k) { return CART[k] > 0; }).map(function (k) { return CART[k] + ' x ' + k; });
+      var err = !name || !place ? 'Please enter your name and where you are from.' : (!svc.length && !items.length && !det ? 'Choose a service, add a product, or write what you need.' : '');
+      if (err) { $('svcErr').textContent = err; $('svcErr').style.display = 'block'; return; }
+      lsSet('abs_name', name); lsSet('abs_place', place); lsSet('abs_branch', $('svcBranch').value);
+      var when = $('svcWhen').value.trim(), ph = $('svcPhone').value.trim(), br = (BRANCHES[+$('svcBranch').value] || {});
+      var msg = 'Hello ' + brandName() + ' 👋, my name is ' + name + ' and I am from ' + place + '.\nI would like to place an order. I will pick it up when it is ready and pay on pickup.' +
+        (svc.length ? '\n\n*Services:* ' + svc.join(', ') : '') + (items.length ? '\n*Products:*\n- ' + items.join('\n- ') : '') + (det ? '\n*Details:* ' + det : '') +
+        (when ? '\n*Needed by:* ' + when : '') + (br.name ? '\n*Pick up at:* ' + br.name : '') + (ph ? '\n*My phone:* ' + ph : '') + '\n\nI will send my photos/documents here. Thank you.';
+      if (window.absOrderPush) window.absOrderPush({ ts: Date.now(), name: name, place: place, phone: ph, services: svc, items: items, details: det, when: when, branch: br.name || '', summary: svc.concat(items).join(', ') || det.slice(0, 80) });
+      window.open('https://wa.me/' + (br.phone ? intl(br.phone) : mainPhone()) + '?text=' + encodeURIComponent(msg), '_blank');
+      CART = {}; SEL = {}; $('svcDetails').value = ''; persist(); svcM.hide();
+    });
+    /* ---- sound for alerts (browsers allow audio only after the first tap, so we unlock it then) ---- */
+    function ac() { var C = window.AudioContext || window.webkitAudioContext; if (!C) return null; return window.__ac || (window.__ac = new C()); }
+    ['click', 'touchstart', 'keydown'].forEach(function (ev) { document.addEventListener(ev, function () { try { var c = ac(); if (c && c.state === 'suspended') c.resume(); } catch (e) {} }, { passive: true }); });
+    window.absBeep = function () {
+      try { var c = ac(); if (!c) return; if (c.state === 'suspended') c.resume();
+        [880, 1175, 1480].forEach(function (f, i) { var o = c.createOscillator(), g = c.createGain(), t = c.currentTime + i * 0.17;
+          o.type = 'sine'; o.frequency.value = f; g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.35, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.16);
+          o.connect(g); g.connect(c.destination); o.start(t); o.stop(t + 0.18); });
+      } catch (e) {}
+    };
+    window.cartRefresh();
+  })();
+  </script>
+
+  <!-- FIREBASE -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import { getDatabase, ref, set, onValue, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    /* >>> TO USE YOUR NEW FIREBASE ACCOUNT: replace everything inside the braces below with the
+           config from Firebase console > Project settings > Your apps > Web app. <<< */
+    const firebaseConfig = {
+      apiKey: "AIzaSyBqXw3zdr11eoS6k5Cm-exnXm743XCCdR8",
+      authDomain: "ab-signs-media-web.firebaseapp.com",
+      databaseURL: "https://ab-signs-media-web-default-rtdb.firebaseio.com",
+      projectId: "ab-signs-media-web",
+      storageBucket: "ab-signs-media-web.firebasestorage.app",
+      messagingSenderId: "197565885635",
+      appId: "1:197565885635:web:638714379d8325d9374676",
+      measurementId: "G-44G42RSKRN"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    try { getAnalytics(app); } catch (e) { /* analytics only works on http(s) */ }
+    const db = getDatabase(app);
+    const stateRef = ref(db, "abs_state");    /* staff data (users, stock, activity) */
+    const pubRef = ref(db, "abs_public");     /* website products */
+    const siteRef = ref(db, "abs_site");      /* all website content edited in the portal */
+    let timer = null, siteTimer = null, ready = false, started = false, lastPublic = null;
+
+    /* ---- online / offline status shown in the portal header ---- */
+    const bad = {}; let connected = false;
+    function refreshSync() {
+      const keys = Object.keys(bad);
+      let st, msg;
+      if (keys.length) { st = 'err'; msg = 'Not saving online — Firebase blocked (' + keys.join(', ') + ')'; }
+      else if (connected) { st = 'ok'; msg = 'Online'; }
+      else { st = 'wait'; msg = 'Connecting…'; }
+      window.__sync = { st: st, msg: msg };
+      if (window.absSetSync) window.absSetSync(st, msg);
+    }
+    function setBad(node, err) { bad[node] = (err && (err.code || err.message)) || 'error'; console.error("Firebase problem (" + node + "):", err); refreshSync(); }
+    function clearBad(node) { if (bad[node]) { delete bad[node]; refreshSync(); } }
+    onValue(ref(db, ".info/connected"), function (snap) { connected = snap.val() === true; refreshSync(); });
+
+    /* 1) EVERY visitor: live product feed for the website */
+    onValue(pubRef, function (snap) {
+      clearBad("abs_public");
+      const v = snap.val();
+      const data = { products: v && v.products ? Object.values(v.products) : [] };
+      try { localStorage.setItem("abs_public_v1", JSON.stringify(data)); } catch (e) {}
+      if (window.renderWebProducts) window.renderWebProducts();
+    }, function (err) { setBad("abs_public", err); });
+
+    /* 2) EVERY visitor: live website content (name, packages, gallery, offers, branches, about, CEO, contact...) */
+    onValue(siteRef, function (snap) {
+      clearBad("abs_site");
+      if (window.absSiteRemote) window.absSiteRemote(snap.val());
+    }, function (err) { setBad("abs_site", err); });
+
+    function pushPublic() {
+      const data = window.absPublicData();
+      const str = JSON.stringify(data);
+      if (str === lastPublic) return;
+      set(pubRef, data).then(function () { lastPublic = str; clearBad("abs_public"); }).catch(function (e) { setBad("abs_public", e); });
+    }
+
+    window.absFirebasePush = function () {
+      if (!ready) return;                       /* wait until the first download finished */
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        set(stateRef, window.absFirebaseState()).then(function () { clearBad("abs_state"); }).catch(function (e) { setBad("abs_state", e); });
+        pushPublic();
+      }, 400);
+    };
+
+    window.absSitePush = function () {
+      clearTimeout(siteTimer);
+      siteTimer = setTimeout(function () {
+        set(siteRef, window.absSiteData()).then(function () { clearBad("abs_site"); }).catch(function (e) { setBad("abs_site", e); });
+      }, 300);
+    };
+
+    /* 3) ONLY when someone opens Menu > Login: sync the staff data */
+    function startStaff() {
+      if (started) return; started = true;
+      onValue(stateRef, function (snap) {
+        clearBad("abs_state");
+        const remote = snap.val();
+        ready = true;
+        if (remote && remote.branches) window.absFirebaseApply(remote);
+        else window.absFirebasePush();          /* first run: upload the starting data */
+        pushPublic();
+      }, function (err) { setBad("abs_state", err); });
+    }
+    window.absOrderPush = function (o) { try { push(ref(db, "abs_orders"), o).catch(function () {}); } catch (e) {} };   /* customer orders */
+    const t0 = Date.now();
+    function startOrders() { onChildAdded(ref(db, "abs_orders"), function (s) { const o = s.val() || {}; if ((o.ts || 0) > t0 - 3000 && window.absOrderIn) window.absOrderIn(o); }, function () {}); }
+    window.absStartStaffSync = function () { startStaff(); if (!window.__ordersOn) { window.__ordersOn = true; startOrders(); } };
+    if (window.__wantStaff) window.absStartStaffSync();
+  </script>
+</body>
+</html>
